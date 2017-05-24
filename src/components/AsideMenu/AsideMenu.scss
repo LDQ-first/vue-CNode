@@ -19,7 +19,6 @@
         display: flex;
         flex-direction: column;
         width: 3rem;
-        /*background: #f7f8fa;*/
         background: #0091ea linear-gradient(135deg, #33b5e5, #0091ea);
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.25),
                     2px 0 10px rgba(0, 0, 0, 0.3);
@@ -31,6 +30,15 @@
             width: 100%;
             height: 3rem;
             color: #FFF;
+            @media screen and (max-width: 720px) {
+                padding-top: 0.1rem;
+                box-sizing: content-box;
+            }
+            .close {
+                align-self: flex-end;
+                padding-top: 0.1rem;
+                margin-right: 0.2rem;
+            }
             .user-avatar {
                 width: 120px;
                 height: 120px;
@@ -107,7 +115,7 @@
                 }
                 .option-text {
                     flex: 5;
-                    padding: 10px 0;
+                    padding: 0.1rem 0;
                     position: relative;
                     color: #EEE;
                     &::before {

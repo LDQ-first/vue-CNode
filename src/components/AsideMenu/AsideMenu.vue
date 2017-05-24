@@ -2,7 +2,8 @@
     <transition name="slide-left">
          <div class="aside-menu" v-show="isShowAsideMenu">
              <div class="menu">
-                 <div class="user">
+                 <div class="user" >
+                      <Close @close="hiddenAsideMenu"></Close>
                       <Buttons class="user-avatar" @click="showLogin">
                         <img :src="userInfo.avatar_url" >
                       </Buttons>
@@ -27,10 +28,10 @@
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="option-text">关于</span>
                     </Buttons>
-                    <div class="cnode"></div>
+
                 </div>
              </div>
-             <div @click.stop.prevent="hiddenAsideMenu" class="mask"></div>
+             <div @click="hiddenAsideMenu" class="mask"></div>
         </div>
     </transition>
 </template>

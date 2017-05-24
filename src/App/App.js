@@ -11,8 +11,11 @@ export default {
   name: 'App',
   store,
   router,
+  computed: {
+      
+  },
   methods: {
-
+     
   },
   components: {
       Topbar,

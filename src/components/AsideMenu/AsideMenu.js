@@ -1,4 +1,5 @@
 import Buttons from '../button/button.vue'
+import Close from '../close/close.vue'
 
 export default {
     name: 'AsideMenu',
@@ -16,7 +17,8 @@ export default {
         }
     },
     components: {
-        Buttons
+        Buttons,
+        Close
     },
     methods: {
         hiddenAsideMenu() {

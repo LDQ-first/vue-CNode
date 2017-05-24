@@ -1,0 +1,50 @@
+.skin {
+    margin: 10px 0;
+    .chooseSkin {
+        float: left;
+        margin-right: 20px;
+        line-height: 30px;
+        background: #FFF;
+        background: linear-gradient(-45deg, transparent 10px, #FFF 0) bottom right no-repeat,
+                    linear-gradient(-135deg, transparent 10px, #FFF 0) top right no-repeat;
+        background-size: 100% 50%;
+        padding: 0 30px 0 20px;
+        cursor: pointer;
+    }
+    li {
+        float: left;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0 10px;
+        .color {
+            margin: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+    }
+    .skin-show-enter-active {
+        transition: all .5s ease;
+    }
+    .skin-show-leave-active {
+        transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .skin-show-enter, .skin-show-leave-active {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    @keyframes bounce {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(0.5);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
