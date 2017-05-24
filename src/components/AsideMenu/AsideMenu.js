@@ -10,6 +10,9 @@ export default {
     computed: {
         userInfo() {
             return this.$store.state.userInfo;
+        },
+        isShowAsideMenu() {
+            return this.$store.state.isShowAsideMenu;
         }
     },
     components: {

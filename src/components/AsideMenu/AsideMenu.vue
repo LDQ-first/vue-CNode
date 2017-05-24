@@ -1,6 +1,6 @@
 <template>
-    <transition name="asideMenu">
-         <div class="aside-menu">
+    <transition name="slide-left">
+         <div class="aside-menu" v-show="isShowAsideMenu">
              <div class="menu">
                  <div class="user">
                       <Buttons class="user-avatar" @click="showLogin">
