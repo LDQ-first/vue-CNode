@@ -13,16 +13,28 @@ export default {
             context: '',
             width: 0,
             height: 0,
+            timer: null
         }
     },
     methods: {
+        can() {
+            if(this.context) {
+                cancelAnimationFrame(this.timer);
+                this.context.clearRect(0, 0, this.width, this.height);
+            }
+        },
+        mouseenter() {
+           this.$refs.btnCan.style.zIndex = 1;
+        },
+        mouseleave() {
+            this.$refs.btnCan.style.zIndex = 0;
+        },
         click() {
             setTimeout(()=>{
                 this.$emit('click');
             },800);
-            /*this.$emit('click');*/
         },
-        mouseenter() {
+       /* mouseenter() {
             setTimeout(()=>{
                 this.$emit('mouseenter');
             },0);
@@ -31,7 +43,7 @@ export default {
             setTimeout(()=>{
                 this.$emit('mouseleave');
             },0);
-        },
+        },*/
         init() {   
             this.ex = 0;
             this.ey = 0;
@@ -77,12 +89,15 @@ export default {
             this.context.fill();
             this.radius += 2;
             if(this.radius < this.width) {
-               requestAnimFrame(this.draw);
+                /*setInterval(()=>{
+                   requestAnimFrame(this.draw);
+                },1600); */
+               this.timer = requestAnimFrame(this.draw);
             }
             else {
                  setTimeout(()=>{
                     this.context.clearRect(0, 0, this.width, this.height);
-                },1600);    
+                },1000);    
             }
         }
     }

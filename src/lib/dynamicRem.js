@@ -6,14 +6,14 @@
               if(!clientWidth) {
                   return;
               }
-              if(clientWidth >= 750) {
+              if(clientWidth >= 1000) {
                   docEl.style.fontSize = '100px'
               }
-              if(clientWidth <= 414) {
-                  docEl.style.fontSize = '60px'
+              else if(clientWidth <= 640) {
+                  docEl.style.fontSize = '64px'
               }
               else {
-                  docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                  docEl.style.fontSize = 100 * (clientWidth / 1000) + 'px';
               }
           };
         if(!doc.addEventListener) {

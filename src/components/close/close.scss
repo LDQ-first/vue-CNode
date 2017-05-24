@@ -1,0 +1,44 @@
+.close {
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    &:hover {
+        &::before,
+        &::after {
+            background: #ee5715;
+            box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.4);
+        }
+        &::before {
+            transform: rotateZ(405deg);
+        }
+        &::after {
+            transform: rotateZ(315deg);
+        }
+    }
+    &::before,
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 5px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -2.5px;
+        margin-top: -15px;
+       /* transform: translate(-50%, -50%);*/
+        background: #FFF;
+        transition: all 0.8s ease-in-out;
+        border-radius: 10px;
+        box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.3);
+    }
+    &::before {
+        transform: rotateZ(45deg);
+    }
+    &::after {
+        transform: rotateZ(-45deg);
+    }
+}

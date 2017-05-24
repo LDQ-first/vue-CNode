@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 0.7em;
+    width: 100%;
     position: relative;
     background: #0091ea linear-gradient(135deg, #33b5e5, #0091ea);
     color: #FFF;
@@ -26,7 +27,7 @@
         .logo-text {
             text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
         }
-        .logo-blue {
+        /*.logo-blue {
             color: #4286F3;
         }
         .logo-red {
@@ -40,6 +41,6 @@
         }
         .logo-orange {
             color: #E88C67;
-        }
+        }*/
     }
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Topbar></Topbar>
-
+    <AsideMenu></AsideMenu>
   </div>
 </template>
 

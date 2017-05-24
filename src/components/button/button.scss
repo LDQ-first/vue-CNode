@@ -11,6 +11,7 @@
     box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
+
     &:hover {
         box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.5);
     }
@@ -19,5 +20,6 @@
         position: absolute;
         top: 0;
         left: 0;
+       /* z-index: 1;*/
     }
 }
