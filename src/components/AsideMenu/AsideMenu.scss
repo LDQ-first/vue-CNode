@@ -109,6 +109,7 @@
                     flex: 5;
                     padding: 10px 0;
                     position: relative;
+                    color: #EEE;
                     &::before {
                         content: '';
                         position: absolute;
@@ -150,7 +151,7 @@
                 }
             }
             .bg-yellow {
-                background: #FBBC05;
+                background: #F9B01F;
             }
             .bg-orange {
                 background: #E88C67;
