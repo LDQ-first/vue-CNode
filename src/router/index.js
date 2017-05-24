@@ -1,15 +1,35 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import ArticleList from '../components/ArticleList/ArticleList.vue'
+import Article from '../components/Article/Article.vue'
+import User from '../components/User/User.vue'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
+const routes = [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'ArticleList',
+      component: ArticleList
+    },
+    {
+      path: '/article/:id',
+      name: 'Article',
+      component: Article
+    },
+    {
+      path: '/user/:name?',
+      name: 'User',
+      component: User
     }
-  ]
+  ];
+
+const router =  new Router({
+    routes
 })
+
+
+export {
+  router,
+  routes
+}

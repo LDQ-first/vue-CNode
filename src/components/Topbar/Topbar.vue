@@ -1,6 +1,8 @@
 <template>
-    <div>
-        
+    <div class="Topbar">
+        <div class="title">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
     </div>
 </template>
 
