@@ -6,8 +6,8 @@ import mutations from './mutations'
 
 export default new Vuex.Store({
     state: {
-
+        isShowAsideMenu: false
     },
-    mutations
+    mutations: mutations()
 })
 

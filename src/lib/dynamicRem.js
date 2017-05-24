@@ -9,6 +9,9 @@
               if(clientWidth >= 750) {
                   docEl.style.fontSize = '100px'
               }
+              if(clientWidth <= 414) {
+                  docEl.style.fontSize = '60px'
+              }
               else {
                   docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
               }

@@ -1,7 +1,8 @@
 <template>
     <div class="Topbar">
         <div class="title">
-            <i class="fa fa-bars" aria-hidden="true"></i>
+            <i class="fa fa-bars" aria-hidden="true" 
+            @click.stop.prevent="showAsideMenu"></i>
             <h1 class="logo" title="CNode">
                 <span class="logo-text logo-blue">C</span>
                 <span class="logo-text logo-red">N</span>
