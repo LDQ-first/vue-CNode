@@ -1,4 +1,5 @@
 
+import '../lib/dynamicRem.js'
 import store from '../store/index'
 import { router, routes } from '../router/index.js'
 

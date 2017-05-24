@@ -1,0 +1,23 @@
+.btns {
+    cursor: pointer;
+    margin: 10px 0px;
+    padding: 5px 10px;
+    display: inline-block;   
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgba(3,169,244 ,1);
+    color: #EEE;
+    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.5);
+    }
+    #canvas {
+        opacity: 0.25;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

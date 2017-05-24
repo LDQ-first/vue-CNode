@@ -5,3 +5,73 @@
   outline: none;
   border: none;
 }
+
+@mixin widHei {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+   @include widHei;
+}
+
+body {
+   @include widHei;  
+  background: #f7f8fa;
+}
+
+a {
+  display: inline-block;
+  font-size: 16px;
+  color: #0C69CD;
+  margin: 0.1rem 0;
+  text-decoration: none;
+  position: relative;
+  &::before , &::after{
+    position: absolute;
+  }
+  &.menu {
+    &::before , &::after{
+      font-size: 16px;
+      font-weight: bold;
+      color: #FFF;
+      opacity: 0;
+      transition: all .5s ease-in-out;
+      }
+      &::before {
+        content: '[';
+        left: 10px; 
+      }
+      &::after {
+        content: ']';
+        right: 10px;
+      }
+      &:hover::before {
+        opacity: 1;
+        left: -10px; 
+      }
+      &:hover::after {
+         opacity: 1;
+        right: -10px;
+      }
+    }
+    &.content {
+       &::after{
+        content: "";
+        background: #FF801F;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 100%;
+        transition: all .5s ease-in-out;
+        transform: scaleX(0);
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+
+  
+}
+
