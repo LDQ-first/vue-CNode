@@ -25,8 +25,8 @@ export default () => {
         changeSkinColor(state, color) {
             state.skinColor = color;
         },
-        changeTab(state, {type, articleList, isLoading}) {
-           state.type = type;
+        changeTab(state, {tab, articleList, isLoading}) {
+           state.tab = tab;
            state.articleList = articleList;
            state.isLoading = isLoading;
         },

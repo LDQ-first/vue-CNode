@@ -3,7 +3,7 @@
         <!--<transition-group name="slide-top">-->
         <ul class="items">
             <li v-for="(item, index) of articleList" :key="item.last_reply_at+index" class="article-brief"
-            :style="{borderColor: (skinColor.replace(/\sl[^\)]+\)/, '') === '#FFF' ? '' : skinColor.replace(/\sl[^\)]+\)/, ''))}">
+            :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}">
                 <div class="avatar">
                     <img :src="item.author.avatar_url" alt="">
                 </div>
