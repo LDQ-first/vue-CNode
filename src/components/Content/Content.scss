@@ -1,0 +1,37 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex: 1;
+    position: relative; 
+    .tabs {
+        height: 0.45rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #0091ea linear-gradient(135deg, #33b5e5, #0091ea);
+        font-size: 0;
+        .tab {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.5);
+            &.isBorder {
+                border-bottom: 4px solid #D93700;
+                a {
+                    color: #D93700;
+                }
+            }
+            a {
+                color: #FFF;
+                font-size: 20px;
+                &::before , &::after{
+                font-size: inherit;
+                }
+            }
+        }
+        
+        
+    }
+}

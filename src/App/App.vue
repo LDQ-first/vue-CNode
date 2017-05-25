@@ -2,6 +2,7 @@
   <div id="app">
     <Topbar></Topbar>
     <AsideMenu></AsideMenu>
+    <NContent></NContent>
   </div>
 </template>
 

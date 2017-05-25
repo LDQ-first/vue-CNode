@@ -17,11 +17,14 @@ export default new Vuex.Store({
         isShowSkin: false,
         skinColor: '#0091ea',
         skinColors: [
-        '#0091ea linear-gradient(135deg, #33b5e5, #0091ea)',
-        '#3ABB5D linear-gradient(135deg, #3ABB5D, #2E9549)', 
-        '#FFB771 linear-gradient(135deg, #FFB771, #FF7E00)', 
-        '#E4637D linear-gradient(135deg, #E4637D, #E4002E)',
+            '#0091ea linear-gradient(135deg, #33b5e5, #0091ea)',
+            '#3ABB5D linear-gradient(135deg, #3ABB5D, #2E9549)', 
+            '#FFB771 linear-gradient(135deg, #FFB771, #FF7E00)', 
+            '#E4637D linear-gradient(135deg, #E4637D, #E4002E)',
         ],
+        tab: 'all',
+        isLoading: false,
+        articleList: [],
 },
     mutations: mutations()
 })

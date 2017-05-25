@@ -24,6 +24,9 @@ export default () => {
         },
         changeSkinColor(state, color) {
             state.skinColor = color;
+        },
+        changeTab(state, payload) {
+           
         }
     }
 }
