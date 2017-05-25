@@ -1,8 +1,8 @@
 <template>
      <nav class="skin clearfix">
-        <span class="chooseSkin" @click="changeShowSkin(showSkin, !showSkin)" title="点击展示">皮肤</span>
+        <span class="chooseSkin" @click="changeShowSkin(!isShowSkin)" title="点击展示">皮肤</span>
         <transition name="skin-show">
-            <ol class="clearfix" v-show="showSkin==true" >
+            <ol class="clearfix" v-show="isShowSkin==true" >
                 <li v-for="(color, key) in skinColors" :key="key" @click="bounce($event)" >
                     <Buttons class="color" @click="changeSkinColor(color)" :style="{background: color}" ref="color"></Buttons>
                 </li>

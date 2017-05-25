@@ -28,8 +28,8 @@
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="option-text">关于</span>
                     </Buttons>
-
                 </div>
+                <SkinColor></SkinColor>
              </div>
              <div @click="hiddenAsideMenu" class="mask"></div>
         </div>

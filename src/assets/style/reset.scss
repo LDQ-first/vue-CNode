@@ -12,6 +12,7 @@
   overflow: hidden;
 }
 
+
 html {
    @include widHei;
 }
@@ -19,6 +20,16 @@ html {
 body {
    @include widHei;  
   background: #f7f8fa;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+li {
+  list-style: none;
 }
 
 a {

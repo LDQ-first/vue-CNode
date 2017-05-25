@@ -19,5 +19,12 @@ export default () => {
         showAbout(state, isShow) {
             state.isShowAbout = isShow;
         },
+       /* editResume(state, )*/
+         showSkin(state, isShow) {
+             state.isShowSkin = isShow;
+         },
+         changeSkinColor(state, color) {
+             state.skinColor = color;
+         }
     }
 }

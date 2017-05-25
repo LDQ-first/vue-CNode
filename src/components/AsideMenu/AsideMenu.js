@@ -1,5 +1,6 @@
 import Buttons from '../button/button.vue'
 import Close from '../close/close.vue'
+import SkinColor from '../skinColor/skinColor.vue'
 
 export default {
     name: 'AsideMenu',
@@ -18,7 +19,8 @@ export default {
     },
     components: {
         Buttons,
-        Close
+        Close,
+        SkinColor
     },
     methods: {
         hiddenAsideMenu() {
@@ -41,6 +43,9 @@ export default {
         showAbout() {
             this.$store.commit('showAbout', true);
         },
+        changeSkin() {
+
+        }
 
     }
 }
