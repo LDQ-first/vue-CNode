@@ -1,7 +1,7 @@
 <template>
     <transition name="slide-left">
          <div class="aside-menu" v-show="isShowAsideMenu">
-             <div class="menu">
+             <div class="menu" :style="{background:skinColor}">
                  <div class="user" >
                       <Close @close="hiddenAsideMenu"></Close>
                       <Buttons class="user-avatar" @click="showLogin">

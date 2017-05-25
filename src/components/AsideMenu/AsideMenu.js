@@ -15,6 +15,9 @@ export default {
         },
         isShowAsideMenu() {
             return this.$store.state.isShowAsideMenu;
+        },
+        skinColor() {
+            return this.$store.state.skinColor;
         }
     },
     components: {

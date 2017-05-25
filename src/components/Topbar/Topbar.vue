@@ -1,5 +1,5 @@
 <template>
-    <div class="Topbar">
+    <div class="Topbar" :style="{background:skinColor}">
         <div class="title">
             <i class="fa fa-bars" aria-hidden="true" 
             @click.stop.prevent="showAsideMenu"></i>
