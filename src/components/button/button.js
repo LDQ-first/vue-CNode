@@ -32,7 +32,7 @@ export default {
         click() {
             setTimeout(()=>{
                 this.$emit('click');
-            },800);
+            },400);
         },
        /* mouseenter() {
             setTimeout(()=>{
