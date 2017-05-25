@@ -1,7 +1,8 @@
 <template>
     <div class="article-list">
-        <!--<transition-group name="slide-top">-->
-        <ul class="items">
+        
+        <ul class="items" :key="1">
+            <transition-group name="slide-top">
             <li v-for="(item, index) of articleList" :key="item.last_reply_at+index" class="article-brief"
             :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}">
                 <div class="avatar">
@@ -18,10 +19,13 @@
                     </p>
                 </div>
             </li>
+            </transition-group>
         </ul>
-        <!--</transition-group>-->
+        
         <div class="more">
             <!--<i v-show="isMore" class="icon-more"></i>-->
+             <i v-show="isMore" class="fa fa-spin fa-circle-o-notch" aria-hidden="true" 
+                :style="{color:skinColor}"></i>
         </div>
     </div>
 </template>

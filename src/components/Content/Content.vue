@@ -26,7 +26,7 @@
         </div>
         <transition name="slide-top-enter">
             <div v-show="isShowTop" class="top">
-                <i @click.stop.prevent="toTop" class="fa fa-fighter-jet" aria-hidden="true"
+                <i @click.stop.prevent="toTop" class="fa fa-fighter-jet fa-rotate-270" aria-hidden="true"
                 :style="{color:skinColor}"></i>
             </div>
         </transition>
