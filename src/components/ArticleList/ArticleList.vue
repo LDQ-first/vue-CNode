@@ -14,8 +14,7 @@
                     </p>
                     <p class="view">
                         <span class="viewed">{{item.reply_count}}</span>/{{item.visit_count}}
-                        <!--<span class="date"> {{changeTime(item.last_reply_at)}}</span>-->
-                        <span class="date"> {{item.last_reply_at}}</span>
+                        <span class="date"> {{changeTime(item.last_reply_at)}}</span>
                     </p>
                 </div>
             </li>
