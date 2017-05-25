@@ -19,13 +19,15 @@
         </div>
         <div ref="article" @scroll="scroll($event)" class="article">
             <div class="loading">
-                <i v-show="isLoading" class="fa fa-spinner" aria-hidden="true"></i>
+                <i v-show="isLoading" class="fa fa-spin fa-circle-o-notch" aria-hidden="true" 
+                :style="{color:skinColor}"></i>
             </div>
             <router-view></router-view>
         </div>
-        <transition name="slide-fade">
+        <transition name="slide-top-enter">
             <div v-show="isShowTop" class="top">
-                <i @click.stop.prevent="toTop" class="fa fa-fighter-jet" aria-hidden="true"></i>
+                <i @click.stop.prevent="toTop" class="fa fa-fighter-jet" aria-hidden="true"
+                :style="{color:skinColor}"></i>
             </div>
         </transition>
     </div>
