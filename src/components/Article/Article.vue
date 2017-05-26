@@ -72,18 +72,23 @@
                     </div>
                     {{item.author.loginname}}
                 </router-link>
-                  {{replies.length - index}}楼 • {{changeTime(item.create_at)}}
-                  <span @click="currentIndex=index" class="article-reply-at">回复</span>
+                <span class="article-reply-index">
+                  {{replies.length - index}}楼
+                </span>
+                <span class="article-reply-option">
+                    <span @click="currentIndex=index" class="article-reply-at">回复</span>
                     <i @click="ups(index, item.id, item)" :class="[item.ups.indexOf(userInfo.id) !== -1 ? 'fa-thumbs-up' : 'fa-thumbs-o-up']" 
                     class="icon-reply-at fa"></i>
-                  
-                  <span class="ups-count">{{ item.ups.length }}</span>
+                    <span class="ups-count">{{ item.ups.length }}</span>
+                </span>
               </div>
             </div>
           </div>
 
-       <!--   <div v-html="item.content" class="reply-content"></div>-->
-
+          <div v-html="item.content" class="article-reply-content"></div>
+          <span class="article-reply-data">
+             {{changeTime(item.create_at)}}
+          </span>
          <!-- <transition name="slide-top">
             <div v-show="currentIndex===index" class="reply-one">
               <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">

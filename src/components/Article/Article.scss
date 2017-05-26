@@ -171,8 +171,13 @@
                                   0 6px 20px 0 rgba(0,0,0,.19);
                   }
                  .article-reply-author {
-                     height: 0.6rem;
+                    /* height: 0.6rem;*/
+                     margin-bottom: 0.1rem;
                      .article-reply-desc {
+                         font-size: 0.2rem;
+                         display: flex;
+                         align-items: center;
+                         position: relative;
                          .avatar {
                             left: calc(-0.8rem - 8px);
                             width: 0.4rem;
@@ -190,10 +195,29 @@
                             margin: 10px;
                             margin-left: 0.8rem;
                         }
-                        .article-reply-at {
+                        .article-reply-index {
 
                         }
+                        .article-reply-option {
+                            position: absolute;
+                            right: 0.2rem;
+                            .article-reply-at {
+                                cursor: pointer;
+                            }
+                            .icon-reply-at {
+                                cursor: pointer;
+                            }
+                        }
                      }
+                 }
+                 .article-reply-content {
+                     font-size: 0.25rem;
+                     margin-bottom: 0.1rem;
+                     
+                 }
+                 .article-reply-data {
+                     font-size: 0.2rem;
+                     color: #808080;
                  }
              }
         }
