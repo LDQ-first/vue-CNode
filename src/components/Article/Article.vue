@@ -39,16 +39,11 @@
                     <span class="date"> 
                         {{changeTime(article.last_reply_at)}}
                     </span>
+                    <span class="tab">
+                         来自 {{types[article.tab]}}
+                    </span>
                 </div>
             </div>
-            <!--<div class="desc">
-                <p> 发布于 {{changeTime(article.create_at)}}  作者 
-                    <router-link :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
-                        {{article.author && article.author.loginname}}
-                        </router-link> 
-                        {{article.visit_count}} 次浏览  来自 {{types[article.tab]}}
-                </p>
-            </div>-->
         </div>
         <div v-html="article.content" class="article-content" ref="articleContent"></div>
       </div>

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   outline: none;
   border: none;
+  transition: all 0.3s ease-in-out;
 }
 
 @mixin widHei {
@@ -31,6 +32,19 @@ body {
 
 li {
   list-style: none;
+  line-height: 2em;
+}
+
+ol,ul {
+    padding: 0;
+    margin: 0 0 10px 25px
+}
+
+img {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  
 }
 
 a {
