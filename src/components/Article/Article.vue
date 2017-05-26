@@ -48,12 +48,14 @@
         <div v-html="article.content" class="article-content" ref="articleContent"></div>
       </div>
 
-      <div class="reply">
+      <div class="article-reply">
 
-        <!--<div class="other">
-          <div @click="collect" class="collect"><i :class="[isCollected ? 'collected' : 'collected-no']"></i>收藏文章</div>
-          <div class="total-reply">{{article.reply_count}} 回复</div>
-        </div>-->
+        <div class="other">
+          <div @click="collect" class="collect">
+              <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏文章
+          </div>
+         <!-- <div class="total-reply">{{article.reply_count}} 回复</div>-->
+        </div>
 
        <!-- <div class="reply-input">
           <input v-model.trim="replyContent" type="text" placeholder="请输入回复内容">

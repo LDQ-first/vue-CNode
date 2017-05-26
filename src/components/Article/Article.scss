@@ -5,8 +5,9 @@
         max-width: 1000px;
         margin: 10px auto;
         .article-main {
-            background: #FFFAE8;
+            background: #FFBD8D;
             padding: 0.1rem 0.2rem;
+            margin-bottom: 0.15rem;
             .article-title {
                 .article-tag {
                      display: inline-block;
@@ -100,7 +101,7 @@
                     }
                     h2 {
                         margin: 0.3rem 0 0.15rem;
-                        padding-bottom: 0.5rem;
+                        padding-bottom: 0.2rem;
                         border-bottom: 2px solid #eee
                     }
 
@@ -109,6 +110,10 @@
 
             
         }
-        
+        .article-reply {
+             background: #FFBD8D;
+             padding: 0.1rem 0.2rem;
+             margin-bottom: 0.15rem;
+        }
     }
 }

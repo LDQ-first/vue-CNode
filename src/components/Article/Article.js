@@ -13,6 +13,7 @@ export default {
             article: {},
             replies: [],
             articleImgs: [],
+            isCollected: false
         }
     },
     created() {
@@ -47,6 +48,8 @@ export default {
         }
     },
     methods: {
-
+        collect() {
+            
+        }
     }
 }
