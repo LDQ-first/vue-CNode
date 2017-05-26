@@ -32,6 +32,9 @@ export default () => {
         },
         changeMore(state, isOver) {
             state.isMore = isOver; 
+        },
+        showLoading(state, isShow) {
+            state.isLoading = isShow;
         }
     }
 }

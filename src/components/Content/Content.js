@@ -52,7 +52,7 @@ export default {
                 if(isOver) {
                     this.$store.commit('changeMore', true);
                     this.page ++;
-                     this.$store.commit('changeTab',{isLoading: true});
+                    this.$store.commit('changeTab',{isLoading: true});
                     axios.get(`https://cnodejs.org/api/v1/topics?page=${this.page}&tab=${this.tab}`)
                           .then(result => {
                               console.log(result);

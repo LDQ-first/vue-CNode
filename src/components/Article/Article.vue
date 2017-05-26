@@ -1,7 +1,76 @@
 <template>
-    <div>
-        
+    <div class="article-detail">
+
+    <div v-show="!isLoading" class="body">
+
+      <div class="article-title">
+        <a class="title">
+            {{article.title}}
+        </a>
+        <span class="tag" v-show="article.top || article.good">
+            {{article.top ? '置顶' : '精华'}}
+        </span>
+        <div class="desc">
+           <p> 发布于 {{changeTime(article.create_at)}}  作者 
+               <router-link :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
+                   {{article.author && article.author.loginname}}
+                </router-link> 
+                {{article.visit_count}} 次浏览  来自 {{types[article.tab]}}
+          </p>
+        </div>
+      </div>
+
+      <div v-html="article.content" class="article-content" ref="articleContent"></div>
+
+      <div class="reply">
+
+        <!--<div class="other">
+          <div @click="collect" class="collect"><i :class="[isCollected ? 'collected' : 'collected-no']"></i>收藏文章</div>
+          <div class="total-reply">{{article.reply_count}} 回复</div>
+        </div>-->
+
+       <!-- <div class="reply-input">
+          <input v-model.trim="replyContent" type="text" placeholder="请输入回复内容">
+          <button @click="reply('')" type="button">回复</button>
+        </div>-->
+
+        <!--<div v-for="(item, index) of replies" class="reply-item">
+
+          <div class="reply-author">
+            <div class="reply-avatar">
+              <img :src="item.author.avatar_url" alt="">
+              <div class="reply-desc">
+                <router-link :to="{name: 'user', params: {name: item.author && item.author.loginname}}">{{item.author.loginname}}</router-link>
+                  {{replies.length - index}}楼 • {{changeTime(item.create_at)}}
+                  <span @click="currentIndex=index" class="reply-at">回复</span>
+                  <i @click="ups(index, item.id, item)" :class="[item.ups.indexOf(userInfo.id) !== -1 ? 'ups-yes' : 'ups-no']" class="icon-reply-at"></i>
+                  <span class="ups-count">{{ item.ups.length }}</span>
+              </div>
+            </div>
+          </div>-->
+
+       <!--   <div v-html="item.content" class="reply-content"></div>-->
+
+         <!-- <transition name="slide-top">
+            <div v-show="currentIndex===index" class="reply-one">
+              <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">
+              <button @click="reply(item.id, item.author.loginname)">回复</button>
+              <button @click="currentIndex=null;replyOneContent=''">取消</button>
+            </div>
+          </transition>-->
+
+
+        </div>
+
+      </div>
+
     </div>
+
+   <!-- <div class="back">
+      <i @click.stop.prevent="$router.go(-1)" class="icon-back"></i>
+    </div>-->
+
+  </div>
 </template>
 
 <script>
