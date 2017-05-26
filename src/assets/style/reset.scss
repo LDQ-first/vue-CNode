@@ -34,7 +34,7 @@ li {
 
 a {
   display: inline-block;
-  font-size: 16px;
+  font-size: 0.22rem;
   color: #0C69CD;
   margin: 0.1rem 0;
   text-decoration: none;
@@ -44,7 +44,7 @@ a {
   }
   &.menu {
     &::before , &::after{
-      font-size: 16px;
+      font-size: 0.22rem;
       font-weight: bold;
       color: #FFF;
       opacity: 0;
@@ -67,12 +67,12 @@ a {
          right: -15px;
       }
     }
-    &.content {
+    &.title {
        &::after{
         content: "";
-        background: #FF801F;
+        background: #E84BAF;
         left: 0;
-        bottom: -2px;
+        bottom: -8px;
         height: 2px;
         width: 100%;
         transition: all .5s ease-in-out;

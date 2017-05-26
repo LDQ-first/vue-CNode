@@ -11,7 +11,9 @@
                     </div>
                     <div class="article-brief-group">
                         <h2 class="article-brief-title">
-                            <!-- <router-link :to="{name: 'article', params: {id: item.id}}">{{item.title}}</router-link>-->
+                             <router-link class="title" :to="{name: 'Article', params: {id: item.id}}">
+                                {{item.title}}
+                             </router-link>
                         </h2>
                         <div class="article-brief-tag">
                             <span class="tag" :class="{special: item.top || item.good}" :style="{background:skinColor}" v-show="item.tab">

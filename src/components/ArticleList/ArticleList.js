@@ -9,7 +9,6 @@ export default {
                 ask: '问答',
                 job: '招聘',
                 share: '分享'
-                
             }
         }
     },
