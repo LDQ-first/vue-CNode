@@ -1,8 +1,6 @@
 <template>
     <div class="article-detail">
-
-    <div v-show="!isLoading" class="article-body">
-      
+    <div v-show="!isLoading" class="article-body">   
       <div class="article-main">
         <div class="article-title">
             <div>
@@ -21,9 +19,9 @@
                 <div class="article-author">
                     <router-link class="title" :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
                         <div class="avatar">
-                                <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
-                        borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
-                                <img :src="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">
+                            <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
+                            borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
+                            <img :src="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">
                         </div>
                         {{article.author && article.author.loginname}}
                     </router-link> 
@@ -47,37 +45,42 @@
         </div>
         <div v-html="article.content" class="article-content" ref="articleContent"></div>
       </div>
-
-      <div class="article-reply">
-
-        <div class="other">
-          <div @click="collect" class="collect">
-              <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏文章
-          </div>
-         <!-- <div class="total-reply">{{article.reply_count}} 回复</div>-->
+      <div class="other">
+        <div @click="collect" class="collect">
+            <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏文章
         </div>
-
+        <!-- <div class="total-reply">{{article.reply_count}} 回复</div>-->
+     </div>
+      <div class="article-reply">
+        
         <div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
           :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></textarea>
            <!--<button @click="reply('')" type="button">回复</button>-->
            <Buttons @click="reply('')" text="回复" :style="{background:skinColor}"></Buttons>
         </div>
-
-        <!--<div v-for="(item, index) of replies" class="reply-item">
-
-          <div class="reply-author">
-            <div class="reply-avatar">
-              <img :src="item.author.avatar_url" alt="">
-              <div class="reply-desc">
-                <router-link :to="{name: 'user', params: {name: item.author && item.author.loginname}}">{{item.author.loginname}}</router-link>
+        <div v-for="(item, index) of replies" class="article-reply-item" :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}">
+          <div class="article-reply-author">
+            <div class="article-reply-avatar">
+             <!-- <img :src="item.author? item.author.avatar_url : ''" alt="">-->
+              <div class="article-reply-desc">
+                <router-link class="title" :to="{name: 'User', params: {name: item.author && item.author.loginname}}">
+                    <div class="avatar">
+                        <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
+                        borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
+                        <img :src="item.author? item.author.avatar_url : ''" class="avatar-img" alt="">
+                    </div>
+                    {{item.author.loginname}}
+                </router-link>
                   {{replies.length - index}}楼 • {{changeTime(item.create_at)}}
-                  <span @click="currentIndex=index" class="reply-at">回复</span>
-                  <i @click="ups(index, item.id, item)" :class="[item.ups.indexOf(userInfo.id) !== -1 ? 'ups-yes' : 'ups-no']" class="icon-reply-at"></i>
+                  <span @click="currentIndex=index" class="article-reply-at">回复</span>
+                    <i @click="ups(index, item.id, item)" :class="[item.ups.indexOf(userInfo.id) !== -1 ? 'fa-thumbs-up' : 'fa-thumbs-o-up']" 
+                    class="icon-reply-at fa"></i>
+                  
                   <span class="ups-count">{{ item.ups.length }}</span>
               </div>
             </div>
-          </div>-->
+          </div>
 
        <!--   <div v-html="item.content" class="reply-content"></div>-->
 

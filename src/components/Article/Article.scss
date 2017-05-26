@@ -104,29 +104,37 @@
                         padding-bottom: 0.2rem;
                         border-bottom: 2px solid #eee
                     }
-
                 }
+            }       
+        }
+        .other {
+            background: #FFBD8D;
+            padding: 0.1rem 0.2rem;
+            margin-bottom: 0.2rem;
+            .collect {
+                cursor: pointer;
             }
-
-            
         }
         .article-reply {
-             background: #FFBD8D;
-             padding: 0.1rem 0.2rem;
+            /* padding: 0.1rem 0.2rem;*/
              margin-bottom: 0.15rem;
-             .other {
-                 margin-bottom: 0.2rem;
-             }
+            
              .article-reply-input {
                  width: 100%;
-                 height: 0.8rem;
+                 height: 1.6rem;
                  position: relative;
                  font-size: 0.2rem;
                  display: flex;
+                 justify-content: center;
+                 margin-bottom: 0.2rem;
+                 background: #FFBD8D;
+                 padding: 0.1rem 0.2rem;
                  @media screen and (max-width: 400px) {
                      flex-direction: column;
-                     button {
+                     align-items: center;
+                     button.btns {
                          width: 80%;
+                         height: 50%;
                      }
                  }
                  textarea {
@@ -141,6 +149,7 @@
                     border-radius: 8px;
                     margin-right: 0.1rem;
                     margin-bottom: 0.1rem;
+                    box-shadow: 0 0px 3px 0 rgba(0, 0, 0, 0.4);
                     &:focus {
                         border: 2px solid;
                     }
@@ -149,6 +158,43 @@
                     height: 100%;
                     margin: 0;
                 }
+             }
+             .article-reply-item {
+                  background: #C6C9FF;
+                  padding: 0.2rem;
+                  margin-bottom: 0.1rem;
+                  border: 4px solid;
+                  box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
+                              0 2px 10px 0 rgba(0,0,0,.12);
+                  &:hover {
+                      box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),
+                                  0 6px 20px 0 rgba(0,0,0,.19);
+                  }
+                 .article-reply-author {
+                     height: 0.6rem;
+                     .article-reply-desc {
+                         .avatar {
+                            left: calc(-0.8rem - 8px);
+                            width: 0.4rem;
+                            height: 0.4rem;
+                            .img-border {
+                                width: 0.4rem;
+                                height: 0.4rem;
+                            }
+                            .avatar-img {
+                                width: 0.4rem;
+                                height: 0.4rem;
+                            }
+                        } 
+                        .title {
+                            margin: 10px;
+                            margin-left: 0.8rem;
+                        }
+                        .article-reply-at {
+
+                        }
+                     }
+                 }
              }
         }
     }

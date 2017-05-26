@@ -48,6 +48,9 @@ export default {
         },
         skinColor() {
             return this.$store.state.skinColor;
+        },
+        userInfo() {
+            return this.$store.state.userInfo;
         }
     },
     methods: {
@@ -55,6 +58,9 @@ export default {
 
         },
         reply() {
+
+        },
+        ups() {
 
         }
     },

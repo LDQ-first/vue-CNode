@@ -7,8 +7,6 @@ import mutations from './mutations'
 export default new Vuex.Store({
     state: {
         isShowAsideMenu: false,
-        userInfo: localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
-                  { avatar_url: '', id: '', loginname: '', success: false},
         isShowLogin: false,
         isShowMsg: false,
         isShowNewArticle: false,
@@ -26,6 +24,8 @@ export default new Vuex.Store({
         isLoading: false,
         articleList: [],
         isMore: false,
+         userInfo: localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
+                  { avatar_url: '', id: '', loginname: '', success: false},
 },
     mutations: mutations()
 })
