@@ -14,7 +14,7 @@
                             <!-- <router-link :to="{name: 'article', params: {id: item.id}}">{{item.title}}</router-link>-->
                         </h2>
                         <div class="article-brief-tag">
-                            <span class="tag" :class="{special: item.top || item.good}" :style="{background:skinColor}">
+                            <span class="tag" :class="{special: item.top || item.good}" :style="{background:skinColor}" v-show="item.tab">
                             {{(item.top ? '置顶' : '') || (item.good ? '精华': '') || types[item.tab]}}
                         </span>
                         </div>
