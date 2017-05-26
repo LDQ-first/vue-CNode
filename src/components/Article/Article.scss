@@ -70,41 +70,6 @@
             }
             .article-content {
                 font-size: 0.2rem;
-                .markdown-text {
-                    p {
-                        line-height: 1.7em;
-                        overflow: auto;
-                        margin-bottom: 0.2rem;
-                    }
-                    li {
-                       position: relative;
-                       &::before{
-                            content: '';
-                            display: inline-block;
-                            margin-top: 10px;
-                            margin-right: 10px;
-                            height: 0.2rem;
-                            width: 0.2rem;
-                            background: url('../../assets/logo.png');
-                            background-size: cover;
-                        }
-                    }
-                    blockquote {
-                        padding: 0 0 0 0.15rem;
-                        margin: 0 0 0.2rem;
-                        border-left: 5px solid #AAA3EE;
-                    }
-                    blockquote p {
-                        font-size: 0.17rem;
-                        font-weight: 300;
-                        line-height: 1.25
-                    }
-                    h2 {
-                        margin: 0.3rem 0 0.15rem;
-                        padding-bottom: 0.2rem;
-                        border-bottom: 2px solid #eee
-                    }
-                }
             }       
         }
         .other {
@@ -213,7 +178,14 @@
                  .article-reply-content {
                      font-size: 0.25rem;
                      margin-bottom: 0.1rem;
+                    /* p {
+                         margin-bottom: 0.1rem;
+                         img {
+                             margin: 0.1rem auto;
+                         }
+                     }*/
                      
+
                  }
                  .article-reply-data {
                      font-size: 0.2rem;
