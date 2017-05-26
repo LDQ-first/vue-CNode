@@ -145,6 +145,17 @@ a {
   transition: all .2s ease-out;
 }
 .slide-top-enter, .slide-top-leave-active {
-  transform: translateY(-5px);
+  transform: translateY(- 0.2rem);
+  opacity: 0;
+}
+
+.slide-bottom-enter-active {
+  transition: all .5s ease;
+}
+.slide-bottom-leave-active {
+  transition: all .2s ease-out;
+}
+.slide-bottom-enter, .slide-bottom-leave-active {
+  transform: translateY(0.6rem);
   opacity: 0;
 }

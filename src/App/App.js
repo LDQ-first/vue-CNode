@@ -11,6 +11,7 @@ import moment from 'moment'
 import Topbar from '../components/Topbar/Topbar.vue'
 import AsideMenu from  '../components/AsideMenu/AsideMenu.vue'
 import NContent from '../components/Content/Content.vue'
+import ToTop from '../components/toTop/toTop.vue'
 
 Vue.prototype.moment = moment;
 Vue.prototype.changeTime = time => 
@@ -33,6 +34,7 @@ export default {
   components: {
       Topbar,
       AsideMenu,
-      NContent
+      NContent,
+      ToTop
   }
 }

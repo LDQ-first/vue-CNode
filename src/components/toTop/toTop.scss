@@ -1,0 +1,11 @@
+.top {
+    position: fixed;
+    z-index: 1;
+    bottom: 0.5rem;
+    right: 0.2rem;
+    font-size: 0;
+    cursor: pointer;
+    .fa-fighter-jet {
+        font-size: 0.5rem;
+    }
+}

@@ -17,19 +17,19 @@
                 <router-link to="/" class="menu">招聘</router-link>
             </div>
         </div>
-        <div ref="article" @scroll="scroll($event)" class="article">
+        <div ref="articles" @scroll="scroll($event)" class="article">
             <div class="loading">
                 <i v-show="isLoading" class="fa fa-spin fa-circle-o-notch" aria-hidden="true" 
                 :style="{color:skinColor}"></i>
             </div>
             <router-view></router-view>
         </div>
-        <transition name="slide-top-enter">
+        <!--<transition name="slide-top-enter">
             <div v-show="isShowTop" class="top">
                 <i @click.stop.prevent="toTop" class="fa fa-fighter-jet fa-rotate-270" aria-hidden="true"
                 :style="{color:skinColor}"></i>
             </div>
-        </transition>
+        </transition>-->
     </div>
 </template>
 

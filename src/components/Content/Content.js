@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from 'axios'
+import bus from '../../lib/bus.js'
 
 export default {
     name: 'Content',
@@ -6,7 +7,6 @@ export default {
         return {
             page: 3,
             over: false, // 是否已经没有内容加载
-            isShowTop: false
         }
     },
     computed: {
@@ -37,13 +37,13 @@ export default {
                  })
         },
         scroll(e) {
-            console.log(e.target.clientHeight);
-            console.log(e.target.scrollTop);
             if(e.target.clientHeight * 4 > e.target.scrollTop) {
-                this.isShowTop = false;
+                const e = this.$refs.articles;
+                bus.$emit('isShowTop', {isShow: false, e});
             }
             else {
-                this.isShowTop = true;
+                  const e = this.$refs.articles;
+                bus.$emit('isShowTop', {isShow: true, e});
             }
             if (this.$route.path !== '/') {
                 return;
@@ -52,7 +52,6 @@ export default {
                 if(isOver) {
                     this.$store.commit('changeMore', true);
                     this.page ++;
-                    console.log(this.page);
                      this.$store.commit('changeTab',{isLoading: true});
                     axios.get(`https://cnodejs.org/api/v1/topics?page=${this.page}&tab=${this.tab}`)
                           .then(result => {
@@ -72,16 +71,6 @@ export default {
                 }
             }
         },
-        toTop() {
-            if (this.$refs.article.scrollTop <= 0) {
-                return;
-            }
-            let time = setInterval(() => {
-                if (this.$refs.article.scrollTop <= 0) {
-                    clearInterval(time);
-                }
-                this.$refs.article.scrollTop -= 200;
-            }, 1000/60)
-        }
+        
     }
 }

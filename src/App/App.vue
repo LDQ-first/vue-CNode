@@ -3,6 +3,7 @@
     <Topbar></Topbar>
     <AsideMenu></AsideMenu>
     <NContent></NContent>
+    <ToTop></ToTop>
   </div>
 </template>
 
