@@ -57,10 +57,12 @@
          <!-- <div class="total-reply">{{article.reply_count}} 回复</div>-->
         </div>
 
-       <!-- <div class="reply-input">
-          <input v-model.trim="replyContent" type="text" placeholder="请输入回复内容">
-          <button @click="reply('')" type="button">回复</button>
-        </div>-->
+        <div class="article-reply-input">
+          <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
+          :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></textarea>
+           <!--<button @click="reply('')" type="button">回复</button>-->
+           <Buttons @click="reply('')" text="回复" :style="{background:skinColor}"></Buttons>
+        </div>
 
         <!--<div v-for="(item, index) of replies" class="reply-item">
 

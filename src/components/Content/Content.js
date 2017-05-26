@@ -37,7 +37,7 @@ export default {
                  })
         },
         scroll(e) {
-            if(e.target.clientHeight * 4 > e.target.scrollTop) {
+            if(e.target.clientHeight * 2 > e.target.scrollTop) {
                 const e = this.$refs.articles;
                 bus.$emit('isShowTop', {isShow: false, e});
             }

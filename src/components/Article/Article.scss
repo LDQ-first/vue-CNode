@@ -114,6 +114,42 @@
              background: #FFBD8D;
              padding: 0.1rem 0.2rem;
              margin-bottom: 0.15rem;
+             .other {
+                 margin-bottom: 0.2rem;
+             }
+             .article-reply-input {
+                 width: 100%;
+                 height: 0.8rem;
+                 position: relative;
+                 font-size: 0.2rem;
+                 display: flex;
+                 @media screen and (max-width: 400px) {
+                     flex-direction: column;
+                     button {
+                         width: 80%;
+                     }
+                 }
+                 textarea {
+                    outline: none;
+                    border: none;
+                    width: 80%;
+                    height: 100%;
+                    padding: 0.1rem 0.15rem;
+                    position: relative;
+                    resize: none;
+                    overflow-y: auto;
+                    border-radius: 8px;
+                    margin-right: 0.1rem;
+                    margin-bottom: 0.1rem;
+                    &:focus {
+                        border: 2px solid;
+                    }
+                }
+                button {
+                    height: 100%;
+                    margin: 0;
+                }
+             }
         }
     }
 }

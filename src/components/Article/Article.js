@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Buttons from '../button/button.vue'
 
 export default {
     name: 'Article',
@@ -13,7 +14,9 @@ export default {
             article: {},
             replies: [],
             articleImgs: [],
-            isCollected: false
+            isCollected: false,
+            replyContent: '',
+
         }
     },
     created() {
@@ -49,7 +52,13 @@ export default {
     },
     methods: {
         collect() {
-            
+
+        },
+        reply() {
+
         }
-    }
+    },
+    components: {
+        Buttons,
+    },
 }
