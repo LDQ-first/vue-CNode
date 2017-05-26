@@ -45,20 +45,19 @@ i {
 }
 
 img {
-  max-width: 90%;
   margin: 0 auto;
   display: block;
 }
 
 .markdown-text {
+    img {
+      max-width: 90%;
+       margin: 0.1rem auto;
+    }
     p {
         line-height: 1.7em;
         overflow: auto;
         margin-bottom: 0.1rem;
-        img {
-            margin: 0.1rem auto;
-
-        }
     }
     li {
         position: relative;
@@ -89,7 +88,7 @@ img {
     }
     blockquote p {
         font-size: 0.17rem;
-        font-weight: 300;
+        font-weight: 400;
         line-height: 1.25
     }
     h2 {
