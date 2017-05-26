@@ -1,26 +1,57 @@
 <template>
     <div class="article-detail">
 
-    <div v-show="!isLoading" class="body">
-
-      <div class="article-title">
-        <a class="title">
-            {{article.title}}
-        </a>
-        <span class="tag" v-show="article.top || article.good">
-            {{article.top ? '置顶' : '精华'}}
-        </span>
-        <div class="desc">
-           <p> 发布于 {{changeTime(article.create_at)}}  作者 
-               <router-link :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
-                   {{article.author && article.author.loginname}}
-                </router-link> 
-                {{article.visit_count}} 次浏览  来自 {{types[article.tab]}}
-          </p>
+    <div v-show="!isLoading" class="article-body">
+      
+      <div class="article-main">
+        <div class="article-title">
+            <div>
+                <div class="article-tag">
+                    <span class="tag" v-show="article.top || article.good" :style="{background:skinColor}">
+                        {{article.top ? '置顶' : '精华'}}
+                    </span>
+                </div>
+                <div class="title-ct">
+                    <a class="title">
+                        {{article.title}}
+                    </a>
+                </div>
+             </div>
+             <div class="article-desc">
+                <div class="article-author">
+                    <router-link class="title" :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
+                        <div class="avatar">
+                                <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
+                        borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
+                                <img :src="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">
+                        </div>
+                        {{article.author && article.author.loginname}}
+                    </router-link> 
+                </div>
+                <div class="article-count">
+                
+                    <span class="reply">
+                        <i class="fa fa-comment" aria-hidden="true"></i>{{article.reply_count}}
+                    </span>
+                    <span class="visit">
+                        <i class="fa fa-eye" aria-hidden="true"></i>{{article.visit_count}}
+                    </span>
+                    <span class="date"> 
+                        {{changeTime(article.last_reply_at)}}
+                    </span>
+                </div>
+            </div>
+            <!--<div class="desc">
+                <p> 发布于 {{changeTime(article.create_at)}}  作者 
+                    <router-link :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
+                        {{article.author && article.author.loginname}}
+                        </router-link> 
+                        {{article.visit_count}} 次浏览  来自 {{types[article.tab]}}
+                </p>
+            </div>-->
         </div>
+        <div v-html="article.content" class="article-content" ref="articleContent"></div>
       </div>
-
-      <div v-html="article.content" class="article-content" ref="articleContent"></div>
 
       <div class="reply">
 

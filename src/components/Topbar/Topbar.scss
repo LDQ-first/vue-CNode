@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 0.7em;
+   /* height: 0.7em;*/
     width: 100%;
     position: relative;
     background: #0091ea linear-gradient(135deg, #33b5e5, #0091ea);
@@ -27,20 +27,5 @@
         .logo-text {
             text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
         }
-        /*.logo-blue {
-            color: #4286F3;
-        }
-        .logo-red {
-            color: #EA4335;
-        }
-        .logo-yellow {
-            color: #FBBC05;
-        }
-        .logo-green {
-            color: #34A853;
-        }
-        .logo-orange {
-            color: #E88C67;
-        }*/
     }
 }

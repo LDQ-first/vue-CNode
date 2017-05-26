@@ -42,6 +42,9 @@ export default {
         isLoading() {
             return this.$store.state.isLoading;
         },
+        skinColor() {
+            return this.$store.state.skinColor;
+        }
     },
     methods: {
 

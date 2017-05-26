@@ -19,7 +19,8 @@ html {
 
 body {
    @include widHei;  
-  background: #f7f8fa;
+   background: #f7f8fa;
+   font-size: 0.3rem;
 }
 
 .clearfix::after {
@@ -83,6 +84,46 @@ a {
       }
     }
 }
+
+
+
+.avatar {
+    position: absolute;
+    top: 50%;
+    left: calc(-0.8rem - 8px);
+    transform: translate( 50% ,-50%);
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: #EEE;
+    transition: all 0.5s ease-in-out;
+    .img-border {
+        position: absolute;
+        top: -4px;
+        left: -4px;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        box-sizing: content-box;
+        border: 4px solid ;
+        border-left-color: #6B33CC;
+        border-bottom-color: #6B33CC;
+        transition: all 0.5s ease-in-out;
+    }
+    &:hover {
+        .img-border  {
+              transform: rotate(360deg);
+        }
+    }
+    .avatar-img {
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),
+                    0 4px 15px 0 rgba(0,0,0,.15); 
+        transition: all 0.5s ease-in-out;
+    }
+} 
 
 .color-blue {
     color: #4286F3;

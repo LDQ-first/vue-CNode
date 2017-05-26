@@ -1,0 +1,76 @@
+.article-detail {
+    position: absolute;
+    width: 100%;
+    .article-body {
+        max-width: 1000px;
+        margin: 10px auto;
+        .article-main {
+            background: #FFFAE8;
+            padding: 0.1rem 0.2rem;
+            .article-title {
+                .article-tag {
+                     display: inline-block;
+                     margin-right: 10px;
+                    .tag {
+                        display: inline-block;
+                        font-size: 0.2rem;
+                        padding: 5px 10px;
+                    }
+                }
+                .title-ct {
+                    display: inline-block;
+                    .title {
+                        font-size: 0.28rem;
+                    }
+                } 
+                .article-desc {
+                    margin: 10px 0;
+                }
+                .article-author {
+                    display: inline-block;
+                    .avatar {
+                        left: calc(-0.8rem - 8px);
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        .img-border {
+                            width: 0.4rem;
+                            height: 0.4rem;
+                        }
+                        .avatar-img {
+                            width: 0.4rem;
+                            height: 0.4rem;
+                        }
+                    } 
+                    .title {
+                        margin: 10px;
+                        margin-left: 0.8rem;
+                    }
+                }
+                .article-count {
+                    display: inline-block;
+                    font-size: 0.2rem;
+                    margin: 10px 0;
+                    span {
+                        margin-right: 0.2rem;
+                        &.reply {
+                            color: #81C784;
+                        }
+                        &.visit {
+                            color: #00BFA5;
+                        }
+                        &.date {
+                            color: #808080;
+                        }
+                    }
+                    i {
+                        margin-right: 0.1rem;
+                    }
+                }
+            }
+
+
+            
+        }
+        
+    }
+}
