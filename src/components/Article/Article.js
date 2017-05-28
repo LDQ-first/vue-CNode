@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Buttons from '../button/button.vue'
+import Close from '../close/close.vue'
 
 export default {
     name: 'Article',
@@ -14,6 +15,8 @@ export default {
             article: {},
             replies: [],
             articleImgs: [],
+            articleReplyImgs: [],
+            modalImgSrc: '',
             isCollected: false,
             replyContent: '',
 
@@ -35,11 +38,13 @@ export default {
              .then( () => this.$store.commit('showLoading', false))
              .then( () => {
                  const articleContent = this.$refs.articleContent;
-                 console.log(articleContent);
+                 const articleReply = this.$refs.articleReply;
+               /*  console.log(articleContent);
+                 console.log(articleReply);*/
                  this.articleImgs = articleContent.querySelectorAll('img');
-                 for(let img of this.articleImgs) {
-                     img.onclick = () => location.href = img.src; 
-                 }
+                 this.articleReplyImgs = articleReply.querySelectorAll('img');
+                 this.showModal(this.articleImgs);
+                 this.showModal(this.articleReplyImgs);
              })
     },
     computed: {
@@ -54,6 +59,16 @@ export default {
         }
     },
     methods: {
+        showModal(imgs) {
+            for(let img of imgs) {
+             img.onclick = () => { 
+                if(img.parentNode.tagName === 'A') {
+                    return;
+                }
+                this.modalImgSrc = img.src;
+             }
+            }
+        },
         collect() {
 
         },
@@ -66,5 +81,6 @@ export default {
     },
     components: {
         Buttons,
+        Close
     },
 }

@@ -51,7 +51,7 @@
         </div>
         <!-- <div class="total-reply">{{article.reply_count}} 回复</div>-->
      </div>
-      <div class="article-reply">
+      <div class="article-reply" ref="articleReply">
         
         <div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
@@ -89,6 +89,9 @@
           <span class="article-reply-data">
              {{changeTime(item.create_at)}}
           </span>
+
+       
+
          <!-- <transition name="slide-top">
             <div v-show="currentIndex===index" class="reply-one">
               <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">
@@ -104,6 +107,14 @@
 
     </div>
 
+     <transition name="slide-in">
+        <div class="preview-modal"  aria-hidden="false" v-show="modalImgSrc">
+            <div class="modal-body" style="max-height: initial;">
+                <Close @close="modalImgSrc=''"></Close>
+                <img :src="modalImgSrc" class="preview-image">
+            </div>
+        </div>
+    </transition>
    <!-- <div class="back">
       <i @click.stop.prevent="$router.go(-1)" class="icon-back"></i>
     </div>-->

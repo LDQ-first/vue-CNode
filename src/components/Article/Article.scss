@@ -193,5 +193,30 @@
                  }
              }
         }
+        
+    }
+    .preview-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background:rgba(63,81,181,1);
+        z-index: 1000;
+        overflow-y: auto;
+        min-width: 320px;
+        .modal-body {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            margin-top: 0.1rem;
+            width: 98%;         
+        }
+        .close {
+            float: right;
+        }
+        .preview-image {
+           max-width: 100%;
+        }
     }
 }
