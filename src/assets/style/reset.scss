@@ -10,7 +10,6 @@
 @mixin widHei {
   width: 100%;
   height: 100%;
-  overflow: hidden;
 }
 
 
@@ -48,6 +47,23 @@ img {
   margin: 0 auto;
   display: block;
 }
+
+::-webkit-scrollbar {
+    width: 0.08rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 0.05rem;
+    background: #444;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 1rem;
+    border-radius: 0.1rem;
+    background: #498BD6 linear-gradient(to bottom, #EEE, rgba(3, 169, 244, 0.5), #0277BD);
+}
+
+
 
 .markdown-text {
     img {

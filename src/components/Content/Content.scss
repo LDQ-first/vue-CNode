@@ -40,7 +40,7 @@
     .article {
         flex: 1;
         display: flex;
-        overflow: scroll;
+        overflow-y: auto;
         position: relative;
         transition: 1s linear;
         .loading {

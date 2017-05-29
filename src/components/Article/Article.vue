@@ -84,29 +84,13 @@
               </div>
             </div>
           </div>
-
           <div v-html="item.content" class="article-reply-content"></div>
           <span class="article-reply-data">
              {{changeTime(item.create_at)}}
           </span>
-
-       
-
-         <!-- <transition name="slide-top">
-            <div v-show="currentIndex===index" class="reply-one">
-              <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">
-              <button @click="reply(item.id, item.author.loginname)">回复</button>
-              <button @click="currentIndex=null;replyOneContent=''">取消</button>
-            </div>
-          </transition>-->
-
-
         </div>
-
       </div>
-
     </div>
-
      <transition name="slide-in">
         <div class="preview-modal"  aria-hidden="false" v-show="modalImgSrc">
             <div class="modal-body" style="max-height: initial;">
@@ -115,10 +99,10 @@
             </div>
         </div>
     </transition>
-   <!-- <div class="back">
-      <i @click.stop.prevent="$router.go(-1)" class="icon-back"></i>
-    </div>-->
-
+    <div class="back">
+      <i class="fa fa-chevron-left" @click.stop.prevent="$router.go(-1)" aria-hidden="true"
+      :style="{color: skinColor.replace(/\sl[^\)]+\)/, '')}"></i>
+    </div>
   </div>
 </template>
 
