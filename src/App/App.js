@@ -19,6 +19,8 @@ Vue.prototype.changeTime = time =>
         .replace(/hours?/, '小时').replace('ago', '前').replace(/days?/, '天').replace(/minutes?/, '分钟')
         .replace(/\ban?/, '1').replace(/months?/, '个月').replace(/\byears?/, '年').replace(/\s/g, '').replace('fewseconds','分钟');
 
+Vue.prototype.createTime = time => 
+        moment(time).format("YYYY-MM-DD");
 
 
 export default {
