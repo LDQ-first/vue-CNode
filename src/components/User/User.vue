@@ -8,6 +8,10 @@
                     <img :src="user? user.avatar_url : ''" class="avatar-img" alt="">
                 </div>
                 <span class="user-name">{{ user.loginname}}</span>
+                <span class="user-score">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    {{ user.score}}
+                </span>
             </div>
         </div>
     </div>

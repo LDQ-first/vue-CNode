@@ -6,21 +6,37 @@
         margin: 10px auto;
         .user-info {
             width: 100%;
-            height: 1.6rem;
+            height: 3rem;
            /* background: #51BDFF;*/
             position: relative;
             .user-info-avatar {
-                top: 30%;
+                top: 0.2rem;
                 left: 50%;
-                transform: translate(-50%, -30%);
+                transform: translate(-50%, 0);
             }
             .user-name {
                 position: absolute;
                 left: 50%;
-                bottom: 10%;
+                top: 1.2rem;
                 transform: translate(-50%, 0);
                 color: #414141;
             }
+            .user-score {
+                position: absolute;
+                left: 50%;
+                top: 1.6rem;
+                transform: translate(-50%, 0);
+                .fa-star {
+                    color: #fb4;
+                    text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+                    transition: all 1s ease-in-out;
+                    &:hover {
+                        transform: rotate(360deg);
+                    }
+                }
+                
+            }
+            
         }
     } 
 }
