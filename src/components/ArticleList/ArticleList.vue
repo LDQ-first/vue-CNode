@@ -3,10 +3,10 @@
 
         <ul class="items" :key="1">
             <transition-group name="slide-top">
-                <li v-for="(item, index) of articleList" :key="item.last_reply_at+index" class="article-brief" :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}">
+                <li v-for="(item, index) of articleList" :key="item.last_reply_at+index" class="article-brief" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
                     <div class="avatar">
-                        <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
-                 borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
+                        <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                 borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
                         <img :src="item.author.avatar_url" class="avatar-img" alt="">
                     </div>
                     <div class="article-brief-group">

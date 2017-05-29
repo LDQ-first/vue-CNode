@@ -19,8 +19,8 @@
                 <div class="article-author">
                     <router-link class="title" :to="{name: 'User', params: {name: article.author && article.author.loginname}}">
                         <div class="avatar">
-                            <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
-                            borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
+                            <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                            borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
                             <img :src="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">
                         </div>
                         {{article.author && article.author.loginname}}
@@ -55,19 +55,19 @@
         
         <div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
-          :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></textarea>
+          :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}"></textarea>
            <!--<button @click="reply('')" type="button">回复</button>-->
            <Buttons @click="reply('')" text="回复" :style="{background:skinColor}"></Buttons>
         </div>
-        <div v-for="(item, index) of replies" class="article-reply-item" :style="{borderColor: skinColor.replace(/\sl[^\)]+\)/, '')}">
+        <div v-for="(item, index) of replies" class="article-reply-item" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
           <div class="article-reply-author">
             <div class="article-reply-avatar">
              <!-- <img :src="item.author? item.author.avatar_url : ''" alt="">-->
               <div class="article-reply-desc">
                 <router-link class="title" :to="{name: 'User', params: {name: item.author && item.author.loginname}}">
                     <div class="avatar">
-                        <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[^\)]+\)/, ''),
-                        borderRightColor: skinColor.replace(/\sl[^\)]+\)/, '')}"></span>
+                        <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                        borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
                         <img :src="item.author? item.author.avatar_url : ''" class="avatar-img" alt="">
                     </div>
                     {{item.author.loginname}}
@@ -101,7 +101,7 @@
     </transition>
     <div class="back">
       <i class="fa fa-chevron-left" @click.stop.prevent="$router.go(-1)" aria-hidden="true"
-      :style="{color: skinColor.replace(/\sl[^\)]+\)/, '')}"></i>
+      :style="{color: skinColor.replace(/\sl[\S\s]+/, '')}"></i>
     </div>
   </div>
 </template>

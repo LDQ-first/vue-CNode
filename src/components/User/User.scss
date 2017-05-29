@@ -1,0 +1,26 @@
+.user-center {
+    position: absolute;
+    width: 100%;
+    .user-main {
+        max-width: 1000px;
+        margin: 10px auto;
+        .user-info {
+            width: 100%;
+            height: 1.6rem;
+           /* background: #51BDFF;*/
+            position: relative;
+            .user-info-avatar {
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -30%);
+            }
+            .user-name {
+                position: absolute;
+                left: 50%;
+                bottom: 10%;
+                transform: translate(-50%, 0);
+                color: #414141;
+            }
+        }
+    } 
+}
