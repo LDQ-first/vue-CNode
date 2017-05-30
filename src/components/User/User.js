@@ -27,15 +27,24 @@ export default {
         },
         contents() {
             return [
-                { tag: 'create', content: this.collectTopics, title: '最近创建的话题'},
-                { tag: 'reply', content: this.user.recent_replies, title: '最近参与的话题'},
-                { tag: 'collect', content: this.user.recent_topics, title: '收藏的话题'},
+                { tag: 'create', topic: this.collectTopics, title: '最近创建的话题'},
+                { tag: 'reply', topic: this.user.recent_replies, title: '最近参与的话题'},
+                { tag: 'collect', topic: this.user.recent_topics, title: '收藏的话题'},
             ]
         }
     },
     created() {
         this.$store.commit('showAsideMenu', false);
-        axios.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`)
+        this.fetchData();
+    },
+    watch: {
+        $route() {
+            this.fetchData();
+        }
+    },
+    methods: {
+        fetchData() {
+             axios.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`)
              .then(result =>  result.data.data )
              .then(user => {
                  console.log(user);
@@ -47,9 +56,6 @@ export default {
                  console.log(collectTopics);
                  this.collectTopics = collectTopics;
              })
-        
-    },
-    methods: {
-
+        }
     }
 }

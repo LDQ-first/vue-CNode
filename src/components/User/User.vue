@@ -40,13 +40,19 @@
                 <div class="user-topic-content">
                     <ul class="topic-contents">
                         <li class="topic-content" v-for="(content, index) in contents" :key="index">
-                            <div class="topic-content-title">
+                          <!--  <h2 class="topic-content-title" :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
                                 {{content.title}}
-                            </div>
-                            <div class="topic-content-main">
-                                <div>
-                                    
+                            </h2>-->
+                            <div class="topic-content-main" v-for="(topic, key) in content.topic" :key="key"
+                            :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
+                               <!-- {{topic}}-->
+                             <router-link class="title" :to="{name: 'User', params: {name: topic.author && topic.author.loginname}}">
+                               <div class="avatar topic-content-avatar">
+                                    <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                                    borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
+                                    <img :src="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">
                                 </div>
+                             </router-link>
                             </div>
                         </li>
                     </ul>

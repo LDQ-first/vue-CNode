@@ -115,13 +115,31 @@
                 
             }
             .user-topic-content {
+                flex: 1;
                 overflow: auto;
                 .topic-contents {
                     .topic-content {
+                         
+                         margin: 0.3rem 0;
                          font-size: 0.2rem;
                          .topic-content-title {
-
+                             text-align: center;
+                             margin-bottom: 0.4rem;
+                             padding: 0.2rem 0;
+                             color: #414141;
                          }
+                         .topic-content-main {
+                            width: 80%;
+                            margin: 0 auto;
+                            margin-bottom: 0.3rem;
+                            padding: 0.2rem;
+                            border: 2px solid;
+                            position: relative;
+                            .topic-content-avatar {
+                                width: 0.4rem;
+                                height: 0.4rem;
+                            }
+                        }
                     }
                 }
             }
