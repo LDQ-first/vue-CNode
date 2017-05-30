@@ -90,8 +90,24 @@ export default {
         sort( e, type) {
             if(this.replies && this.replies.length > 0) {
                const target = e.target;
-               console.log(target);
+               if(target.classList.contains('active')) return;
 
+               this.replies.sort((a, b) => {
+                   this.sortWay = type;
+
+                   if(type === 'normal' ) {
+                       return new Date(b.create_at) - new Date(a.create_at);
+                   }
+                   else if (type === 'farthest') {
+                       return new Date(a.create_at) - new Date(b.create_at);
+                   }
+                   else if(type === 'ups') {
+                       return b.ups.length - a.ups.length;
+                   }
+
+                   
+
+               })
 
             }
         },
