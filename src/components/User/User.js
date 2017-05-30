@@ -4,6 +4,7 @@ export default {
     name: 'User',
     data() {
         return {
+            hasUser: false,
             user: {},
             collectTopics: [],
             navs: [
@@ -12,7 +13,7 @@ export default {
                 { name: '最近收藏的话题', tag: 'collect', fa: 'fa-archive'}
             ],
             currType: 'create',
-            
+            time: 5
         }
     },
      computed: {
@@ -27,8 +28,8 @@ export default {
         },
         contents() {
             return [
-                { tag: 'create', topic: this.user.recent_topics, title: '最近创建的话题'},
-                { tag: 'reply', topic: this.user.recent_replies, title: '最近参与的话题'},
+                { tag: 'create', topic: this.user ? this.user.recent_topics : '', title: '最近创建的话题'},
+                { tag: 'reply', topic: this.user ? this.user.recent_replies : '', title: '最近参与的话题'},
                 { tag: 'collect', topic: this.collectTopics, title: '收藏的话题'},
             ]
         }
@@ -44,9 +45,29 @@ export default {
     },
     methods: {
         fetchData() {
+             console.log('fetchData');
              this.$store.commit('showLoading', true);
+             this.hasUser = false;
              axios.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`)
-             .then(result =>  result.data.data )
+             .catch(() => {
+                 this.time = 5;
+                 this.$store.commit('showLoading', false);
+                 const timer = setInterval(() => {
+                    if(this.time === 0) {
+                        clearInterval(timer);
+                        this.$router.go(-1);
+                         return;
+                    }
+                    this.time--;
+                }, 1000); 
+             })
+             .then(result => {
+                 console.log(result);
+                 if(result) {
+                     this.hasUser = true;
+                     return result.data.data
+                 }
+             })
              .then(user =>  this.user = user)
              .then( () => axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.$route.params.name}`))
              .then(result => result.data.data)
@@ -54,7 +75,7 @@ export default {
                  console.log(collectTopics);
                  this.collectTopics = collectTopics;
              })
-             .then(() =>  this.$store.commit('showLoading', false));
+             .then(() =>  this.$store.commit('showLoading', false))
         }
     }
 }

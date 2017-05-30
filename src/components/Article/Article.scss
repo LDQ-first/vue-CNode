@@ -1,6 +1,13 @@
 .article-detail {
     position: absolute;
     width: 100%;
+    .article-error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        color: #343434;
+    }
     .article-body {
         max-width: 1000px;
         margin: 10px auto;

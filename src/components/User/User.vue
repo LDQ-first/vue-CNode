@@ -1,26 +1,26 @@
 <template>
     <div class="user-center" v-show="!isLoading">
-        <div class="user-main">
+        <div class="user-main" v-if="hasUser">
             <div class="user-info" :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
                 <div class="avatar user-info-avatar">
                     <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                     borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
                     <img :src="user? user.avatar_url : ''" class="avatar-img" alt="">
                 </div>
-                <span class="user-name">{{ user.loginname}}</span>
+                <span class="user-name">{{ user ? user.loginname: ''}}</span>
                 <span class="user-score">
                     <i class="fa fa-star" aria-hidden="true"></i>
-                    {{ user.score}}
+                    {{ user ?  user.score: ''}}
                 </span>
                 <span class="user-github">
                     <i class="fa fa-github" aria-hidden="true"></i>
-                    <a :href="`https://github.com/${user.githubUsername}`" class="title" target="new">
-                        {{ user.githubUsername || 'github' }}
+                    <a :href="`https://github.com/${user ? user.githubUsername : ''}`" class="title" target="new">
+                        {{ user ? user.githubUsername : ''}}
                     </a>
                 </span>
                 <span class="user-data">
                     <i class="fa fa-calendar" aria-hidden="true"></i>
-                    {{ createTime(user.create_at) }}
+                    {{ createTime(user ? user.create_at: '') }}
                 </span>
             </div>
             <div class="user-topic" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
@@ -46,7 +46,7 @@
                                     :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}" >  
                                     <div class="avatar topic-content-avatar">
                                         <router-link class="topic-user" :to="{name: 'User', params: {name: topic.author && topic.author.loginname}}"
-                                        :title="topic.author.loginname">
+                                        :title="topic.author.loginname" v-show="topic.author">
                                             <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                                             borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
                                             <img :src="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">
@@ -77,6 +77,9 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="user-error" v-else :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
+            用户不存在, {{ time }} 秒后返回上一页
         </div>
     </div>
 </template>

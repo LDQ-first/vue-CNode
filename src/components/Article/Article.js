@@ -6,6 +6,8 @@ export default {
     name: 'Article',
     data() {
         return {
+            hasArticle: false,
+            time: 5,
             id: this.$route.params.id,
             types: { 
                 share: '分享',
@@ -26,7 +28,24 @@ export default {
         this.$store.commit('showLoading', true);
         this.$store.commit('showInfo', true);
         axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
-             .then( result => result.data.data)
+            .catch(() => {
+                this.time = 5;
+                 this.$store.commit('showLoading', false);
+                 const timer = setInterval(() => {
+                    if(this.time === 0) {
+                        clearInterval(timer);
+                        this.$router.push({path: '/'});
+                        return;
+                    }
+                    this.time--;
+                }, 1000); 
+            })
+             .then( result => {
+                 if(result) {
+                     this.hasArticle = true;
+                     return result.data.data;
+                 }
+             })
              .then( article => {
                  console.log(article);
                  return this.article = article;
@@ -39,8 +58,6 @@ export default {
              .then( () => {
                  const articleContent = this.$refs.articleContent;
                  const articleReply = this.$refs.articleReply;
-               /*  console.log(articleContent);
-                 console.log(articleReply);*/
                  this.articleImgs = articleContent.querySelectorAll('img');
                  this.articleReplyImgs = articleReply.querySelectorAll('img');
                  this.showModal(this.articleImgs);

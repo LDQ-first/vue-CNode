@@ -1,7 +1,7 @@
 <template>
-    <div class="article-detail">
-    <div v-show="!isLoading" class="article-body">   
-      <div class="article-main">
+    <div class="article-detail" v-show="!isLoading">
+    <div  class="article-body" v-if="hasArticle">   
+      <div class="article-main" >
         <div class="article-title">
             <div>
                 <div class="article-tag">
@@ -89,6 +89,9 @@
           </span>
         </div>
       </div>
+    </div>
+    <div class="article-error" v-else :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
+        文章不存在, {{ time }} 秒后返回首页
     </div>
      <transition name="slide-in">
         <div class="preview-modal"  aria-hidden="false" v-show="modalImgSrc">
