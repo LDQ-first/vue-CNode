@@ -103,8 +103,7 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        cursor: pointer;
-                        
+                        cursor: pointer;  
                         font-weight: bold;
                         &.active {
                             border-right: 4px solid; 
@@ -114,6 +113,13 @@
                     }
                 }
                 
+            }
+            .user-topic-content {
+                .topic-contets {
+                    .topic-contet {
+                         font-size: 0.2rem;
+                    }
+                }
             }
         }
     } 

@@ -24,7 +24,7 @@
                 </span>
             </div>
             <div class="user-topic" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
-                <nav class="user-topic-nav" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
+                <nav class="user-topic-nav" :style="{borderRightColor: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
                     <ul class="topic-navs">
                         <li v-for="(nav, index) in navs" :key="index" class="topic-nav" 
                         :class="{active: currType === nav.tag}" 
@@ -37,6 +37,13 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="user-topic-content">
+                    <ul class="topic-contets">
+                        <li class="topic-contet">
+
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
