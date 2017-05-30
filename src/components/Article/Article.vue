@@ -27,7 +27,6 @@
                     </router-link> 
                 </div>
                 <div class="article-count">
-                
                     <span class="reply">
                         <i class="fa fa-comment" aria-hidden="true"></i>{{article.reply_count}}
                     </span>

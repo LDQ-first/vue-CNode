@@ -44,18 +44,17 @@ export default {
     },
     methods: {
         fetchData() {
+             this.$store.commit('showLoading', true);
              axios.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`)
              .then(result =>  result.data.data )
-             .then(user => {
-                 console.log(user);
-                 this.user = user;
-             })
+             .then(user =>  this.user = user)
              .then( () => axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.$route.params.name}`))
              .then(result => result.data.data)
              .then(collectTopics => {
                  console.log(collectTopics);
                  this.collectTopics = collectTopics;
              })
+             .then(() =>  this.$store.commit('showLoading', false));
         }
     }
 }

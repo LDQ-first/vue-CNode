@@ -1,5 +1,5 @@
 <template>
-    <div class="user-center">
+    <div class="user-center" v-show="!isLoading">
         <div class="user-main">
             <div class="user-info" :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
                 <div class="avatar user-info-avatar">
@@ -31,7 +31,8 @@
                         :style="{borderRightColor: skinColor.replace(/\sl[\S\s]+/, ''),
                         borderTopColor: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.6$2'),
                         background: currType === nav.tag ? skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2'): '',
-                        color: currType === nav.tag ? '' :skinColor.replace(/\sl[\S\s]+/, '')}">
+                        color: currType === nav.tag ? '' :skinColor.replace(/\sl[\S\s]+/, '')}"
+                        @click="currType = nav.tag" >
                             <i class="fa" :class="nav.fa" aria-hidden="true"></i>
                             {{nav.name}}
                         </li>
@@ -39,20 +40,38 @@
                 </nav>
                 <div class="user-topic-content">
                     <ul class="topic-contents">
-                        <li class="topic-content" v-for="(content, index) in contents" :key="index">
-                          <!--  <h2 class="topic-content-title" :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
-                                {{content.title}}
-                            </h2>-->
-                            <div class="topic-content-main" v-for="(topic, key) in content.topic" :key="key"
-                            :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
-                               <!-- {{topic}}-->
-                             <router-link class="title" :to="{name: 'User', params: {name: topic.author && topic.author.loginname}}">
-                               <div class="avatar topic-content-avatar">
-                                    <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
-                                    borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
-                                    <img :src="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">
+                        <li class="topic-content"  v-for="(content, index) in contents" :key="index" v-show="content.tag === currType">
+                            <div v-if="content.topic? content.topic.length: true">
+                                <div class="topic-content-main" v-for="(topic, key) in content.topic" :key="key" 
+                                    :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}" >  
+                                    <div class="avatar topic-content-avatar">
+                                        <router-link class="topic-user" :to="{name: 'User', params: {name: topic.author && topic.author.loginname}}"
+                                        :title="topic.author.loginname">
+                                            <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                                            borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
+                                            <img :src="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">
+                                        </router-link>
+                                    </div>
+                                    <div class="topic-content-title">
+                                        <router-link class="title" :to="{name: 'Article', params: {id: topic.id}}">
+                                            {{topic.title}}
+                                        </router-link>
+                                    </div>
+                                    <div class="topic-brief-count">
+                                        <span class="reply" v-show="topic.reply_count">
+                                            <i class="fa fa-comment" aria-hidden="true"></i>{{topic.reply_count}}
+                                        </span>
+                                        <span class="visit" v-show="topic.visit_count">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>{{topic.visit_count}}
+                                        </span>
+                                        <span class="date"> 
+                                            {{changeTime(topic.last_reply_at)}}
+                                        </span>
+                                    </div>
                                 </div>
-                             </router-link>
+                            </div>
+                            <div class="topic-error-tip" v-else :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
+                                该用户没有此类数据
                             </div>
                         </li>
                     </ul>

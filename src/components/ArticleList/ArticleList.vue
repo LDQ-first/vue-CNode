@@ -4,11 +4,13 @@
         <ul class="items" :key="1">
             <transition-group name="slide-top">
                 <li v-for="(item, index) of articleList" :key="item.last_reply_at+index" class="article-brief" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
-                    <div class="avatar">
-                        <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
-                 borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
-                        <img :src="item.author.avatar_url" class="avatar-img" alt="">
-                    </div>
+                        <div class="avatar">
+                            <router-link class="item-author" :to="{name: 'User', params: {name: item.author && item.author.loginname}}" title="item.author.loginname">
+                                <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                                borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
+                                <img :src="item.author.avatar_url" class="avatar-img" alt="">
+                            </router-link>
+                        </div>
                     <div class="article-brief-group">
                         <h2 class="article-brief-title">
                              <router-link class="title" :to="{name: 'Article', params: {id: item.id}}">

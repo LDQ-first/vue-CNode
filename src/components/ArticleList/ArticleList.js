@@ -33,10 +33,7 @@ export default {
         renFirScreen(tab) {
             this.$store.commit('changeTab', {tab, isLoading: true});
             axios.get(`https://cnodejs.org/api/v1/topics`)
-                 .then( result => {
-                     console.log(result);
-                     return result.data.data;
-                 })
+                 .then( result =>  result.data.data )
                  .then( articleList => {
                      console.log(articleList);
                      this.$store.commit('changeTab', {tab, articleList, isLoading: false});
