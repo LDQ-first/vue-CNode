@@ -38,9 +38,16 @@
                     </ul>
                 </nav>
                 <div class="user-topic-content">
-                    <ul class="topic-contets">
-                        <li class="topic-contet">
-
+                    <ul class="topic-contents">
+                        <li class="topic-content" v-for="(content, index) in contents" :key="index">
+                            <div class="topic-content-title">
+                                {{content.title}}
+                            </div>
+                            <div class="topic-content-main">
+                                <div>
+                                    
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>

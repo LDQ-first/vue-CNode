@@ -115,9 +115,13 @@
                 
             }
             .user-topic-content {
-                .topic-contets {
-                    .topic-contet {
+                overflow: auto;
+                .topic-contents {
+                    .topic-content {
                          font-size: 0.2rem;
+                         .topic-content-title {
+
+                         }
                     }
                 }
             }
