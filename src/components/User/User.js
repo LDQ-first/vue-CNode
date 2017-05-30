@@ -27,9 +27,9 @@ export default {
         },
         contents() {
             return [
-                { tag: 'create', topic: this.collectTopics, title: '最近创建的话题'},
+                { tag: 'create', topic: this.user.recent_topics, title: '最近创建的话题'},
                 { tag: 'reply', topic: this.user.recent_replies, title: '最近参与的话题'},
-                { tag: 'collect', topic: this.user.recent_topics, title: '收藏的话题'},
+                { tag: 'collect', topic: this.collectTopics, title: '收藏的话题'},
             ]
         }
     },
