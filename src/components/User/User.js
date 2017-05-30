@@ -7,9 +7,9 @@ export default {
             user: {},
             collectTopics: [],
             navs: [
-                { name: '最近创建的话题', tag: 'create' },
-                { name: '最近参与的话题', tag: 'reply' },
-                { name: '最近收藏的话题', tag: 'collect' }
+                { name: '最近创建的话题', tag: 'create', fa: 'fa-plus-circle' },
+                { name: '最近参与的话题', tag: 'reply', fa: 'fa-reply' },
+                { name: '最近收藏的话题', tag: 'collect', fa: 'fa-archive'}
             ],
             currType: 'create'
         }

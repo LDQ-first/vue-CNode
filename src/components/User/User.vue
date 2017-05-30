@@ -32,6 +32,7 @@
                         borderTopColor: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.6$2'),
                         background: currType === nav.tag ? skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2'): '',
                         color: currType === nav.tag ? '' :skinColor.replace(/\sl[\S\s]+/, '')}">
+                            <i class="fa" :class="nav.fa" aria-hidden="true"></i>
                             {{nav.name}}
                         </li>
                     </ul>
