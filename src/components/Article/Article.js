@@ -91,7 +91,6 @@ export default {
             if(this.replies && this.replies.length > 0) {
                const target = e.target;
                if(target.classList.contains('active')) return;
-
                this.replies.sort((a, b) => {
                    this.sortWay = type;
 

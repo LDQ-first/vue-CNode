@@ -93,9 +93,7 @@
             }
         }
         .article-reply {
-            /* padding: 0.1rem 0.2rem;*/
              margin-bottom: 0.15rem;
-            
              .article-reply-input {
                  width: 100%;
                  height: 1.6rem;
@@ -169,7 +167,6 @@
                                   0 6px 20px 0 rgba(0,0,0,.19);
                   }
                  .article-reply-author {
-                    /* height: 0.6rem;*/
                      margin-bottom: 0.1rem;
                      .article-reply-desc {
                          font-size: 0.2rem;
@@ -210,7 +207,7 @@
                  }
                  .article-reply-content {
                      font-size: 0.25rem;
-                     margin-bottom: 0.1rem;
+                     margin: 0.1rem 0;
                  }
                  .article-reply-data {
                      font-size: 0.2rem;
@@ -272,3 +269,4 @@
         }
     }
 }
+
