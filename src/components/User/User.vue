@@ -1,7 +1,7 @@
 <template>
     <div class="user-center">
         <div class="user-main">
-            <div class="user-info" :style="{background:skinColor.replace(/(1)(\)\s)/, '0.4$2').replace(/\sl[\S\s]+/, '')}">
+            <div class="user-info" :style="{background: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
                 <div class="avatar user-info-avatar">
                     <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                     borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
@@ -22,6 +22,20 @@
                     <i class="fa fa-calendar" aria-hidden="true"></i>
                     {{ createTime(user.create_at) }}
                 </span>
+            </div>
+            <div class="user-topic" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
+                <nav class="user-topic-nav" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2')}">
+                    <ul class="topic-navs">
+                        <li v-for="(nav, index) in navs" :key="index" class="topic-nav" 
+                        :class="{active: currType === nav.tag}" 
+                        :style="{borderRightColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                        borderTopColor: skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.6$2'),
+                        background: currType === nav.tag ? skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.4$2'): '',
+                        color: currType === nav.tag ? '' :skinColor.replace(/\sl[\S\s]+/, '')}">
+                            {{nav.name}}
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

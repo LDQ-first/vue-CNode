@@ -1,13 +1,18 @@
 .user-center {
     position: absolute;
     width: 100%;
+    height: 100%;
+    padding: 10px 0;
     .user-main {
         max-width: 1000px;
-        margin: 10px auto;
+        height: 100%;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: column;
         .user-info {
             width: 100%;
             height: 3rem;
-           /* background: #51BDFF;*/
+            margin-bottom: 0.3rem;
             position: relative;
             .user-info-avatar {
                 top: 0.2rem;
@@ -76,6 +81,40 @@
                 }
             }
 
+        }
+        .user-topic {
+            width: 100%;
+            border: 2px solid;
+            flex: 1;
+            display: flex;
+            .user-topic-nav {
+                width: 2.4rem;
+                border-right: 4px solid;
+                .topic-navs {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .topic-nav:not(:first-child){
+                        border-top: 2px solid rgba(0, 0, 0, .3);
+                    }
+                    .topic-nav {
+                        flex: 1;
+                        font-size: 0.24rem;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        
+                        font-weight: bold;
+                        &.active {
+                            border-right: 4px solid; 
+                            color: #000;
+                            width: 102%;
+                        }
+                    }
+                }
+                
+            }
         }
     } 
 }
