@@ -28,8 +28,9 @@ export default new Vuex.Store({
         isLoading: false,
         articleList: [],
         isMore: false,
-         userInfo: localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
+        userInfo: localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
                   { avatar_url: '', id: '', loginname: '', success: false},
+        
 },
     mutations: mutations()
 })
