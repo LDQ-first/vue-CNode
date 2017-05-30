@@ -64,9 +64,9 @@
             
              <span class="sort-reply">
                  <span class="button-group">
-                     <Buttons @click="sort('normal', $event)" text="默认" :style="{background:skinColor}"></Buttons>
-                     <Buttons @click="sort('latest', $event)" text="最早" :style="{background:skinColor}"></Buttons>
-                     <Buttons @click="sort('ups', $event)" text="赞数" :style="{background:skinColor}"></Buttons>
+                     <Buttons @click="sort($event,'normal')" :class="{active: sortWay === 'normal'}" text="默认" :style="{background:skinColor}"></Buttons>
+                     <Buttons @click="sort($event, 'farthest')" :class="{active: sortWay === 'farthest'}" text="最早" :style="{background:skinColor}"></Buttons>
+                     <Buttons @click="sort($event, 'ups')" :class="{active: sortWay === 'ups'}" text="赞数" :style="{background:skinColor}"></Buttons>
                  </span>
              </span>
         </div>

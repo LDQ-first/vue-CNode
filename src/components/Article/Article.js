@@ -21,6 +21,7 @@ export default {
             modalImgSrc: '',
             isCollected: false,
             replyContent: '',
+            sortWay: 'normal'
 
         }
     },
@@ -86,8 +87,13 @@ export default {
              }
             }
         },
-        sort(type, e) {
+        sort( e, type) {
+            if(this.replies && this.replies.length > 0) {
+               const target = e.target;
+               console.log(target);
 
+
+            }
         },
         collect() {
 

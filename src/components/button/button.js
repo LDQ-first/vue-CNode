@@ -29,9 +29,9 @@ export default {
         mouseleave() {
             this.$refs.btnCan.style.zIndex = 0;
         },
-        click() {
+        click(e) {
             setTimeout(()=>{
-                this.$emit('click');
+                this.$emit('click', e);
             },400);
         },
        /* mouseenter() {

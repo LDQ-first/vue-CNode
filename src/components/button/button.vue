@@ -1,6 +1,6 @@
 <template>
   <!-- <button class="btns" @click="click" @mouseenter="mouseenter" @mouseleave="mouseleave" ref="btns">-->
-   <button class="btns" @click="click" ref="btns"  @mouseenter="mouseenter" @mouseleave="mouseleave">
+   <button class="btns" @click="click($event)" ref="btns"  @mouseenter="mouseenter" @mouseleave="mouseleave">
        {{text}}
        <canvas id="canvas" @click="press" ref="btnCan" @mouseenter="can" ></canvas>
        <slot></slot>

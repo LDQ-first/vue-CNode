@@ -147,9 +147,13 @@
                    top: 50%;
                    transform: translate(-50%, -50%);
                    width: 2.4rem;
-                   
                     .button-group {
                         font-size: 0.22rem;
+                        .btns {
+                            &.active {
+                                color:  #8E4CFF;
+                            }
+                        }
                     }
                 }
              }
@@ -207,14 +211,6 @@
                  .article-reply-content {
                      font-size: 0.25rem;
                      margin-bottom: 0.1rem;
-                    /* p {
-                         margin-bottom: 0.1rem;
-                         img {
-                             margin: 0.1rem auto;
-                         }
-                     }*/
-                     
-
                  }
                  .article-reply-data {
                      font-size: 0.2rem;
