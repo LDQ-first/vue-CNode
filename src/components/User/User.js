@@ -7,11 +7,12 @@ export default {
             user: {},
             collectTopics: [],
             navs: [
-                { name: '最近创建的话题', tag: 'create', fa: 'fa-plus-circle' },
+                { name: '最近创建的话题', tag: 'create', fa: 'fa-plus-circle'},
                 { name: '最近参与的话题', tag: 'reply', fa: 'fa-reply' },
                 { name: '最近收藏的话题', tag: 'collect', fa: 'fa-archive'}
             ],
-            currType: 'create'
+            currType: 'create',
+            
         }
     },
      computed: {
@@ -23,6 +24,13 @@ export default {
         },
         userInfo() {
             return this.$store.state.userInfo;
+        },
+        contents() {
+            return [
+                { tag: 'create', content: this.collectTopics},
+                { tag: 'reply', content: this.user.recent_replies},
+                { tag: 'collect', content: this.user.recent_topics},
+            ]
         }
     },
     created() {
