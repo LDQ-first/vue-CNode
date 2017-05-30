@@ -84,8 +84,12 @@
             padding: 0.1rem 0.2rem;
             margin-bottom: 0.2rem;
             .collect {
-                cursor: pointer;
                 display: inline-block;
+                display: flex;
+                justify-content: space-between;
+                .article-collect {
+                    cursor: pointer;
+                }
             }
         }
         .article-reply {
@@ -130,6 +134,23 @@
                 button {
                     height: 100%;
                     margin: 0;
+                }
+             }
+             .article-reply-handle {
+                background: #C6C9FF;
+                padding: 0.4rem 0;
+                margin-bottom: 0.1rem;
+                position: relative;
+                .sort-reply {
+                   position: absolute;
+                   left: 50%;
+                   top: 50%;
+                   transform: translate(-50%, -50%);
+                   width: 2.4rem;
+                   
+                    .button-group {
+                        font-size: 0.22rem;
+                    }
                 }
              }
              .article-reply-item {
@@ -249,6 +270,9 @@
             100% {
                 left: 0.4rem;
             }
+        }
+        @media screen and (max-width: 1100px) {
+            display: none;
         }
     }
 }

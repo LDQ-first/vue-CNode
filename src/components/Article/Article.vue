@@ -46,17 +46,29 @@
       </div>
       <div class="other">
         <div @click="collect" class="collect">
-            <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏文章
+            <span class="article-collect">
+                <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏文章
+            </span>
+             <span class="total-reply">评论数：{{article.replies ? article.replies.length: ''}} </span>
         </div>
-        <!-- <div class="total-reply">{{article.reply_count}} 回复</div>-->
+        
      </div>
       <div class="article-reply" ref="articleReply">
-        
         <div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
           :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}"></textarea>
            <!--<button @click="reply('')" type="button">回复</button>-->
            <Buttons @click="reply('')" text="回复" :style="{background:skinColor}"></Buttons>
+        </div>
+        <div class="article-reply-handle">
+            
+             <span class="sort-reply">
+                 <span class="button-group">
+                     <Buttons @click="sort('normal', $event)" text="默认" :style="{background:skinColor}"></Buttons>
+                     <Buttons @click="sort('latest', $event)" text="最早" :style="{background:skinColor}"></Buttons>
+                     <Buttons @click="sort('ups', $event)" text="赞数" :style="{background:skinColor}"></Buttons>
+                 </span>
+             </span>
         </div>
         <div v-for="(item, index) of replies" class="article-reply-item" :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}">
           <div class="article-reply-author">

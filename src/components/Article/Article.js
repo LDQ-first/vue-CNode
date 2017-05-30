@@ -86,6 +86,9 @@ export default {
              }
             }
         },
+        sort(type, e) {
+
+        },
         collect() {
 
         },
