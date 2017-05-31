@@ -62,7 +62,8 @@ img {
 
 .markdown-text {
     img {
-      max-width: 90%;
+      max-width: 100%;
+      min-width: 50%;
        margin: 0.1rem auto;
     }
     p {

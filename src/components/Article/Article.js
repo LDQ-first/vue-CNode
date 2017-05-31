@@ -57,9 +57,9 @@ export default {
                  const articleContent = this.$refs.articleContent;
                  const articleReply = this.$refs.articleReply;
                  this.articleImgs = articleContent.querySelectorAll('img:not(.avatar-img)');
-                 this.articleReplyImgs = articleReply.querySelectorAll('img:not(.avatar-img)');
+                // this.articleReplyImgs = articleReply.querySelectorAll('img:not(.avatar-img)');
                  this.showModal(this.articleImgs);
-                 this.showModal(this.articleReplyImgs);
+                 //this.showModal(this.articleReplyImgs);
              })
     },
     computed: {
@@ -90,7 +90,6 @@ export default {
                if(target.classList.contains('active')) {
                    return;
                 }
-               /* axios.get()*/
                this.replies.sort((a, b) => {
                    this.sortWay = type;
                    if(type === 'normal' ) {
