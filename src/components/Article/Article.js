@@ -47,10 +47,7 @@ export default {
                      return result.data.data;
                  }
              })
-             .then( article => {
-                 console.log(article);
-                 return this.article = article;
-             })
+             .then( article => this.article = article)
              .then( article => {
                  console.log(article);
                  return this.replies = article.replies.reverse();
@@ -58,13 +55,11 @@ export default {
              .then( () => this.$store.commit('showLoading', false))
              .then( () => {
                  const articleContent = this.$refs.articleContent;
-                 let articleReply = this.$refs.articleReply;
+                 const articleReply = this.$refs.articleReply;
                  this.articleImgs = articleContent.querySelectorAll('img:not(.avatar-img)');
                  this.articleReplyImgs = articleReply.querySelectorAll('img:not(.avatar-img)');
                  this.showModal(this.articleImgs);
                  this.showModal(this.articleReplyImgs);
-                 //  console.log(this.articleReplyImgs);
-                 
              })
     },
     computed: {
@@ -79,20 +74,14 @@ export default {
         }
     },
     methods: {
-        showModal(imgs) {
-            console.log(imgs);
-            imgs.forEach((img, idx) => {
-                console.log(img);
-            })
+        showModal(imgs) { 
             for(let img of imgs) {
-              //  console.log(img);
-             img.onclick = () => { 
+             img.addEventListener('click', () => { 
                 if(img.parentNode.tagName === 'A') {
                     return;
                 }
-              /*  console.log(img);*/
                 this.modalImgSrc = img.src;
-             }
+             })
             }
         },
         sort( e, type) {
@@ -101,9 +90,9 @@ export default {
                if(target.classList.contains('active')) {
                    return;
                 }
+               /* axios.get()*/
                this.replies.sort((a, b) => {
                    this.sortWay = type;
-                 //  console.log(this.articleReplyImgs);
                    if(type === 'normal' ) {
                        return new Date(b.create_at) - new Date(a.create_at);
                    }
@@ -113,13 +102,7 @@ export default {
                    else if(type === 'ups') {
                        return b.ups.length - a.ups.length;
                    }
-                  
-               })
-                const articleReply = this.$refs.articleReply;
-                this.articleReplyImgs = articleReply.getElementsByTagName('img');
-                //console.log( this.articleReplyImgs);
-                this.showModal( this.articleReplyImgs);
-             
+               })             
             }
         },
         collect() {
@@ -133,23 +116,7 @@ export default {
         }
     },
     watch: {
-        replies() {
-             let articleReply = this.$refs.articleReply;
-            // console.log(articleReply);
-           //  this.articleReplyImgs = articleReply.getElementsByTagName('img');
-          //   this.articleReplyImgs = articleReply.querySelectorAll('img:not(.avatar-img)');
-            // console.log(this.articleReplyImgs);
-             if(this.articleReplyImgs && this.articleReplyImgs.length) {
-             //  this.showModal(this.articleReplyImgs);
-               // console.log(this.articleReplyImgs);
-             }
-          
-             
-             /*this.articleReplyImgs = articleReply.querySelectorAll('img:not(.avatar-img)');*/
-             
-            /* this.showModal(this.articleReplyImgs);*/
-            /*  console.log(this.articleReplyImgs);*/
-        }
+       
     },
     components: {
         Buttons,
