@@ -41,6 +41,7 @@ i {
 img {
   margin: 0 auto;
   display: block;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {
@@ -63,8 +64,7 @@ img {
 .markdown-text {
     img {
       max-width: 100%;
-      min-width: 50%;
-       margin: 0.1rem auto;
+      margin: 0.1rem auto;
     }
     p {
         line-height: 1.7em;

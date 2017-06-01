@@ -17,7 +17,6 @@ export default {
             article: {},
             replies: [],
             articleImgs: [],
-            articleReplyImgs: [],
             modalImgSrc: '',
             isCollected: false,
             replyContent: '',
@@ -54,12 +53,7 @@ export default {
              })
              .then( () => this.$store.commit('showLoading', false))
              .then( () => {
-                 const articleContent = this.$refs.articleContent;
-                 const articleReply = this.$refs.articleReply;
-                 this.articleImgs = articleContent.querySelectorAll('img:not(.avatar-img)');
-                // this.articleReplyImgs = articleReply.querySelectorAll('img:not(.avatar-img)');
-                 this.showModal(this.articleImgs);
-                 //this.showModal(this.articleReplyImgs);
+                  this.chooseImg();
              })
     },
     computed: {
@@ -74,14 +68,19 @@ export default {
         }
     },
     methods: {
+        chooseImg() {
+              const articleBody = this.$refs.articleBody;
+              this.articleImgs = articleBody.querySelectorAll('img:not(.avatar-img)');
+              this.showModal(this.articleImgs);
+        },
         showModal(imgs) { 
             for(let img of imgs) {
-             img.addEventListener('click', () => { 
+             img.onclick = () => { 
                 if(img.parentNode.tagName === 'A') {
                     return;
                 }
                 this.modalImgSrc = img.src;
-             })
+             }
             }
         },
         sort( e, type) {
@@ -90,18 +89,32 @@ export default {
                if(target.classList.contains('active')) {
                    return;
                 }
-               this.replies.sort((a, b) => {
-                   this.sortWay = type;
-                   if(type === 'normal' ) {
-                       return new Date(b.create_at) - new Date(a.create_at);
-                   }
-                   else if (type === 'farthest') {
-                       return new Date(a.create_at) - new Date(b.create_at);
-                   }
-                   else if(type === 'ups') {
-                       return b.ups.length - a.ups.length;
-                   }
-               })             
+                 axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
+                      .then( result => {
+                            return result.data.data;
+                    })
+                    .then( article => {
+                        return this.replies = sortFun(article.replies);
+                    })
+                    .then( ()=> {
+                        this.chooseImg();
+                        console.log(this.articleImgs);   
+                    })
+
+                   const sortFun =  (replies) => {
+                    return replies.sort((a, b) => {
+                        this.sortWay = type;
+                        if(type === 'normal' ) {
+                            return new Date(b.create_at) - new Date(a.create_at);
+                        }
+                        else if (type === 'farthest') {
+                            return new Date(a.create_at) - new Date(b.create_at);
+                        }
+                        else if(type === 'ups') {
+                            return b.ups.length - a.ups.length;
+                        }
+                 })     
+               }      
             }
         },
         collect() {
@@ -115,7 +128,7 @@ export default {
         }
     },
     watch: {
-       
+     
     },
     components: {
         Buttons,

@@ -1,6 +1,6 @@
 <template>
     <div class="article-detail" v-show="!isLoading">
-    <div  class="article-body" v-if="hasArticle">   
+    <div  class="article-body" v-if="hasArticle" ref="articleBody">   
       <div class="article-main" >
         <div class="article-title">
             <div>
@@ -111,7 +111,7 @@
         <div class="preview-modal"  aria-hidden="false" v-show="modalImgSrc">
             <div class="modal-body" style="max-height: initial;">
                 <Close @close="modalImgSrc=''"></Close>
-                <img :src="modalImgSrc" class="preview-image">
+                <img :src="modalImgSrc" class="preview-image" title="手机浏览时横屏更佳">
             </div>
         </div>
     </transition>
