@@ -1,6 +1,9 @@
 import axios from 'axios'
 import Buttons from '../button/button.vue'
 import Close from '../close/close.vue'
+import highlightjs from 'highlight.js'
+import 'highlight.js/styles/agate.css'
+
 
 export default {
     name: 'Article',
@@ -54,6 +57,7 @@ export default {
              .then( () => this.$store.commit('showLoading', false))
              .then( () => {
                   this.chooseImg();
+                  this.chooseCode();
              })
     },
     computed: {
@@ -68,6 +72,13 @@ export default {
         }
     },
     methods: {
+        chooseCode() {
+            const articleBody = this.$refs.articleBody;
+            const codes =  articleBody.querySelectorAll('pre code');
+            for(let code of codes) {
+                highlightjs.highlightBlock(code);
+            }
+        },
         chooseImg() {
               const articleBody = this.$refs.articleBody;
               this.articleImgs = articleBody.querySelectorAll('img:not(.avatar-img)');
@@ -98,7 +109,7 @@ export default {
                     })
                     .then( ()=> {
                         this.chooseImg();
-                        console.log(this.articleImgs);   
+                        this.chooseCode();
                     })
 
                    const sortFun =  (replies) => {

@@ -111,14 +111,16 @@ img {
         padding-bottom: 0.2rem;
         border-bottom: 2px solid #eee
     }
+    code {
+        padding: 0.2rem;
+        overflow-y: auto; 
+        overflow-x: hidden;
+        font-family: Consolas, Monaco;
+    }
     pre{
       font-size: 0.16rem;
-      padding: 0 0.15rem;
       margin: 0.2rem 0;
-      padding: 0.1rem;
       border-width: 1px 0;
-      background: #272822;
-      color: #4EC8E8;
       -o-tab-size: 4;
       -moz-tab-size: 4;
       tab-size: 4;
