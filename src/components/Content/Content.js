@@ -49,7 +49,6 @@ export default {
             if(pathArr.indexOf(this.$route.path) === -1) {
                 return;
             }
-            console.log(this.over);
             if(!this.over) {
                 let isOver = e.target.clientHeight + e.target.scrollTop === e.target.scrollHeight;
                 if(isOver) {
@@ -66,6 +65,9 @@ export default {
                                   this.over = true;
                                   this.$store.commit('changeMore', false);
                                   return ;
+                              }
+                              else {
+                                  this.over = false;
                               }
                               this.$store.commit('changeTab',
                                {articleList: this.articleList.concat(articleList), isLoading: false});
