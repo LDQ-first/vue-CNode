@@ -27,6 +27,7 @@ export default new Vuex.Store({
         tab:  'all',
         isLoading: false,
         articleList: [],
+        over: false,
         isMore: false,
         userInfo: localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
                   { avatar_url: '', id: '', loginname: '', success: false},

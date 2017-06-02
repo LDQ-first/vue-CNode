@@ -5,8 +5,7 @@ export default {
     name: 'Content',
     data() {
         return {
-            page: 3,
-            over: false, // 是否已经没有内容加载
+            page: 3
         }
     },
     computed: {
@@ -21,10 +20,14 @@ export default {
         },
         skinColor() {
             return this.$store.state.skinColor;
+        },
+        over() {
+            return this.$store.state.over;
         }
     },
     methods: {
         changeTab(tab, page = 1) {
+            this.$store.commit('Over', false);
             this.$store.commit('changeTab', {tab, articleList:[], isLoading: true});
             axios.get(`https://cnodejs.org/api/v1/topics?page=${page}&tab=${tab}`)
                  .then( result => {
@@ -62,12 +65,9 @@ export default {
                             })
                           .then(articleList => {
                               if(!articleList.length) {
-                                  this.over = true;
+                                  this.$store.commit('Over', true);
                                   this.$store.commit('changeMore', false);
                                   return ;
-                              }
-                              else {
-                                  this.over = false;
                               }
                               this.$store.commit('changeTab',
                                {articleList: this.articleList.concat(articleList), isLoading: false});

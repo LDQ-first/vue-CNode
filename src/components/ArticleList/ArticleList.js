@@ -39,6 +39,7 @@ export default {
             return false;
         },
         renFirScreen(tab, page = 1) {
+            
             this.$store.commit('changeTab', {tab, isLoading: true});
             axios.get(`https://cnodejs.org/api/v1/topics?page=${page}&&tab=${tab}`)
                  .then( result =>  result.data.data )

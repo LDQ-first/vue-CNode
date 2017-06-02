@@ -35,6 +35,9 @@ export default () => {
         },
         showLoading(state, isShow) {
             state.isLoading = isShow;
+        },
+        Over(state, isOver) {
+            state.over = isOver;
         }
     }
 }
