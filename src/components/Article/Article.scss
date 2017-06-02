@@ -232,14 +232,27 @@
             left: 50%;
             transform: translate(-50%);
             margin-top: 0.1rem;
-            width: 98%;         
+            width: 98%;   
+            text-align: center;
+            header {
+                margin: 0.2rem 0;
+                .modal-title {
+                    display: none;
+                    color: #EEE;
+                    @media screen and (max-width: 480px) {
+                        display: inline-block;
+                    }
+                }     
+                .close {
+                    float: right;
+                }
+            } 
+            
+            .modal-image {
+            max-width: 100%;
+            }
         }
-        .close {
-            float: right;
-        }
-        .preview-image {
-           max-width: 100%;
-        }
+        
     }
     .back {
         position: fixed;

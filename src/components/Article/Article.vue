@@ -110,8 +110,11 @@
      <transition name="slide-in">
         <div class="preview-modal"  aria-hidden="false" v-show="modalImgSrc">
             <div class="modal-body" style="max-height: initial;">
-                <Close @close="modalImgSrc=''"></Close>
-                <img :src="modalImgSrc" class="preview-image" title="手机浏览时横屏更佳">
+                <header>
+                    <h3 class="modal-title">手机浏览时横屏更佳</h3>
+                    <Close @close="modalImgSrc=''"></Close>
+                </header>
+                <img :src="modalImgSrc" class="modal-image">
             </div>
         </div>
     </transition>
