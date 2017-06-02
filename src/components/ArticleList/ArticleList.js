@@ -8,13 +8,14 @@ export default {
             types: {
                 ask: '问答',
                 job: '招聘',
-                share: '分享'
+                share: '分享',
+                dev: '客户端测试'
             }
         }
     },
     computed: {
         tab() {
-            return this.$store.state.tab;
+            return this.$route.params.tab || this.$store.state.tab;
         },
         articleList() {
             return this.$store.state.articleList;
@@ -30,12 +31,19 @@ export default {
         this.renFirScreen(this.tab);
     },
     methods: {
-        renFirScreen(tab) {
+        isShowArticle(item, tab) {
+            if(tab === 'all' || item.tab === tab 
+            || (item.top && item.tab === 'all' || item.tab === 'good' || item.tab === 'share')) {
+                return true;
+            }
+            return false;
+        },
+        renFirScreen(tab, page = 1) {
             this.$store.commit('changeTab', {tab, isLoading: true});
-            axios.get(`https://cnodejs.org/api/v1/topics`)
+            axios.get(`https://cnodejs.org/api/v1/topics?page=${page}&&tab=${tab}`)
                  .then( result =>  result.data.data )
                  .then( articleList => {
-                     console.log(articleList);
+                    /* console.log(articleList);*/
                      this.$store.commit('changeTab', {tab, articleList, isLoading: false});
                  })
         },

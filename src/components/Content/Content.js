@@ -24,7 +24,7 @@ export default {
         }
     },
     methods: {
-        changeTab(tab, page=1) {
+        changeTab(tab, page = 1) {
             this.$store.commit('changeTab', {tab, articleList:[], isLoading: true});
             axios.get(`https://cnodejs.org/api/v1/topics?page=${page}&tab=${tab}`)
                  .then( result => {
@@ -32,7 +32,7 @@ export default {
                      return result.data.data;
                  })
                  .then( articleList => {
-                     /*console.log(articleList);*/
+                    /* console.log(articleList);*/
                      this.$store.commit('changeTab', {tab, articleList, isLoading: false});
                  })
         },
@@ -45,9 +45,12 @@ export default {
                   const e = this.$refs.articles;
                 bus.$emit('isShowTop', {isShow: true, e});
             }
-            if (this.$route.path !== '/') {
+            const pathArr = ['/', '/all', '/good', '/share', '/ask', '/job', '/dev'];
+            if(pathArr.indexOf(this.$route.path) === -1) {
                 return;
-            } else if(!this.over) {
+            }
+            console.log(this.over);
+            if(!this.over) {
                 let isOver = e.target.clientHeight + e.target.scrollTop === e.target.scrollHeight;
                 if(isOver) {
                     this.$store.commit('changeMore', true);
@@ -55,7 +58,7 @@ export default {
                     this.$store.commit('changeTab',{isLoading: true});
                     axios.get(`https://cnodejs.org/api/v1/topics?page=${this.page}&tab=${this.tab}`)
                           .then(result => {
-                              console.log(result);
+                              /*console.log(result);*/
                               return result.data.data;
                             })
                           .then(articleList => {

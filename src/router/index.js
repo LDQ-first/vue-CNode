@@ -13,6 +13,11 @@ const routes = [
       component: ArticleList
     },
     {
+      path: '/:tab',
+      name: 'ArticleListTab',
+      component: ArticleList
+    },
+    {
       path: '/article/:id',
       name: 'Article',
       component: Article

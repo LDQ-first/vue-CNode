@@ -24,7 +24,7 @@ export default new Vuex.Store({
             'rgba(255, 183, 113, 1) linear-gradient(135deg, rgba(255, 183, 113, 1), rgba(255, 126, 0, 1))', 
             'rgba(228, 99, 125, 1) linear-gradient(135deg, rgba(228, 99, 125, 1), rgba(228, 0, 46, 1))',
         ],
-        tab: 'all',
+        tab:  'all',
         isLoading: false,
         articleList: [],
         isMore: false,
