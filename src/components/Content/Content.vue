@@ -23,7 +23,7 @@
         <div ref="articles" @scroll="scroll($event)" class="article">
             <div class="loading">
                 <i v-show="isLoading" class="fa fa-spin fa-circle-o-notch" aria-hidden="true" 
-                :style="{color:skinColor}"></i>
+                :style="{color:skinColor.replace(/\sl[\S\s]+/, '')}"></i>
             </div>
             <router-view></router-view>
         </div>
