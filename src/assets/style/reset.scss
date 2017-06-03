@@ -10,6 +10,8 @@
 @mixin widHei {
   width: 100%;
   height: 100%;
+  word-break: break-word;
+  overflow-x: hidden;
 }
 
 
@@ -105,14 +107,15 @@ img {
       }
     }
     blockquote {
-        padding: 0 0 0 0.15rem;
+        padding: 0.15rem;
         margin: 0 0 0.2rem;
         border-left: 5px solid #AAA3EE;
-    }
-    blockquote p {
-        font-size: 0.17rem;
-        font-weight: 400;
-        line-height: 1.25
+        background: #B0E7C6;
+        color: #333;
+        p {
+            font-weight: 400;
+            line-height: 1.25
+        }
     }
     h2, h3 {
         margin: 0.3rem 0 0.15rem;
@@ -136,6 +139,7 @@ img {
       white-space: pre-wrap;
    }
    table {
+       max-width: 100%;
        border-collapse: collapse;
        margin: 0.2rem 0;
        thead {
@@ -144,6 +148,7 @@ img {
        tr {
            border-top: 2px solid #444;
            th,td {
+               text-align: left;
                border: 2px solid #444;
                padding: 0.06rem 0.13rem;
            }
