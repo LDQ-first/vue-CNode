@@ -9,7 +9,7 @@
                 <input v-model="accessToken" type="text" placeholder="请输入Access Token">
                 <span class="textBottom"></span>
             </div>
-            <Buttons @click.stop.prevent="check(accessToken)" text="登录" :style="{background:skinColor}"></Buttons>
+            <Buttons @click="check(accessToken)" text="登录" :style="{background:skinColor}"></Buttons>
          </div>
 
         <div class="login-tips">

@@ -35,7 +35,7 @@ li {
   list-style: none;
   line-height: 0.4rem;
   margin: 0.1rem 0;
-  a {
+  &>a {
     margin: 0;
     font-size: inherit;
   }
@@ -116,6 +116,9 @@ img {
             font-weight: 400;
             line-height: 1.25
         }
+    }
+    h1 {
+        font-size: 1.5em;
     }
     h2, h3 {
         margin: 0.3rem 0 0.15rem;

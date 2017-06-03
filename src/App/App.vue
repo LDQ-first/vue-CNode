@@ -12,6 +12,10 @@
       <Login v-if="isShowLogin"></Login>
     </transition>
 
+  <!--  <transition name="show">
+      <router-view name="login"></router-view>
+    </transition>-->
+
     <transition name="show">
       <Info v-if="isShowInfo"></Info>
     </transition>

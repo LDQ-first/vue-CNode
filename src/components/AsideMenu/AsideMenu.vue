@@ -4,7 +4,7 @@
              <div class="menu" :style="{background:skinColor}">
                  <div class="user" >
                       <Close @close="hiddenAsideMenu"></Close>
-                      <Buttons class="user-avatar" @click="showLogin">
+                      <Buttons class="user-avatar" @click="showLogin" >
                         <img :src="userInfo.avatar_url" >
                       </Buttons>
                       <div class="username">
