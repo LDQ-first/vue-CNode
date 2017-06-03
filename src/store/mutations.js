@@ -38,6 +38,13 @@ export default () => {
         },
         Over(state, isOver) {
             state.over = isOver;
-        }
+        },
+        updateUserInfo( state, userInfo) {
+            state.userInfo = userInfo;
+        },
+        updateAT(state, at) {
+            state.at = at;
+        },
+
     }
 }
