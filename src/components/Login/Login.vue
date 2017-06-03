@@ -6,18 +6,18 @@
 
         <div class="login-input">
             <div class="text">
-                <input v-model="AccessToken" type="text" placeholder="请输入Access Token">
+                <input v-model="accessToken" type="text" placeholder="请输入Access Token">
                 <span class="textBottom"></span>
             </div>
-            <Buttons @click.stop.prevent="check(AccessToken)" text="登录"></Buttons>
+            <Buttons @click.stop.prevent="check(accessToken)" text="登录" :style="{background:skinColor}"></Buttons>
          </div>
 
         <div class="login-tips">
-            <ul>
-                <li>为了更好的体验请登录（づ￣3￣）づ╭❤～</li>
-                <li>在<a class="title" href="https://cnodejs.org">CNode官网</a>登录CNode账号</li>
-                <li>在<a class="title" href="https://cnodejs.org/setting">设置</a>中可以获取CNode账号的Access Token</li>
-                <li><img src="../../assets/img/Access Token.jpg" alt="如何获取CNode账号的Access Token"></li>
+            <ul class="tips">
+                <li class="tip">为了更好的体验请登录<br class="br"/><b>（づ￣3￣）づ╭❤～</b></li>
+                <li class="tip">在<a class="title" href="https://cnodejs.org">CNode官网</a>登录CNode账号</li>
+                <li class="tip">在<a class="title" href="https://cnodejs.org/setting">设置</a>中可以获取CNode账号的Access Token</li>
+                <li class="tip"><img class="accessTokenImg" src="../../assets/img/Access Token.jpg" alt="如何获取CNode账号的Access Token"></li>
             </ul>
         </div>
   </div>

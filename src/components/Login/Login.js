@@ -5,7 +5,7 @@ export default {
     name: 'Login',
     data() {
         return {
-            AccessToken: ''
+            accessToken: ''
         }
     },
      computed: {
@@ -19,7 +19,7 @@ export default {
             this.$store.commit('showMsg', false);
         },
         check() {
-            
+
         }
     },
     components: {

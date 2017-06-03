@@ -35,14 +35,24 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        .text {
-            input[type=text] {
-               /* padding: 0.1rem 0;
-                box-sizing: content-box;*/
-            }
-        }
     }
     .login-tips {
-
+        margin: 0.2rem;
+        .tips {
+            .tip {
+                .br {
+                    display: none;
+                    @media screen and (max-width: 400px) {
+                        display: block;
+                    }
+                }
+               .accessTokenImg {
+                   width: 70%;
+                    @media screen and (max-width: 600px) {
+                        width: 100%;
+                    }
+               }
+            }
+        }
     }
 }
