@@ -19,7 +19,7 @@ export default {
             this.$store.commit('showMsg', false);
         },
         check() {
-
+            
         }
     },
     components: {

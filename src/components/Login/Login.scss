@@ -1,4 +1,5 @@
 .login {
+    min-width: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -28,11 +29,18 @@
         }
     }
     .login-input {
-        /*display: flex;
-        flex-direction: column;
-        align-items: center;*/
-        margin: 0.4rem;
+        width: 100%;
+        margin: 0.4rem 0;
         padding: 0 0.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .text {
+            input[type=text] {
+               /* padding: 0.1rem 0;
+                box-sizing: content-box;*/
+            }
+        }
     }
     .login-tips {
 
