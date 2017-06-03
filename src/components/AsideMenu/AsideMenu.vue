@@ -28,10 +28,17 @@
                         <i class="fa fa-info-circle" aria-hidden="true"></i>
                         <span class="option-text">关于</span>
                     </Buttons>
+                     <Buttons @click="logout" class="option bg-cyan">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        <span class="logout-text">
+                            <span class="optionText">退出</span>
+                        </span>
+                    </Buttons>
                 </div>
                 <SkinColor></SkinColor>
              </div>
              <div @click="hiddenAsideMenu" class="mask"></div>
+             
         </div>
     </transition>
 </template>

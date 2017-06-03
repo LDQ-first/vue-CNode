@@ -47,8 +47,13 @@ export default {
         showAbout() {
             this.$store.commit('showAbout', true);
         },
-        changeSkin() {
-
+        logout() { 
+            localStorage.userInfo = '';
+            localStorage.at = '';
+             this.$store.commit('updateUserInfo', 
+            localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
+             { avatar_url: '', id: '', loginname: '', success: false});
+            this.$store.commit('updateAT', '');
         }
 
     }
