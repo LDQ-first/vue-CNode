@@ -1,14 +1,14 @@
 <template>
     <div class="login">
-        <div class="login-header">
+        <div class="login-header" :style="{background:skinColor}">
             <i @click="showLogin" class="fa fa-chevron-left" aria-hidden="true"></i>登录
         </div>
 
-        <div class="login-input">
+        <div class="login-input text">
             <input v-model="AccessToken" type="text" placeholder="请输入Access Token">
-        <span class="textBottom"></span>
-        <!-- <button @click.stop.prevent="check(inputVal)">登录</button>-->
-        <Buttons @click.stop.prevent="check(inputVal)" text="登录"></Buttons>
+            <span class="textBottom"></span>
+            <!-- <button @click.stop.prevent="check(inputVal)">登录</button>-->
+            <Buttons @click.stop.prevent="check(inputVal)" text="登录"></Buttons>
         </div>
 
         <div class="login-tips">

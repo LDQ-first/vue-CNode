@@ -15,7 +15,8 @@ export default {
     },
     methods: {
         showLogin() {
-
+            this.$store.commit('showLogin', false);
+            this.$store.commit('showMsg', false);
         },
         check() {
 
