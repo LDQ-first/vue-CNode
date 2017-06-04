@@ -18,7 +18,7 @@
                <!-- <button class="btn btn-default"  :disabled="state === 'posting'">
                 {{ state === 'posting' ? '回复中...' : '回复' }}
                 </button>-->
-                <Buttons @click="reply" text="回复"></Buttons>
+                <Buttons @click="reply(mde)" text="回复"></Buttons>
             </div>
         </div>
     </transition>

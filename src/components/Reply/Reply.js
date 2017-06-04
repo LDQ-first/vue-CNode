@@ -19,15 +19,15 @@ export default {
         }  
     },
     mounted(){
-        console.log(this.$refs);
+      /*  console.log(this.$refs);*/
        /* console.log(document.getElementById('reply'));*/
-        createSimplemde({
+       this.mde = createSimplemde({
             element: this.$refs.reply
         })
     },
     methods: {
-        reply() {
-            this.$emit('reply');
+        reply(mde) {
+            this.$emit('reply', mde );
         },
         hiddenReplay() {
             this.$emit('hiddenReplay');

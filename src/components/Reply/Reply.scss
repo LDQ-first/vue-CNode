@@ -11,10 +11,22 @@
         padding: 0.1rem;
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 700px) { 
+            width: 85%;
+         }
+         @media screen and (max-width: 500px) { 
+            width: 100%;
+         }
     }
     .modal-body {
         width: 70%;
         padding: 0.1rem;
+        @media screen and (max-width: 700px) { 
+            width: 85%;
+         }
+        @media screen and (max-width: 500px) { 
+            width: 100%;
+         }
         .form-group {
             margin-bottom: 0.3rem;
         }
@@ -24,17 +36,22 @@
            
        }
        .editor-toolbar {
-           font-size: 0.16rem;
+           font-size: 0.24rem;
            a::before, a::after {
                position: static;
            }
        }
-
     }
     .modal-footer {
         width: 70%;
         padding: 0.1rem;
         padding-top: 0;
+        @media screen and (max-width: 700px) { 
+            width: 85%;
+         }
+        @media screen and (max-width: 500px) { 
+            width: 100%;
+         }
         .btns {
             width: 100%;
         }

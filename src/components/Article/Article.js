@@ -188,8 +188,10 @@ export default {
                 }
             })
         },
-        reply() {
-
+        reply(mde) {
+            console.log(mde);
+            console.log(mde.value());
+            
         },
         hiddenReplay() {
             
