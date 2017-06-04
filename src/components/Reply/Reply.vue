@@ -5,8 +5,8 @@
                 <!--<button type="button" class="close" @click.stop="close">
                 <span aria-hidden="true">×</span>
                 </button>-->
-                <Close  @close="hiddenReplay" v-show="isShowClose"></Close>
                 <h4 class="modal-title">回复</h4>
+                <Close  @close="hiddenReplay" v-show="isShowClose"></Close>
             </div>
             <div class="modal-body">
                 <div class="form-group">

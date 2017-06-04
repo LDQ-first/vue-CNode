@@ -55,7 +55,7 @@
      </div>
       <div class="article-reply" ref="articleReply">
           <Reply isShowclose="false" @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
-        <!--  <Reply  @reply="reply" @hiddenReplay="hiddenReplay"></Reply>-->
+          <Reply  @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
         <!--<div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
           :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}"></textarea>
