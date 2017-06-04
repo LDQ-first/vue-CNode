@@ -7,7 +7,8 @@ const defaultOpt = {
     status: false
 }
 
-export default createSimplemde = options => {
+export default options => {
     const config = Object.assign({}, defaultOpt, typeof options === 'object' && options);
+    return new Simplemde(config);
 }
 

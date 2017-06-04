@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <div class="form-group">
                     <label for="reply" aria-hidden="true"></label>
-                    <textarea name="post" id="reply"></textarea>
+                    <textarea name="post" id="reply" class="replys" ref="reply"></textarea>
                 </div>
             </div>
             <div class="modal-footer">

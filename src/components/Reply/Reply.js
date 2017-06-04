@@ -7,7 +7,7 @@ export default {
     props: ['isShowclose'],
     data() {
         return {
-            
+            mde: null,
         }
     },
     computed: {
@@ -17,6 +17,13 @@ export default {
         isShowClose() {
             return this.isShowclose === "false" ?  false : true;
         }  
+    },
+    mounted(){
+        console.log(this.$refs);
+       /* console.log(document.getElementById('reply'));*/
+        createSimplemde({
+            element: this.$refs.reply
+        })
     },
     methods: {
         reply() {
