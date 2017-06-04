@@ -24,8 +24,8 @@ export default {
             modalImgSrc: '',
             isCollected: false,
             replyContent: '',
-            sortWay: 'normal'
-
+            sortWay: 'normal',
+            infos: {},
         }
     },
     created() {
@@ -111,9 +111,11 @@ export default {
         },
         sort( e, type) {
             if(this.replies && this.replies.length > 0) {
-               const target = e.target;
-               if(target.classList.contains('active')) {
-                   return;
+                if(e != null) {
+                     const target = e.target;
+                    if(target.classList.contains('active')) {
+                        return;
+                    }
                 }
                  axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
                       .then( result => {
@@ -169,8 +171,22 @@ export default {
                 })
             }
         },
-        ups() {
-
+        ups(index, upsId, item) {
+            if(!this.at) {
+                this.$store.commit('showLogin', true);
+                return ;
+            }
+            if(item.author.loginname === this.userInfo.loginname) {
+                alert('不能给自己点赞');
+                return;
+            }
+            axios.post(`https://cnodejs.org/api/v1/reply/${upsId}/ups`, {
+                accesstoken: this.at
+            }).then( result => {
+                if(result.data.success) {
+                    this.sort(null, this.sortWay);
+                }
+            })
         },
         reply() {
 
