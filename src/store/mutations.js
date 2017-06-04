@@ -13,9 +13,9 @@ export default () => {
         showNewArticle(state, isShow) {
             state.isShowNewArticle = isShow;
         },
-        showInfo(state, isShow) {
+      /*  showInfo(state, isShow) {
             state.isShowInfo = isShow;
-        },
+        },*/
         showAbout(state, isShow) {
             state.isShowAbout = isShow;
         },

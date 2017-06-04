@@ -20,7 +20,7 @@
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                         <span class="option-text">发布话题</span>
                     </Buttons>
-                    <Buttons @click="showInfo" class="option bg-yellow">
+                    <Buttons @click="showUserCenter" class="option bg-yellow">
                         <i class="fa fa-user-o" aria-hidden="true"></i>
                         <span class="option-text">个人中心</span>
                     </Buttons>

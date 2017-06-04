@@ -75,7 +75,7 @@
                 <div class="article-reply-author">
                     <div class="article-reply-avatar">
                     <div class="article-reply-desc">
-                        <router-link class="title" :to="{name: 'User', params: {name: item.author && item.author.loginname}}">
+                        <router-link class="title" :to="{name: 'User', params: {name: item.author.loginname}}">
                             <div class="avatar">
                                 <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                                 borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
@@ -84,7 +84,7 @@
                             {{item.author.loginname}}
                         </router-link>
                         <span class="article-reply-index">
-                        {{replies.length - index}}楼
+                            {{index + 1}}楼
                         </span>
                         <span class="article-reply-option">
                             <span @click="currentIndex=index" class="article-reply-at">回复</span>

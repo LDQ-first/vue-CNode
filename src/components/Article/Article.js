@@ -30,7 +30,7 @@ export default {
     },
     created() {
         this.$store.commit('showLoading', true);
-        this.$store.commit('showInfo', true);
+       /* this.$store.commit('showInfo', true);*/
         axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
             .catch(() => {
                 this.time = 5;
@@ -132,12 +132,13 @@ export default {
         collect() {
 
         },
+        ups() {
+
+        },
         reply() {
 
         },
-        ups() {
-
-        }
+        
     },
     watch: {
      

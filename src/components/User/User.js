@@ -48,6 +48,7 @@ export default {
              console.log('fetchData');
              this.$store.commit('showLoading', true);
              this.hasUser = false;
+             console.log(`${this.$route.params.name}`);
              axios.get(`https://cnodejs.org/api/v1/user/${this.$route.params.name}`)
              .catch(() => {
                  this.time = 5;

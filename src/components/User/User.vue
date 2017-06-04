@@ -45,7 +45,7 @@
                                 <div class="topic-content-main" v-for="(topic, key) in content.topic" :key="key" 
                                     :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}" >  
                                     <div class="avatar topic-content-avatar">
-                                        <router-link class="topic-user" :to="{name: 'User', params: {name: topic.author && topic.author.loginname}}"
+                                        <router-link class="topic-user" :to="{name: 'User', params: {name: topic.author.loginname}}"
                                         :title="topic.author.loginname" v-show="topic.author">
                                             <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                                             borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>

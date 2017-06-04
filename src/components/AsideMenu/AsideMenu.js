@@ -40,9 +40,11 @@ export default {
         showNewArticle() {
             this.$store.commit('showNewArticle', true);
         },
-        showInfo() {
+      /*  showInfo() {
             this.$store.commit('showInfo', true);
-           /* this.$router.push('/');*/
+        },*/
+        showUserCenter() {
+            this.$router.push({name: 'User', params: {name: this.userInfo.loginname}});
         },
         showAbout() {
             this.$store.commit('showAbout', true);
@@ -54,7 +56,8 @@ export default {
             localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
              { avatar_url: '', id: '', loginname: '', success: false});
             this.$store.commit('updateAT', '');
-        }
+        },
+        
 
     }
 }

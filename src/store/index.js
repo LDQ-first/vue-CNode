@@ -10,7 +10,7 @@ export default new Vuex.Store({
         isShowLogin: false,
         isShowMsg: false,
         isShowNewArticle: false,
-        isShowInfo: false,
+        /*isShowInfo: false,*/
         isShowAbout: false,
         isShowSkin: false,
         skinColor: 'rgba(51, 181, 229, 1)',

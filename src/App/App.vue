@@ -16,10 +16,10 @@
       <router-view name="login"></router-view>
     </transition>-->
 
-    <transition name="show">
+    <!--<transition name="show">
       <Info v-if="isShowInfo"></Info>
     </transition>
-
+-->
     <transition name="show">
       <Msg v-if="isShowMsg"></Msg>
     </transition>
