@@ -54,12 +54,12 @@
         
      </div>
       <div class="article-reply" ref="articleReply">
-        <div class="article-reply-input">
+          <Reply isShowclose="false" @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
+        <!--<div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
           :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}"></textarea>
-           <!--<button @click="reply('')" type="button">回复</button>-->
            <Buttons @click="reply('')" text="回复" :style="{background:skinColor}"></Buttons>
-        </div>
+        </div>-->
         <div class="article-reply-handle">
             
              <span class="sort-reply">
@@ -99,6 +99,13 @@
                         {{changeTime(item.create_at)}}
                     </span>
                 </div>   
+                <!--<transition name="slide-top">
+                    <div v-show="currentIndex===index" class="reply-one">
+                    <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">
+                    <button @click="reply(item.id, item.author.loginname)">回复</button>
+                    <button @click="currentIndex=null;replyOneContent=''">取消</button>
+                    </div>
+                </transition>-->
             </div>
             </transition-group>
         

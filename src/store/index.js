@@ -34,6 +34,7 @@ export default new Vuex.Store({
         at: localStorage.at || '',
         collectTopics: [],
         
+        
 },
     mutations: mutations()
 })

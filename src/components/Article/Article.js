@@ -3,7 +3,7 @@ import Buttons from '../button/button.vue'
 import Close from '../close/close.vue'
 import highlightjs from 'highlight.js'
 import 'highlight.js/styles/agate.css'
-
+import Reply from '../Reply/Reply.vue'
 
 export default {
     name: 'Article',
@@ -191,6 +191,9 @@ export default {
         reply() {
 
         },
+        hiddenReplay() {
+            
+        }
         
     },
     watch: {
@@ -198,6 +201,7 @@ export default {
     },
     components: {
         Buttons,
-        Close
+        Close,
+        Reply
     },
 }
