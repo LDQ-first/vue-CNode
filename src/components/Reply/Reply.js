@@ -1,6 +1,6 @@
 import Buttons from '../button/button.vue'
 import Close from '../close/close.vue'
-
+import createSimplemde from '../../lib/simplemde.js'
 
 export default {
     name: 'Reply',
@@ -20,10 +20,10 @@ export default {
     },
     methods: {
         reply() {
-            this.emit('reply');
+            this.$emit('reply');
         },
         hiddenReplay() {
-            this.emit('hiddenReplay');
+            this.$emit('hiddenReplay');
         }
     },
     components: {
