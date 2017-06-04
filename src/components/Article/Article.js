@@ -63,9 +63,10 @@ export default {
              .then( () =>  axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.userInfo.loginname}`))
              .then( result => result.data.data)
              .then( collectTopics => {
-                 console.log(collectTopics);
                  this.$store.commit('updateCollectTopics', collectTopics);
-
+                 collectTopics.forEach( item => {
+                     item.id === this.id ? this.isCollected = true : '';
+                 })
              })
     },
     computed: {
