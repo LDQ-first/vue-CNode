@@ -54,7 +54,7 @@
         
      </div>
       <div class="article-reply" ref="articleReply">
-          <Reply isShowclose="false" @reply="reply" class="article-reply-input"></Reply>
+          <Reply isShowclose="false" @reply="reply" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input"></Reply>
           
         <!--<div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
@@ -100,7 +100,7 @@
                         {{changeTime(item.create_at)}}
                     </span>
                 </div>   
-                <Reply v-show="currentIndex===index" @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
+                <Reply v-show="currentIndex===index" :loginnmaeOpt="item.author.loginname" :item="item" @hiddenReplay="hiddenReplay"></Reply>
                 <!--<transition name="slide-top">
                     <div v-show="currentIndex===index" class="reply-one">
                     <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">

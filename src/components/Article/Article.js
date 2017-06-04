@@ -4,6 +4,8 @@ import Close from '../close/close.vue'
 import highlightjs from 'highlight.js'
 import 'highlight.js/styles/agate.css'
 import Reply from '../Reply/Reply.vue'
+import bus from '../../lib/bus.js'
+
 
 export default {
     name: 'Article',
@@ -30,6 +32,9 @@ export default {
         }
     },
     created() {
+        bus.$on('reply', (mde, item) => {
+            this.reply(mde, item);
+        })
         this.$store.commit('showLoading', true);
        /* this.$store.commit('showInfo', true);*/
         axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
@@ -189,9 +194,20 @@ export default {
                 }
             })
         },
-        reply(mde) {
-           /* console.log(mde);*/
+        reply(mde, item) {
+           console.log(item.id);
+           console.log(item.author.loginname);
+           if(!this.at) {
+                this.$store.commit('showLogin', true);
+                return ;
+            }
             console.log(mde.value());
+            if(!mde.value()) {
+                console.log('内容不能为空');
+                return;
+            }else {
+
+            }
 
         },
         hiddenReplay() {
