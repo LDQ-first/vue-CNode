@@ -60,6 +60,13 @@ export default {
                   this.chooseImg();
                   this.chooseCode();
              })
+             .then( () =>  axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.userInfo.loginname}`))
+             .then( result => result.data.data)
+             .then( collectTopics => {
+                 console.log(collectTopics);
+                 this.$store.commit('updateCollectTopics', collectTopics);
+
+             })
     },
     computed: {
         isLoading() {
@@ -70,6 +77,12 @@ export default {
         },
         userInfo() {
             return this.$store.state.userInfo;
+        },
+        at() {
+            return this.$store.state.at;
+        },
+        collectTopics() {
+            return this.$store.state.collectTopics;
         }
     },
     methods: {
@@ -130,7 +143,30 @@ export default {
             }
         },
         collect() {
-
+            if(!this.at) {
+                this.$store.commit('showLogin', true);
+                return ;
+            }
+            if(!this.isCollected) {
+                axios.post('https://cnodejs.org/api/v1/topic_collect/collect', {
+                    accesstoken: this.at,
+                    topic_id: this.id
+                }).then( result => {
+                    if(result.data.success) {
+                        this.isCollected = true;
+                    }
+                })
+            }
+            else {
+                axios.post(`https://cnodejs.org/api/v1/topic_collect/de_collect`, {
+                    accesstoken: this.at,
+                    topic_id: this.id
+                }).then( result => {
+                    if(result.data.success) {
+                        this.isCollected = false;
+                    }
+                })
+            }
         },
         ups() {
 

@@ -45,6 +45,9 @@ export default () => {
         updateAT(state, at) {
             state.at = at;
         },
+        updateCollectTopics(state, collectTopics) {
+            state.collectTopics = collectTopics;
+        }
 
     }
 }

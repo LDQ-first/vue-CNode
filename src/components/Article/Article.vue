@@ -47,7 +47,7 @@
       <div class="other">
         <div @click="collect" class="collect">
             <span class="article-collect">
-                <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏文章
+                <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏主题
             </span>
              <span class="total-reply">评论数：{{article.replies ? article.replies.length: ''}} </span>
         </div>

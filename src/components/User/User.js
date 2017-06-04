@@ -8,9 +8,9 @@ export default {
             user: {},
             collectTopics: [],
             navs: [
-                { name: '最近创建的话题', tag: 'create', fa: 'fa-plus-circle'},
-                { name: '最近参与的话题', tag: 'reply', fa: 'fa-reply' },
-                { name: '最近收藏的话题', tag: 'collect', fa: 'fa-archive'}
+                { name: '最近创建的主题', tag: 'create', fa: 'fa-plus-circle'},
+                { name: '最近参与的主题', tag: 'reply', fa: 'fa-reply' },
+                { name: '最近收藏的主题', tag: 'collect', fa: 'fa-archive'}
             ],
             currType: 'create',
             time: 5
@@ -28,11 +28,14 @@ export default {
         },
         contents() {
             return [
-                { tag: 'create', topic: this.user ? this.user.recent_topics : '', title: '最近创建的话题'},
-                { tag: 'reply', topic: this.user ? this.user.recent_replies : '', title: '最近参与的话题'},
-                { tag: 'collect', topic: this.collectTopics, title: '收藏的话题'},
+                { tag: 'create', topic: this.user ? this.user.recent_topics : '', title: '最近创建的主题'},
+                { tag: 'reply', topic: this.user ? this.user.recent_replies : '', title: '最近参与的主题'},
+                { tag: 'collect', topic: this.collectTopics ? this.collectTopics : '', title: '收藏的主题'},
             ]
-        }
+        },
+        /*collectTopics() {
+            return this.$store.state.collectTopics;
+        }*/
     },
     created() {
         this.$store.commit('showAsideMenu', false);
@@ -75,6 +78,7 @@ export default {
              .then(collectTopics => {
                  console.log(collectTopics);
                  this.collectTopics = collectTopics;
+                /* this.$store.commit('updateCollectTopics', collectTopics);*/
              })
              .then(() =>  this.$store.commit('showLoading', false))
         }

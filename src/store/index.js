@@ -31,7 +31,8 @@ export default new Vuex.Store({
         isMore: false,
         userInfo: localStorage.userInfo && JSON.parse(localStorage.userInfo) ||
                   { avatar_url: '', id: '', loginname: '', success: false},
-        at: localStorage.at || ''
+        at: localStorage.at || '',
+        collectTopics: [],
         
 },
     mutations: mutations()
