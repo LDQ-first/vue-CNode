@@ -29,11 +29,10 @@ export default {
                  privateOpt = Object.assign(privateOpt, {placeholder: this.placeholderOpt});
               }
               else if(this.loginnmaeOpt) {
-                  console.log(this.loginnmaeOpt);
                   privateOpt = Object.assign(privateOpt, {initialValue: `@${this.loginnmaeOpt}  `});
               }
             const addOpt = Object.assign({element: this.$refs.reply}, privateOpt);
-            console.log(addOpt);
+           /* console.log(addOpt);*/
             this.mde = createSimplemde(addOpt);
         },
         reply(mde) {

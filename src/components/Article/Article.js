@@ -195,8 +195,6 @@ export default {
             })
         },
         reply(mde, item) {
-           console.log(item.id);
-           console.log(item.author.loginname);
            if(!this.at) {
                 this.$store.commit('showLogin', true);
                 return ;
@@ -205,9 +203,14 @@ export default {
             if(!mde.value()) {
                 console.log('内容不能为空');
                 return;
-            }else {
-
             }
+            if(item) {
+                 console.log(item.id);
+                 console.log(item.author.loginname);
+                 axios.post(``)
+            }
+
+            
 
         },
         hiddenReplay() {
