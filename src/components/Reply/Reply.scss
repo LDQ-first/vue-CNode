@@ -24,7 +24,10 @@
            
        }
        .editor-toolbar {
-           font-size: 0.2rem;
+           font-size: 0.16rem;
+           a::before, a::after {
+               position: static;
+           }
        }
 
     }
