@@ -95,7 +95,10 @@
         }
         .article-reply {
              margin-bottom: 0.15rem;
-             .article-reply-input {
+              .article-reply-input  {
+                   background: #FFBD8D;
+              }
+             /*.article-reply-input {
                  width: 100%;
                  height: 1.6rem;
                  position: relative;
@@ -103,7 +106,7 @@
                  display: flex;
                  justify-content: center;
                  margin-bottom: 0.2rem;
-                 background: #FFBD8D;
+                
                  padding: 0.1rem 0.2rem;
                  @media screen and (max-width: 400px) {
                      flex-direction: column;
@@ -134,7 +137,7 @@
                     height: 100%;
                     margin: 0;
                 }
-             }
+             }*/
              .article-reply-handle {
                 background: #C6C9FF;
                 padding: 0.4rem 0;

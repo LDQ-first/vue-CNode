@@ -26,6 +26,7 @@ export default {
             replyContent: '',
             sortWay: 'normal',
             infos: {},
+            currentIndex: null, // 回复某个人的 index
         }
     },
     created() {
@@ -189,12 +190,12 @@ export default {
             })
         },
         reply(mde) {
-            console.log(mde);
+           /* console.log(mde);*/
             console.log(mde.value());
-            
+
         },
         hiddenReplay() {
-            
+            this.currentIndex = null;
         }
         
     },

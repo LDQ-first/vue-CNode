@@ -54,8 +54,8 @@
         
      </div>
       <div class="article-reply" ref="articleReply">
-          <Reply isShowclose="false" @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
-          <Reply  @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
+          <Reply isShowclose="false" @reply="reply" class="article-reply-input"></Reply>
+          
         <!--<div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
           :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}"></textarea>
@@ -100,6 +100,7 @@
                         {{changeTime(item.create_at)}}
                     </span>
                 </div>   
+                <Reply v-show="currentIndex===index" @reply="reply" @hiddenReplay="hiddenReplay"></Reply>
                 <!--<transition name="slide-top">
                     <div v-show="currentIndex===index" class="reply-one">
                     <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">
