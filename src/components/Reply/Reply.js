@@ -15,7 +15,7 @@ export default {
             return this.$store.state.skinColor;
         },
         isShowClose() {
-            return this.isShowclose || true;
+            return this.isShowclose === "false" ?  false : true;
         }  
     },
     methods: {
