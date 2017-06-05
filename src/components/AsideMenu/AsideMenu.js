@@ -26,6 +26,13 @@ export default {
         SkinColor
     },
     methods: {
+        isNoLogin() {
+             if(!this.at) {
+                /*this.$store.commit('showLogin', true);*/
+                this.$router.push({name: 'Login'});
+                return ;
+            }
+        },
         hiddenAsideMenu() {
             this.$store.commit('showAsideMenu', false);
         },
@@ -34,10 +41,12 @@ export default {
            this.$router.push({name: 'Login'});
         },
         showMsg() {
+            this.isNoLogin();
             this.$store.commit('showMsg', true);
             /*this.$router.push('/');*/
         },
         showNewArticle() {
+            this.isNoLogin();
             this.$store.commit('showNewArticle', true);
         },
       /*  showInfo() {

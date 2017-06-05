@@ -66,14 +66,19 @@ export default {
                   this.chooseImg();
                   this.chooseCode();
              })
-             .then( () =>  axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.userInfo.loginname}`))
-             .then( result => result.data.data)
-             .then( collectTopics => {
-                 this.$store.commit('updateCollectTopics', collectTopics);
-                 collectTopics.forEach( item => {
-                     item.id === this.id ? this.isCollected = true : '';
-                 })
-             })
+             .then( () => { 
+                 if(this.userInfo.loginname) {
+                      axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.userInfo.loginname}`)
+                            .then( result => result.data.data)
+                            .then( collectTopics => {
+                                this.$store.commit('updateCollectTopics', collectTopics);
+                                collectTopics.forEach( item => {
+                                    item.id === this.id ? this.isCollected = true : '';
+                                })
+                            })
+                 }
+                })
+             
     },
     computed: {
         isLoading() {
@@ -171,9 +176,11 @@ export default {
         },
         collect() {
             if(!this.at) {
-                this.$store.commit('showLogin', true);
-                return ;
+                /*this.$store.commit('showLogin', true);*/
+                this.$router.push({name: 'Login'});
+                 return ;
             }
+            console.log(1);
             if(!this.isCollected) {
                 axios.post('https://cnodejs.org/api/v1/topic_collect/collect', {
                     accesstoken: this.at,
@@ -197,8 +204,9 @@ export default {
         },
         ups(index, upsId, item) {
             if(!this.at) {
-                this.$store.commit('showLogin', true);
-                return ;
+                /*this.$store.commit('showLogin', true);*/
+                this.$router.push({name: 'Login'});
+                 return ;
             }
             if(item.author.loginname === this.userInfo.loginname) {
                 alert('不能给自己点赞');
@@ -213,9 +221,10 @@ export default {
             })
         },
         reply(mde, item) {
-           if(!this.at) {
-                this.$store.commit('showLogin', true);
-                return ;
+            if(!this.at) {
+                /*this.$store.commit('showLogin', true);*/
+                this.$router.push({name: 'Login'});
+                 return ;
             }
             console.log(mde.value());
             if(!mde.value()) {
