@@ -1,20 +1,19 @@
 <template>
     <div class="new-article">
         <div class="new-article-header" :style="{background:skinColor}">
-            <i @click="hiddenNewArticle" class="fa fa-chevron-left" aria-hidden="true"></i>
-            新建话题
+            <i @click="hiddenNewArticle" class="fa fa-chevron-left" aria-hidden="true"></i>新建话题
         </div>
 
         <div class="new-article-content">
             <div class="new-article-type">
-                请选择主题类别:
+                <span>请选择主题类别:</span>
                 <select v-model.trim="newArticleType">
                     <option value="" v-for="(opt, index) in  types" :key="index">{{opt}}</option>
                 </select>
             </div>
 
             <div class="new-article-title text">
-                <input v-model.trim="newArticleTitle" type="text" placeholder=" 请输入标题，不少于十个字符">
+                <input v-model.trim="newArticleTitle" type="text" class="title-input" placeholder=" 请输入标题，不少于十个字符">
                 <span class="textBottom"></span>
             </div>
 

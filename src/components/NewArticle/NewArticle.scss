@@ -1,6 +1,6 @@
 .new-article {
     min-width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -10,12 +10,12 @@
     align-items: center;
     z-index: 200;
     background: #E7EAF0;
+    /*overflow: hidden;*/
     .new-article-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
         width: 100%;
-        height: 0.8rem;
+        text-align: center;
+        padding: 0.1rem 0;
         color: #FFF;
         .fa-chevron-left {
             position: absolute;
@@ -29,21 +29,39 @@
         }
     }
     .new-article-content {
-        display: flex;
+        width: 100%;
+        margin: 0.4rem 0;
+        padding: 0 0.4rem;
+        @media screen and (max-width: 600px) {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /*display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center;*/
         .new-article-type {
-
+            margin: 4px 0;
         }
         .new-article-title {
-
+            .title-input {
+                font-size: 0.24rem;
+            }
         }
         .new-article-body {
+            .modal-header {
+                display: none;
+            }
+            .modal-body {
 
+            }
+            .modal-footer {
+                @media screen and (max-width: 480px) {
+                    /*width: 100%;
+                    padding: 0 0.1rem;*/
+                    /*display: none;*/
+                }
+            }
         }
-        .new-article-send {
-
-        }
-    }
-    
+    } 
 }

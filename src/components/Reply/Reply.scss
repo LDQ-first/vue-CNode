@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 0.2rem;
+    /*margin-bottom: 0.2rem;*/
     .modal-header {
         width: 70%;
         padding: 0.1rem;
@@ -25,8 +25,11 @@
         @media screen and (max-width: 500px) { 
             width: 100%;
          }
+         @media screen and (max-width: 600px) {
+            padding: 0;
+        }
         .form-group {
-            margin-bottom: 0.3rem;
+            /*margin-bottom: 0.3rem;*/
         }
        #reply {
            resize: vertical;
@@ -35,6 +38,10 @@
        }
        .editor-toolbar {
            font-size: 0.24rem;
+           a {
+                width: 0.3rem;
+                height: 0.3rem;
+            }
            a::before, a::after {
                position: static;
            }
@@ -42,7 +49,7 @@
     }
     .modal-footer {
         width: 70%;
-        padding: 0.1rem;
+        padding: 0 0.1rem;
         padding-top: 0;
         @media screen and (max-width: 700px) { 
             width: 85%;
