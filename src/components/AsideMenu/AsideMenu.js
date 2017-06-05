@@ -31,7 +31,7 @@ export default {
         },
         showLogin() {
             this.$store.commit('showLogin', true);
-          /* this.$router.push({path: '/Login'});*/
+          /* this.$router.push({name: 'Login'});*/
         },
         showMsg() {
             this.$store.commit('showMsg', true);

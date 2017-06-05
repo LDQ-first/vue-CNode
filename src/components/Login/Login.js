@@ -20,9 +20,10 @@ export default {
         }
     },
     methods: {
-        showLogin() {
+        hiddenLogin() {
             this.$store.commit('showLogin', false);
             this.$store.commit('showMsg', false);
+            /*this.$router.go(-1);*/
         },
         login(accessToken) {
             axios.post('https://cnodejs.org/api/v1/accesstoken', {accesstoken: accessToken})

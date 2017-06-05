@@ -1,7 +1,7 @@
 <template>
     <div class="login">
         <div class="login-header" :style="{background:skinColor}">
-            <i @click="showLogin" class="fa fa-chevron-left" aria-hidden="true"></i>登录
+            <i @click="hiddenLogin" class="fa fa-chevron-left" aria-hidden="true"></i>登录
         </div>
 
         <div class="login-input">

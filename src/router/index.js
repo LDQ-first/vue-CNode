@@ -16,22 +16,24 @@ const routes = [
     {
       path: '/:tab',
       name: 'ArticleListTab',
-      component: ArticleList
+      component: ArticleList 
     },
     {
       path: '/article/:id',
       name: 'Article',
-      component: Article
+      component: Article 
     },
     {
       path: '/user/:name?',
       name: 'User',
-      component: User
+      component: User 
     },
    /* {
       path: '/login',
       name: 'Login',
-      component: Login
+      components: {
+        login: Login 
+      }
     }*/
   ];
 

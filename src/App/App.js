@@ -51,8 +51,11 @@ export default {
                 return this.$store.state.isShowAbout;
         }
   },
+  created() {
+
+  },
   methods: {
-     
+    
   },
   components: {
       Topbar,
