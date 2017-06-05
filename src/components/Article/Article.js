@@ -95,7 +95,14 @@ export default {
     methods: {
         chooseCode() {
             const articleBody = this.$refs.articleBody;
-            const codes =  articleBody.querySelectorAll('pre code');
+            let codes = null;
+            if(articleBody) {
+                console.log(articleBody);
+                codes =  articleBody.querySelectorAll('pre code');
+            }
+            else {
+                console.log(document.querySelector('.article-body'));
+            }
             if(codes) {
                 for(let code of codes) {
                     highlightjs.highlightBlock(code);
@@ -105,7 +112,13 @@ export default {
         },
         chooseImg() {
               const articleBody = this.$refs.articleBody;
-              this.articleImgs = articleBody.querySelectorAll('img:not(.avatar-img)');
+              if(articleBody) {
+                  console.log(articleBody);
+                   this.articleImgs = articleBody.querySelectorAll('img:not(.avatar-img)');
+              }
+             else {
+                  console.log(document.querySelector('.article-body'));
+              }
               if(this.articleImgs) {
                    this.showModal(this.articleImgs);
               }
@@ -204,7 +217,7 @@ export default {
                 this.$store.commit('showLogin', true);
                 return ;
             }
-          //  console.log(mde.value());
+            console.log(mde.value());
             if(!mde.value()) {
                 console.log('内容不能为空');
                 return;
@@ -214,22 +227,28 @@ export default {
                  axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
                      accesstoken: this.at,
                      content: mde.value()
-                 }).then((result) => {
-                     console.log(result);
-                     this.sort(null, this.sortWay);
+                 }).then(result => {
+                      if(result.data.success) {
+                            this.sort(null, this.sortWay);
+                      }
+                 }).then(()=> {
+                     mde.value('');
                  })
             }
             else {
                  console.log(item.id);
                  console.log(item.author.loginname);
                 axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
-                    accesstoken: this.ak,
-                    content: mde.value(),
+                    accesstoken: this.at,
+                    content: `@${item.author.loginname}  ${mde.value()}`,
                     reply_id: item.id
-                }).then(() => {
-                    this.sort(null, this.sortWay);
+                }).then(result => {
+                     if(result.data.success) {
+                        this.sort(null, this.sortWay);
+                    }
                 }).then(() => {
                     this.hiddenReplay();
+                     mde.value('');
                 })
             }
         },

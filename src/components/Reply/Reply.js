@@ -29,7 +29,7 @@ export default {
                  privateOpt = Object.assign(privateOpt, {placeholder: this.placeholderOpt});
               }
               else if(this.loginnmaeOpt) {
-                  privateOpt = Object.assign(privateOpt, {initialValue: `@${this.loginnmaeOpt}  `});
+                  privateOpt = Object.assign(privateOpt, {placeholder: `自动添加了@${this.loginnmaeOpt}`});
               }
             const addOpt = Object.assign({element: this.$refs.reply}, privateOpt);
            /* console.log(addOpt);*/
