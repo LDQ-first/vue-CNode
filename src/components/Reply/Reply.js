@@ -5,10 +5,11 @@ import bus from '../../lib/bus.js'
 
 export default {
     name: 'Reply',
-    props: ['isShowclose', 'placeholderOpt', 'loginnmaeOpt', 'item'],
+    props: ['isShowclose', 'placeholderOpt', 'loginnmaeOpt', 'item', 'btnText'],
     data() {
         return {
             mde: null,
+            text: this.btnText ? this.btnText : '回复'
         }
     },
     computed: {
@@ -17,7 +18,10 @@ export default {
         },
         isShowClose() {
             return this.isShowclose === "false" ?  false : true;
-        }  
+        },
+        /*text() {
+            return this.btnText ? this.btnText : '回复'
+        }*/
     },
     mounted(){
        this.setMde();

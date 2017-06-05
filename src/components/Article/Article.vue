@@ -54,7 +54,7 @@
         
      </div>
       <div class="article-reply" ref="articleReply">
-          <Reply isShowclose="false" @reply="reply" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input"></Reply>
+          <Reply isShowclose="false" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input"></Reply>
           
         <!--<div class="article-reply-input">
           <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"

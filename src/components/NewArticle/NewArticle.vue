@@ -1,7 +1,33 @@
 <template>
-    <div >
-        
-    </div>
+    <div class="new-article">
+        <div class="new-article-header" :style="{background:skinColor}">
+            <i @click="hiddenNewArticle" class="fa fa-chevron-left" aria-hidden="true"></i>
+            新建话题
+        </div>
+
+        <div class="new-article-content">
+            <div class="new-article-type">
+                请选择主题类别:
+                <select v-model.trim="newArticleType">
+                    <option value="" v-for="(opt, index) in  types" :key="index">{{opt}}</option>
+                </select>
+            </div>
+
+            <div class="new-article-title text">
+                <input v-model.trim="newArticleTitle" type="text" placeholder=" 请输入标题，不少于十个字符">
+                <span class="textBottom"></span>
+            </div>
+
+            <div class="new-article-body">
+                <!--<textarea v-model="newArticleContent" placeholder="请输入内容"></textarea>-->
+                <Reply placeholderOpt='请发表主题 (づ｡◕ᴗᴗ◕｡)づ' isShowclose="false" :btnText="'发布'"></Reply>
+            </div>
+
+            <!--<div class="new-article-send">
+                <Buttons @click="sendNewArticle" text="发布"></Buttons>
+            </div>-->
+        </div>
+   </div>
 </template>
 
 <script>
