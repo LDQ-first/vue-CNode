@@ -4,7 +4,7 @@ const Simplemde = require('simplemde/dist/simplemde.min');
 const defaultOpt = {
     autoDownloadFontAwesome: false,
     spellChecker: false,
-    status: false,
+	status: ["autosave", "lines", "words", "cursor"], 
 }
 
 export default addOpt => {

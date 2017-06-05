@@ -67,7 +67,12 @@ img {
     background: #498BD6 linear-gradient(to bottom,#FFF, rgba(3, 169, 244, 0.5), #0277BD);
 }
 
-
+.form-group {
+    .editor-statusbar {
+        color: #333;
+        font-size: 0.16rem;
+    }
+}
 
 .markdown-text {
     img {
