@@ -20,17 +20,26 @@
       <Info v-if="isShowInfo"></Info>
     </transition>
 -->
-    <transition name="show">
+    <!--<transition name="show">
       <Msg v-if="isShowMsg"></Msg>
-    </transition>
+    </transition>-->
 
     <transition name="show">
+      <router-view name="msg"></router-view>
+    </transition>
+
+   <!-- <transition name="show">
       <NewArticle v-if="isShowNewArticle"></NewArticle>
+    </transition>-->
+
+    <transition name="show">
+      <router-view name="newArticle"></router-view>
     </transition>
     
     <transition name="show">
       <About v-if="isShowAbout"></About>
     </transition>
+    
   </div>
 </template>
 

@@ -7,9 +7,9 @@ import mutations from './mutations'
 export default new Vuex.Store({
     state: {
         isShowAsideMenu: false,
-        isShowLogin: false,
+        /*isShowLogin: false,*/
         isShowMsg: false,
-        isShowNewArticle: false,
+        /*isShowNewArticle: false,*/
         /*isShowInfo: false,*/
         isShowAbout: false,
         isShowSkin: false,

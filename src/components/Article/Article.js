@@ -76,7 +76,7 @@ export default {
                                     item.id === this.id ? this.isCollected = true : '';
                                 })
                             })
-                 }
+                    }
                 })
              
     },
@@ -176,11 +176,9 @@ export default {
         },
         collect() {
             if(!this.at) {
-                /*this.$store.commit('showLogin', true);*/
                 this.$router.push({name: 'Login'});
                  return ;
             }
-            console.log(1);
             if(!this.isCollected) {
                 axios.post('https://cnodejs.org/api/v1/topic_collect/collect', {
                     accesstoken: this.at,
@@ -204,7 +202,6 @@ export default {
         },
         ups(index, upsId, item) {
             if(!this.at) {
-                /*this.$store.commit('showLogin', true);*/
                 this.$router.push({name: 'Login'});
                  return ;
             }
@@ -222,7 +219,6 @@ export default {
         },
         reply(mde, item) {
             if(!this.at) {
-                /*this.$store.commit('showLogin', true);*/
                 this.$router.push({name: 'Login'});
                  return ;
             }

@@ -18,7 +18,10 @@ export default {
         },
         skinColor() {
             return this.$store.state.skinColor;
-        }
+        },
+        at() {
+            return this.$store.state.at;
+        },
     },
     components: {
         Buttons,
@@ -26,33 +29,38 @@ export default {
         SkinColor
     },
     methods: {
-        isNoLogin() {
-             if(!this.at) {
-                /*this.$store.commit('showLogin', true);*/
-                this.$router.push({name: 'Login'});
-                return ;
-            }
-        },
         hiddenAsideMenu() {
             this.$store.commit('showAsideMenu', false);
         },
         showLogin() {
-            /*this.$store.commit('showLogin', true);*/
            this.$router.push({name: 'Login'});
         },
         showMsg() {
-            this.isNoLogin();
-            this.$store.commit('showMsg', true);
-            /*this.$router.push('/');*/
+            if(!this.at) {
+                this.$router.push({name: 'Login'});
+                return ;
+            }
+            this.$router.push({name: 'Msg'});
+            /*this.$store.commit('showMsg', true);*/
         },
         showNewArticle() {
-            this.isNoLogin();
-            this.$store.commit('showNewArticle', true);
+            if(!this.at) {
+                this.$router.push({name: 'Login'});
+                return ;
+            }
+            this.$router.push({name: 'NewArticle'});
+            /*this.$store.commit('showNewArticle', true);*/
+
         },
       /*  showInfo() {
             this.$store.commit('showInfo', true);
         },*/
         showUserCenter() {
+            if(!this.at) {
+                /*this.$store.commit('showLogin', true);*/
+                this.$router.push({name: 'Login'});
+                return ;
+            }
             this.$router.push({name: 'User', params: {name: this.userInfo.loginname}});
         },
         showAbout() {

@@ -42,7 +42,7 @@ export default {
                     this.$store.commit('updateAT', accessToken);
                     localStorage.userInfo = JSON.stringify(userInfo);
                     localStorage.at = accessToken;
-                    this.showLogin();
+                    this.hiddenLogin();
                 })
         }
     },

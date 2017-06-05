@@ -4,6 +4,8 @@ import ArticleList from '../components/ArticleList/ArticleList.vue'
 import Article from '../components/Article/Article.vue'
 import User from '../components/User/User.vue'
 import Login from '../components/Login/Login.vue'
+import NewArticle from '../components/NewArticle/NewArticle.vue'
+import Msg from '../components/Msg/Msg.vue'
 
 Vue.use(Router)
 
@@ -34,7 +36,23 @@ const routes = [
       components: {
         login: Login
       } 
-    }
+    },
+    {
+      path: '/newArticle',
+      name: 'NewArticle',
+      components: {
+        newArticle: NewArticle
+      } 
+    },
+    {
+      path: '/msg',
+      name: 'Msg',
+      components: {
+        msg: Msg
+      } 
+    },
+
+
   ];
 
 const router =  new Router({
