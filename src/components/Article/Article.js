@@ -96,14 +96,19 @@ export default {
         chooseCode() {
             const articleBody = this.$refs.articleBody;
             const codes =  articleBody.querySelectorAll('pre code');
-            for(let code of codes) {
-                highlightjs.highlightBlock(code);
+            if(codes) {
+                for(let code of codes) {
+                    highlightjs.highlightBlock(code);
+                }
             }
+            
         },
         chooseImg() {
               const articleBody = this.$refs.articleBody;
               this.articleImgs = articleBody.querySelectorAll('img:not(.avatar-img)');
-              this.showModal(this.articleImgs);
+              if(this.articleImgs) {
+                   this.showModal(this.articleImgs);
+              }
         },
         showModal(imgs) { 
             for(let img of imgs) {
@@ -199,19 +204,34 @@ export default {
                 this.$store.commit('showLogin', true);
                 return ;
             }
-            console.log(mde.value());
+          //  console.log(mde.value());
             if(!mde.value()) {
                 console.log('内容不能为空');
                 return;
             }
-            if(item) {
+            
+            if(!item) {
+                 axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
+                     accesstoken: this.at,
+                     content: mde.value()
+                 }).then((result) => {
+                     console.log(result);
+                     this.sort(null, this.sortWay);
+                 })
+            }
+            else {
                  console.log(item.id);
                  console.log(item.author.loginname);
-                 axios.post(``)
+                axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
+                    accesstoken: this.ak,
+                    content: mde.value(),
+                    reply_id: item.id
+                }).then(() => {
+                    this.sort(null, this.sortWay);
+                }).then(() => {
+                    this.hiddenReplay();
+                })
             }
-
-            
-
         },
         hiddenReplay() {
             this.currentIndex = null;
