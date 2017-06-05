@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*margin-bottom: 0.2rem;*/
+    margin-bottom: 0.1rem;
     .modal-header {
         width: 70%;
         padding: 0.1rem;
@@ -44,6 +44,7 @@
             }
            a::before, a::after {
                position: static;
+               line-height: 0.3rem;
            }
        }
     }

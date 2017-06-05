@@ -10,7 +10,6 @@
     align-items: center;
     z-index: 200;
     background: #E7EAF0;
-    /*overflow: hidden;*/
     .new-article-header {
         position: relative;
         width: 100%;
@@ -37,9 +36,6 @@
             margin: 0;
             padding: 0;
         }
-        /*display: flex;
-        flex-direction: column;
-        justify-content: center;*/
         .new-article-type {
             margin: 4px 0;
         }
@@ -51,16 +47,6 @@
         .new-article-body {
             .modal-header {
                 display: none;
-            }
-            .modal-body {
-
-            }
-            .modal-footer {
-                @media screen and (max-width: 480px) {
-                    /*width: 100%;
-                    padding: 0 0.1rem;*/
-                    /*display: none;*/
-                }
             }
         }
     } 
