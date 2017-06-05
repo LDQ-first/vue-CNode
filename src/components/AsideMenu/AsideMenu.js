@@ -57,7 +57,6 @@ export default {
         },*/
         showUserCenter() {
             if(!this.at) {
-                /*this.$store.commit('showLogin', true);*/
                 this.$router.push({name: 'Login'});
                 return ;
             }

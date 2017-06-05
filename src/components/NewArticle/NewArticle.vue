@@ -7,13 +7,14 @@
         <div class="new-article-content">
             <div class="new-article-type">
                 <span>请选择主题类别:</span>
-                <select v-model.trim="newArticleType">
-                    <option value="" v-for="(opt, index) in  types" :key="index">{{opt}}</option>
+                <select v-model.trim = "newArticleType">
+                    <option  v-for="(opt, index) in  types" :key="index">{{opt}}</option>
                 </select>
             </div>
 
             <div class="new-article-title text">
-                <input v-model.trim="newArticleTitle" type="text" class="title-input" placeholder=" 请输入标题，不少于十个字符">
+                <input v-model.trim="newArticleTitle" type="text" class="title-input" pattern=".{10,}"
+                placeholder="请输入标题，不少于十个字符(去除前后空格)">
                 <span class="textBottom"></span>
             </div>
 

@@ -13,7 +13,8 @@ export default {
                 job: '招聘',
                 dev: '客户端测试'
             },
-            newArticleType: '',
+            newArticleType: '客户端测试',
+            type: 'dev',
             newArticleTitle: '',
 
         }
@@ -24,7 +25,7 @@ export default {
         },
         at() {
             return this.$store.state.at;
-        }
+        },
     },
     created() {
         bus.$on('reply', (mde) => {
@@ -41,11 +42,36 @@ export default {
         },
         sendNewArticle(mde) {
             console.log(mde.value());
+            if(!this.newArticleTitle.match('.{10,}')) {
+                console.log('标题不能少于十个字符');
+                return;
+            }
             if(!mde.value()) {
                 console.log('内容不能为空');
                 return;
             }
-
+            for(let type in this.types) {
+                if(this.newArticleType === this.types[type]) {
+                    this.type = type;
+                }
+            }
+             console.log(this.type);
+             axios.post(`https://cnodejs.org/api/v1/topics`, {
+                 accesstoken: this.at,
+                 title: this.newArticleTitle,
+                 tab: this.type,
+                 content: mde.value()
+             })
+             .then(result => {
+                 if (result.data && result.data.success) {
+                      this.$store.commit('showAsideMenu', false);
+                      this.$store.commit('changeTab', this.type)
+                      this.$router.push({name: 'Article', params: {id: result.data.topic_id}});
+                } else {
+                    console.log('发布失败');
+                }
+             })
+            
 
         }
 
