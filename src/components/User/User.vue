@@ -14,7 +14,7 @@
                 </span>
                 <span class="user-github">
                     <i class="fa fa-github" aria-hidden="true"></i>
-                    <a :href="`https://github.com/${user ? user.githubUsername : ''}`" class="title" target="new">
+                    <a :href="`https://github.com/${user ? user.githubUsername : ''}`" class="title" >
                         {{ user ? user.githubUsername : ''}}
                     </a>
                 </span>

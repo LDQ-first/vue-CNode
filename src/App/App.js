@@ -52,11 +52,16 @@ export default {
         }
   },
   created() {
-
+      console.log(this.$route);
   },
   methods: {
     
   },
+  watch: { 
+        $route() {
+            
+        }
+    },
   components: {
       Topbar,
       AsideMenu,

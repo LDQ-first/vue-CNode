@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import ArticleList from '../components/ArticleList/ArticleList.vue'
 import Article from '../components/Article/Article.vue'
 import User from '../components/User/User.vue'
-/*import Login from '../components/Login/Login.vue'*/
+import Login from '../components/Login/Login.vue'
 
 Vue.use(Router)
 
@@ -14,7 +14,7 @@ const routes = [
       component: ArticleList
     },
     {
-      path: '/:tab',
+      path: '/articleList/:tab',
       name: 'ArticleListTab',
       component: ArticleList 
     },
@@ -28,13 +28,13 @@ const routes = [
       name: 'User',
       component: User 
     },
-   /* {
+    {
       path: '/login',
       name: 'Login',
       components: {
-        login: Login 
-      }
-    }*/
+        login: Login
+      } 
+    }
   ];
 
 const router =  new Router({

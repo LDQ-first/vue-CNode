@@ -30,8 +30,8 @@ export default {
             this.$store.commit('showAsideMenu', false);
         },
         showLogin() {
-            this.$store.commit('showLogin', true);
-          /* this.$router.push({name: 'Login'});*/
+            /*this.$store.commit('showLogin', true);*/
+           this.$router.push({name: 'Login'});
         },
         showMsg() {
             this.$store.commit('showMsg', true);

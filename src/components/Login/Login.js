@@ -8,9 +8,10 @@ export default {
             accessToken: ''
         }
     },
-    /*created() {
-        this.accessToken = this.at;
-    },*/
+    created() {
+      /*  this.accessToken = this.at;*/
+      
+    },
      computed: {
         skinColor() {
             return this.$store.state.skinColor;
@@ -21,9 +22,9 @@ export default {
     },
     methods: {
         hiddenLogin() {
-            this.$store.commit('showLogin', false);
-            this.$store.commit('showMsg', false);
-            /*this.$router.go(-1);*/
+           /* this.$store.commit('showLogin', false);
+            this.$store.commit('showMsg', false);*/
+            this.$router.go(-1);
         },
         login(accessToken) {
             axios.post('https://cnodejs.org/api/v1/accesstoken', {accesstoken: accessToken})

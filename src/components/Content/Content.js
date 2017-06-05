@@ -25,6 +25,9 @@ export default {
             return this.$store.state.over;
         }
     },
+    created() {
+        
+    },
     methods: {
         changeTab(tab, page = 1) {
             this.$store.commit('Over', false);
