@@ -44,7 +44,7 @@ export default {
                   const e = this.$refs.articles;
                 bus.$emit('isShowTop', {isShow: true, e});
             }
-            const pathArr = ['/', '/all', '/good', '/share', '/ask', '/job', '/dev'];
+            const pathArr = ['/', '/articleList/all', '/articleList/good', '/articleList/share', '/articleList/ask', '/articleList/job', '/articleList/dev'];
             if(pathArr.indexOf(this.$route.path) === -1) {
                 return;
             }
