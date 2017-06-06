@@ -15,7 +15,6 @@ import ToTop from '../components/toTop/toTop.vue'
 import Login from '../components/Login/Login.vue'
 import Msg from '../components/Msg/Msg.vue'
 import NewArticle from '../components/NewArticle/NewArticle.vue'
-/*import Info from '../components/Info/Info.vue'*/
 import About from '../components/About/About.vue'
 
 
@@ -44,9 +43,6 @@ export default {
         isShowNewArticle() {
                 return this.$store.state.isShowNewArticle;
         },
-       /* isShowInfo() {
-                return this.$store.state.isShowInfo;
-        },*/
         isShowAbout() {
                 return this.$store.state.isShowAbout;
         }
