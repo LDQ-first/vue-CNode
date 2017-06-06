@@ -1,6 +1,6 @@
 ((doc, win) => {
     const docEl = doc.documentElement,
-          resizeEvt = 'onorientationchange' in win ? 'orientationchange': 'resize',
+          resizeEvt = 'onorientationchange' in window ? 'onorientationchange': 'resize',
           recalc = () => {
               const clientWidth = docEl.clientWidth;
               if(!clientWidth) {
