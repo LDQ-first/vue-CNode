@@ -1,6 +1,6 @@
 .about {
     min-width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     right: 0;
@@ -33,20 +33,35 @@
         width: 100%;
         font-size: 0.24rem;
         padding: 0.1rem;
+        display: flex;
+        flex-direction: column;
         .about-content-title {
             font-size: 1.3em;
             margin-bottom: 0.1rem;
         }
         .skills {
-
+            overflow-y: auto; 
+            flex: 1;
+            border-left: 4px solid ;
+            margin: 0.1rem 0;
             .skill {
+                display: flex;
+                padding: 0 0.1rem;
+                cursor: pointer;
+                &.active {
+                    border-right: 8px solid;
+                } 
                 .name {
-
+                    font-weight: bold;
+                    margin-right: 6px;
                 }
                 .des {
-                    
+                    flex: 1;
                 }
             }
         }
+        .project {
+            flex: 1;
+        } 
     }
 }
