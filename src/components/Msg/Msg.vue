@@ -19,20 +19,24 @@
 
         <div class="msg-list">
             <transition-group name="show">
-                <div v-for="(item, index) of (tag === 'unread' ? msg.hasnot_read_messages : msg.has_read_messages)" :key="item.id+index" class="msg-item">
-                    <div class="msg-body">
-                        <div class="msg-name">
-                            <span @click="view">
-                                <router-link  :to="{name: 'User', params: {name: item.author.loginname}}">{{ item.author.loginname }}</router-link>
-                            </span> 的回复
-                        </div>
-                        <div v-html="item.reply.content" class="msg-msg"></div>
-                        <div @click="view">
-                            <div class="msg-from">
-                                <router-link  :to="{name: 'Article', params: {id: item.topic.id}}">
-                                    来自：{{ item.topic.title }}
-                                </router-link>
+                <div v-for="(item, index) of (tag === 'unread' ? msg.hasnot_read_messages : msg.has_read_messages)" 
+                :key="item.id+index" class="msg-item">
+                    <div class="msg-author">
+                        <router-link  class="title" :to="{name: 'User', params: {name: item.author.loginname}}">
+                            <div class="avatar " @click="view">
+                                <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
+                                borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
+                                <img :src="item ? item.author.avatar_url : ''" class="avatar-img" alt="">
+                                {{ item.author.loginname }}
                             </div>
+                        </router-link>
+                    </div>
+                    <div v-html="item.reply.content" class="msg-msg"></div>
+                    <div @click="view">
+                        <div class="msg-from">
+                            <router-link  :to="{name: 'Article', params: {id: item.topic.id}}">
+                                来自：{{ item.topic.title }}
+                            </router-link>
                         </div>
                     </div>
                 </div>
