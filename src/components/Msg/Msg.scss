@@ -29,8 +29,35 @@
         }
     }
     .msg-content {
+        flex: 1;
+        width: 100%;
         .msg-read {
-            
+            display: flex;
+            /*border: 2px solid;*/
+            border-bottom: 2px solid #9933CC;
+            .msgReadTab {
+                flex: 1;
+                text-align: center;
+                padding: 0.1rem 0;
+              /* &:first-child {
+                   border-right: 2px solid;
+               }*/
+               &.active {
+                   border-bottom: 4px solid;
+                   margin-bottom: -3px;
+               }
+               .title {
+
+               }
+               .length {
+                   display: inline-block;
+                   border-radius: 50%;
+                   width: 0.4rem;
+                   height: 0.4rem;
+                   line-height: 0.4rem;
+                   color: #EEE;
+               }
+            }
         }
         .msg-list {
 

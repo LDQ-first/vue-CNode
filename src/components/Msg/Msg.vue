@@ -6,17 +6,26 @@
 
     <div class="msg-content">
       <div class="msg-read">
-        <div :class="{selected: isOnRead}" @click="changeTab(true)" class="has-no">
+        <!--<div :class="{selected: isOnRead}" @click="changeTab(true)" class="has-no">
           未读消息: {{ msg.hasnot_read_messages.length }}
         </div>
         <div :class="{selected: !isOnRead}" @click="changeTab(false)" class="has">
           已读消息: {{ msg.has_read_messages.length }}
+        </div>-->
+        <div v-for="(msgReadTab, index) in msgReadTabs" :key="index" class="msgReadTab" 
+        :class="{active: tag === msgReadTab.tag}"  @click="changeTab(msgReadTab.tag)" 
+        :style="{
+            background: tag === msgReadTab.tag ? skinColor.replace(/\sl[\S\s]+/, '').replace(/(1)(\))/, '0.2$2') : '',
+            borderBottomColor: skinColor.replace(/\sl[\S\s]+/, ''), 
+        }" >
+            <span class="title">{{msgReadTab.title}}</span>
+            <span class="length" :style="{background:skinColor}">{{msgReadTab.messages}}</span>
         </div>
       </div>
 
         <div class="msg-list">
             <transition-group name="show">
-                <div v-for="(item, index) of (isOnRead ? msg.hasnot_read_messages : msg.has_read_messages)" :key="item.id+index" class="msg-item">
+                <div v-for="(item, index) of (tag === 'unread' ? msg.hasnot_read_messages : msg.has_read_messages)" :key="item.id+index" class="msg-item">
                     <div class="msg-body">
                     <div class="msg-name">
                         <span @click="view">

@@ -4,11 +4,15 @@ export default {
     name: 'Msg',
     data() {
         return {
+           /* msgReadTabs: [
+                {title: '未读消息', tag: 'unread', messages: this.msg.hasnot_read_messages.length },
+                {title: '已读消息', tag: 'read', messages: this.msg.has_read_messages.length},
+            ],*/
             msg: {
                 hasnot_read_messages: [],
                 has_read_messages: []
             },
-            isOnRead: true
+            tag: 'unread'
         }
     },
     computed: {
@@ -17,7 +21,14 @@ export default {
         },
         at() {
             return this.$store.state.at;
+        },
+        msgReadTabs() {
+            return [
+                {title: '未读消息', tag: 'unread', messages:  this.msg.hasnot_read_messages.length},
+                {title: '已读消息', tag: 'read', messages: this.msg.has_read_messages.length },
+            ]
         }
+        
     },
     created() {
         if(!this.at) {
@@ -32,8 +43,8 @@ export default {
         hiddenMsg() {
             this.$router.go(-1);
         },
-        changeTab(flag) {
-            this.isOnRead = flag;
+        changeTab(tag) {
+            this.tag = tag;
         },
         view() {
             this.$store.commit('showMsg', false);
