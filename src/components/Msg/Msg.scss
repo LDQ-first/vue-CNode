@@ -45,9 +45,6 @@
                    border-bottom: 4px solid;
                    margin-bottom: -3px;
                }
-               .title {
-
-               }
                .length {
                    display: inline-block;
                    border-radius: 50%;
@@ -62,29 +59,43 @@
             flex: 1;
             .msg-item {
                 display: flex;
-                .msg-author {
+                padding: 0.2rem;
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 2px;
+                    left: 0.7rem;
+                    background: rgba(141, 214, 241, 1);
+                }
+                .msg-author-avatar {
                     display: inline-block;
+                    width: 1rem;
+                    position: relative;
                     .avatar {
-                        left: calc(-0.8rem - 8px);
-                        width: 0.4rem;
-                        height: 0.4rem;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0.6rem;
+                        height: 0.6rem;
                         .img-border {
-                            width: 0.4rem;
-                            height: 0.4rem;
+                            width: inherit;
+                            height: inherit;
                         }
                         .avatar-img {
-                            width: 0.4rem;
-                            height: 0.4rem;
+                            width: inherit;
+                            height: inherit;
                         }
                     } 
+                }
+                .msg-reply {
+                    flex: 1;
+                    margin-left: 0.2rem;
                     .title {
-                        margin: 10px;
-                        margin-left: 0.8rem;
+                        font-size: inherit;
                     }
                 }
             }
-
        }
     }
-    
 }
