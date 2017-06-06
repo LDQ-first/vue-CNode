@@ -5,7 +5,7 @@ import bus from '../../lib/bus.js'
 
 export default {
     name: 'Reply',
-    props: ['isShowclose', 'placeholderOpt', 'loginnmaeOpt', 'item', 'btnText'],
+    props: ['isShowclose', 'placeholderOpt', 'loginnmaeOpt', 'item', 'btnText', 'event'],
     data() {
         return {
             mde: null,
@@ -41,10 +41,10 @@ export default {
         },
         reply(mde) {
             if(this.item) {
-                bus.$emit('reply', mde, this.item );
+                bus.$emit(`${this.event}`, mde, this.item );
             }
             else {
-                bus.$emit('reply', mde);
+                bus.$emit(`${this.event}`, mde);
             }
           /*  this.$emit('reply', mde );*/
         },

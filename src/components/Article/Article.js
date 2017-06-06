@@ -32,6 +32,9 @@ export default {
         }
     },
     created() {
+        bus.$on('common', mde => {
+            this.reply(mde);
+        })
         bus.$on('reply', (mde, item) => {
             this.reply(mde, item);
         })
@@ -227,7 +230,7 @@ export default {
                 console.log('内容不能为空');
                 return;
             }
-            
+            console.log(item);
             if(!item) {
                  axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
                      accesstoken: this.at,
@@ -253,7 +256,7 @@ export default {
                     }
                 }).then(() => {
                     this.hiddenReplay();
-                     mde.value('');
+                    mde.value('');
                 })
             }
         },

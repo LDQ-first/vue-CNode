@@ -28,7 +28,7 @@ export default {
         },
     },
     created() {
-        bus.$on('reply', (mde) => {
+        bus.$on('newArticle', (mde) => {
             this.sendNewArticle(mde);
         })
     },

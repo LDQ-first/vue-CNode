@@ -54,7 +54,7 @@
         
      </div>
       <div class="article-reply" ref="articleReply">
-          <Reply isShowclose="false" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input"></Reply>
+          <Reply isShowclose="false" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input" event="common"></Reply>
         <div class="article-reply-handle">
             
              <span class="sort-reply">
@@ -94,7 +94,8 @@
                         {{changeTime(item.create_at)}}
                     </span>
                 </div>   
-                <Reply v-show="currentIndex===index" :loginnmaeOpt="item.author.loginname" :item="item" @hiddenReplay="hiddenReplay"></Reply>
+                <Reply v-show="currentIndex===index" :loginnmaeOpt="item.author.loginname" :item="item" 
+                @hiddenReplay="hiddenReplay"  event="reply"></Reply>
             </div>
             </transition-group>
         
