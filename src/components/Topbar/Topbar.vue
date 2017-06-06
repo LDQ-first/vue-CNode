@@ -10,7 +10,10 @@
                 <span class="logo-text color-green">d</span>
                 <span class="logo-text color-orange">e</span>
             </h1>
-            
+            <span class="hasMsg" @click.stop.prevent="showAsideMenu">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span v-show="at" class="msg-count" >{{msgCount}}</span>
+            </span>
         </div>
     </div>
 </template>
