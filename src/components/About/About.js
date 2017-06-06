@@ -19,6 +19,7 @@ export default {
              {name: 'Simplemde', des: 'markdown编辑器'},
              {name: 'Highlight.js', des: '语法高亮'},
              {name: 'Flex', des: '弹性布局'},
+             {name: 'Canvas', des: '按钮的波纹效果'},
              {name: 'loaclStorge', des: '本地存储用户信息'}
             ],
             skillIndex: 0,

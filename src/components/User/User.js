@@ -34,9 +34,6 @@ export default {
                 { tag: 'collect', topic: this.collectTopics ? this.collectTopics : '', title: '收藏的主题'},
             ]
         },
-        /*collectTopics() {
-            return this.$store.state.collectTopics;
-        }*/
     },
     created() {
         this.$store.commit('showAsideMenu', false);
@@ -77,9 +74,7 @@ export default {
              .then( () => axios.get(`https://cnodejs.org/api/v1/topic_collect/${this.$route.params.name}`))
              .then(result => result.data.data)
              .then(collectTopics => {
-                 console.log(collectTopics);
                  this.collectTopics = collectTopics;
-                /* this.$store.commit('updateCollectTopics', collectTopics);*/
              })
              .then(() =>  this.$store.commit('showLoading', false))
         }

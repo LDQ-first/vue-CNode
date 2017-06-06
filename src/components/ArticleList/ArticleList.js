@@ -44,7 +44,6 @@ export default {
             axios.get(`https://cnodejs.org/api/v1/topics?page=${page}&&tab=${tab}`)
                  .then( result =>  result.data.data )
                  .then( articleList => {
-                    /* console.log(articleList);*/
                      this.$store.commit('changeTab', {tab, articleList, isLoading: false});
                  })
         },

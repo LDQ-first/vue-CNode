@@ -8,37 +8,17 @@
 
     <ToTop></ToTop>
 
-  <!--  <transition name="show">
-      <Login v-if="isShowLogin"></Login>
-    </transition>-->
-
     <transition name="show">
       <router-view name="login"></router-view>
     </transition>
-
-    <!--<transition name="show">
-      <Info v-if="isShowInfo"></Info>
-    </transition>
--->
-    <!--<transition name="show">
-      <Msg v-if="isShowMsg"></Msg>
-    </transition>-->
 
     <transition name="show">
       <router-view name="msg"></router-view>
     </transition>
 
-   <!-- <transition name="show">
-      <NewArticle v-if="isShowNewArticle"></NewArticle>
-    </transition>-->
-
     <transition name="show">
       <router-view name="newArticle"></router-view>
     </transition>
-    
-    <!--<transition name="show">
-      <About v-if="isShowAbout"></About>
-    </transition>-->
 
     <transition name="show">
       <router-view name="about"></router-view>

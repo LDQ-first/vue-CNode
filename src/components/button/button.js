@@ -34,16 +34,6 @@ export default {
                 this.$emit('click', e);
             },400);
         },
-       /* mouseenter() {
-            setTimeout(()=>{
-                this.$emit('mouseenter');
-            },0);
-        },
-        mouseleave() {
-            setTimeout(()=>{
-                this.$emit('mouseleave');
-            },0);
-        },*/
         init() {   
             this.ex = 0;
             this.ey = 0;
@@ -73,12 +63,9 @@ export default {
             this.height = canvas.height = btns.offsetHeight;
             this.context = context;
             
-           /* console.log(window.getComputedStyle(btns).backgroundColor);*/
-            
             this.ex = e.offsetX;
             this.ey = e.offsetY;
             context.clearRect(0, 0, this.width, this.height);
-            
             
             this.draw();
         },
@@ -89,9 +76,6 @@ export default {
             this.context.fill();
             this.radius += 2;
             if(this.radius < this.width) {
-                /*setInterval(()=>{
-                   requestAnimFrame(this.draw);
-                },1600); */
                this.timer = requestAnimFrame(this.draw);
             }
             else {

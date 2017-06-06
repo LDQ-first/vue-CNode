@@ -39,7 +39,6 @@ export default {
             this.reply(mde, item);
         })
         this.$store.commit('showLoading', true);
-       /* this.$store.commit('showInfo', true);*/
         axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
             .catch(() => {
                 this.time = 5;
@@ -61,7 +60,7 @@ export default {
              })
              .then( article => this.article = article)
              .then( article => {
-                 console.log(article);
+                  this.$store.commit('changeTab', {tab: article.tab});
                  return this.replies = article.replies.reverse();
              })
              .then( () => this.$store.commit('showLoading', false))
@@ -105,11 +104,7 @@ export default {
             const articleBody = this.$refs.articleBody;
             let codes = null;
             if(articleBody) {
-                console.log(articleBody);
                 codes =  articleBody.querySelectorAll('pre code');
-            }
-            else {
-                console.log(document.querySelector('.article-body'));
             }
             if(codes) {
                 for(let code of codes) {
@@ -121,11 +116,7 @@ export default {
         chooseImg() {
               const articleBody = this.$refs.articleBody;
               if(articleBody) {
-                  console.log(articleBody);
                    this.articleImgs = articleBody.querySelectorAll('img:not(.avatar-img)');
-              }
-             else {
-                  console.log(document.querySelector('.article-body'));
               }
               if(this.articleImgs) {
                    this.showModal(this.articleImgs);
@@ -225,12 +216,10 @@ export default {
                 this.$router.push({name: 'Login'});
                  return ;
             }
-            console.log(mde.value());
             if(!mde.value()) {
                 console.log('内容不能为空');
                 return;
             }
-            console.log(item);
             if(!item) {
                  axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
                      accesstoken: this.at,
@@ -244,8 +233,6 @@ export default {
                  })
             }
             else {
-                 console.log(item.id);
-                 console.log(item.author.loginname);
                 axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
                     accesstoken: this.at,
                     content: `@${item.author.loginname}  ${mde.value()}`,

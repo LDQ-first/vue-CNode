@@ -8,10 +8,6 @@ export default {
             accessToken: ''
         }
     },
-    created() {
-      /*  this.accessToken = this.at;*/
-      
-    },
      computed: {
         skinColor() {
             return this.$store.state.skinColor;

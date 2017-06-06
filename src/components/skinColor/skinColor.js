@@ -1,4 +1,3 @@
-/*import changeState from '../../lib/changeState.js'*/
 import Buttons from '../button/button.vue'
 
 export default {
@@ -21,11 +20,9 @@ export default {
     },
     methods: {
         changeShowSkin(value) {
-           /* changeState('showSkin', value);*/
            this.$store.commit('showSkin', value)
         },
         changeSkinColor(color){
-           /* changeState('skinColor', color);*/
            this.$store.commit('changeSkinColor', color);
         },
         bounce(e) {

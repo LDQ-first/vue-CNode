@@ -19,9 +19,6 @@ export default {
         isShowClose() {
             return this.isShowclose === "false" ?  false : true;
         },
-        /*text() {
-            return this.btnText ? this.btnText : '回复'
-        }*/
     },
     mounted(){
        this.setMde();
@@ -36,7 +33,6 @@ export default {
                   privateOpt = Object.assign(privateOpt, {placeholder: `自动添加了@${this.loginnmaeOpt}`});
               }
             const addOpt = Object.assign({element: this.$refs.reply}, privateOpt);
-           /* console.log(addOpt);*/
             this.mde = createSimplemde(addOpt);
         },
         reply(mde) {
@@ -46,7 +42,6 @@ export default {
             else {
                 bus.$emit(`${this.event}`, mde);
             }
-          /*  this.$emit('reply', mde );*/
         },
         hiddenReplay() {
             this.$emit('hiddenReplay');
