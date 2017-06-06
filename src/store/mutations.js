@@ -27,6 +27,7 @@ export default () => {
         },
         changeTab(state, {tab, articleList, isLoading}) {
            state.tab = tab || state.tab;
+           localStorage.tab = tab || state.tab;
            state.articleList = articleList || state.articleList;
            state.isLoading = isLoading;
         },
