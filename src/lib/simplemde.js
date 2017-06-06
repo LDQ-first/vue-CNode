@@ -3,6 +3,12 @@ const Simplemde = require('simplemde/dist/simplemde.min');
 
 const defaultOpt = {
     autoDownloadFontAwesome: false,
+    autosave: {
+        enable: true,
+        uniqueId: 'MyUniqueID',
+        delay: 1000
+    },
+    promptURLs: true,
     spellChecker: false,
 	status: ["autosave", "lines", "words", "cursor"], 
 }

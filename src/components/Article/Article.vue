@@ -49,18 +49,12 @@
             <span class="article-collect">
                 <i class="fa" :class="[isCollected ? 'fa-star' : 'fa-star-o']" aria-hidden="true"></i>收藏主题
             </span>
-             <span class="total-reply">评论数：{{article.replies ? article.replies.length: ''}} </span>
+             <span class="total-reply">评论数：{{replies ? replies.length: ''}} </span>
         </div>
         
      </div>
       <div class="article-reply" ref="articleReply">
           <Reply isShowclose="false" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input"></Reply>
-          
-        <!--<div class="article-reply-input">
-          <textarea v-model.trim="replyContent" type="text" placeholder="请发表评论 (・ω・)"
-          :style="{borderColor: skinColor.replace(/\sl[\S\s]+/, '')}"></textarea>
-           <Buttons @click="reply('')" text="回复" :style="{background:skinColor}"></Buttons>
-        </div>-->
         <div class="article-reply-handle">
             
              <span class="sort-reply">
@@ -101,13 +95,6 @@
                     </span>
                 </div>   
                 <Reply v-show="currentIndex===index" :loginnmaeOpt="item.author.loginname" :item="item" @hiddenReplay="hiddenReplay"></Reply>
-                <!--<transition name="slide-top">
-                    <div v-show="currentIndex===index" class="reply-one">
-                    <input type="text" name="" v-model.trim="replyOneContent" :placeholder="'@' + item.author.loginname">
-                    <button @click="reply(item.id, item.author.loginname)">回复</button>
-                    <button @click="currentIndex=null;replyOneContent=''">取消</button>
-                    </div>
-                </transition>-->
             </div>
             </transition-group>
         
