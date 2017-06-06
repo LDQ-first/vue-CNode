@@ -4,10 +4,6 @@ export default {
     name: 'Msg',
     data() {
         return {
-           /* msgReadTabs: [
-                {title: '未读消息', tag: 'unread', messages: this.msg.hasnot_read_messages.length },
-                {title: '已读消息', tag: 'read', messages: this.msg.has_read_messages.length},
-            ],*/
             msg: {
                 hasnot_read_messages: [],
                 has_read_messages: []
@@ -28,7 +24,6 @@ export default {
                 {title: '已读消息', tag: 'read', messages: this.msg.has_read_messages.length },
             ]
         }
-        
     },
     created() {
         if(!this.at) {

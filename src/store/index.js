@@ -8,10 +8,10 @@ export default new Vuex.Store({
     state: {
         isShowAsideMenu: false,
         /*isShowLogin: false,*/
-        isShowMsg: false,
+        /*isShowMsg: false,*/
         /*isShowNewArticle: false,*/
         /*isShowInfo: false,*/
-        isShowAbout: false,
+       /* isShowAbout: false,*/
         isShowSkin: false,
         skinColor: 'rgba(51, 181, 229, 1)',
         skinColors: [

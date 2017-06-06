@@ -63,7 +63,8 @@ export default {
             this.$router.push({name: 'User', params: {name: this.userInfo.loginname}});
         },
         showAbout() {
-            this.$store.commit('showAbout', true);
+            this.$router.push({name: 'About'});
+            /*this.$store.commit('showAbout', true);*/
         },
         logout() { 
             localStorage.userInfo = '';

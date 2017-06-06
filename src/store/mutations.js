@@ -4,7 +4,7 @@ export default () => {
         showAsideMenu(state, isShow) {
             state.isShowAsideMenu = isShow;
         },
-        showLogin(state, isShow) {
+        /*showLogin(state, isShow) {
             state.isShowLogin = isShow;
         },
         showMsg(state, isShow) {
@@ -12,13 +12,13 @@ export default () => {
         },
         showNewArticle(state, isShow) {
             state.isShowNewArticle = isShow;
-        },
+        },*/
       /*  showInfo(state, isShow) {
             state.isShowInfo = isShow;
         },*/
-        showAbout(state, isShow) {
+        /*showAbout(state, isShow) {
             state.isShowAbout = isShow;
-        },
+        },*/
         showSkin(state, isShow) {
             state.isShowSkin = isShow;
         },

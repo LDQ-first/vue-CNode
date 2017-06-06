@@ -6,6 +6,7 @@ import User from '../components/User/User.vue'
 import Login from '../components/Login/Login.vue'
 import NewArticle from '../components/NewArticle/NewArticle.vue'
 import Msg from '../components/Msg/Msg.vue'
+import About from '../components/About/About.vue'
 
 Vue.use(Router)
 
@@ -49,6 +50,13 @@ const routes = [
       name: 'Msg',
       components: {
         msg: Msg
+      } 
+    },
+    {
+      path: '/about',
+      name: 'About',
+      components: {
+        about: About
       } 
     },
 

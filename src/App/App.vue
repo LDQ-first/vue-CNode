@@ -36,9 +36,14 @@
       <router-view name="newArticle"></router-view>
     </transition>
     
-    <transition name="show">
+    <!--<transition name="show">
       <About v-if="isShowAbout"></About>
+    </transition>-->
+
+    <transition name="show">
+      <router-view name="about"></router-view>
     </transition>
+
     
   </div>
 </template>

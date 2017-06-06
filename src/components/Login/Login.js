@@ -22,8 +22,6 @@ export default {
     },
     methods: {
         hiddenLogin() {
-           /* this.$store.commit('showLogin', false);
-            this.$store.commit('showMsg', false);*/
             this.$router.go(-1);
         },
         login(accessToken) {
