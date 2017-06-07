@@ -34,7 +34,8 @@
                         <i class="fa fa-eye" aria-hidden="true"></i>{{article.visit_count}}
                     </span>
                     <span class="date"> 
-                        {{changeTime(article.last_reply_at)}}
+                        {{changeTime(article.create_at)}}
+                        最后一次编辑 {{changeTime(article.last_reply_at)}}
                     </span>
                     <span class="tab">
                          来自 {{types[article.tab]}}

@@ -30,7 +30,7 @@
                                 <i class="fa fa-eye" aria-hidden="true"></i>{{item.visit_count}}
                             </span>
                             <span class="date"> 
-                                {{changeTime(item.last_reply_at)}}
+                                {{changeTime(item.create_at)}}
                             </span>
                         </div>
                     </div>
