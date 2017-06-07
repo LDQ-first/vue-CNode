@@ -222,8 +222,9 @@ export default {
                 console.log('内容不能为空');
                 return;
             }
+            console.log(mde.value());
             if(!item) {
-                 axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
+                 axios.post(`https://lcnodejs.org/api/v1/topic/${this.id}/replies`, {
                      accesstoken: this.at,
                      content: mde.value()
                  }).then(result => {
@@ -235,7 +236,7 @@ export default {
                  })
             }
             else {
-                axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
+                axios.post(`https://lcnodejs.org/api/v1/topic/${this.id}/replies`, {
                     accesstoken: this.at,
                     content: `@${item.author.loginname}  ${mde.value()}`,
                     reply_id: item.id
