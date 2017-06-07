@@ -52,7 +52,7 @@ export default {
             if(pathArr.indexOf(this.$route.path) === -1) {
                 return;
             }
-            if(!this.over) {
+            if(!this.over && !this.isLoading) {
                 let isOver = e.target.clientHeight + e.target.scrollTop === e.target.scrollHeight;
                 if(isOver) {
                     this.page ++;
