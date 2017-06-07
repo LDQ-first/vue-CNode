@@ -52,12 +52,7 @@
         transition: 1s linear;
         .loading {
             flex: 1;
-            display: flex;
-            justify-content: center;
             align-self: center;
-            font-size: 50px;
-            .fa-circle-o-notch {
-            }
         }
     }
     

@@ -37,11 +37,7 @@
                 </li>
             </transition-group>
         </ul>
-
-        <div class="more">
-            <!--<i v-show="isMore" class="icon-more"></i>-->
-            <i v-show="isMore" class="fa fa-spin fa-circle-o-notch" aria-hidden="true" :style="{color:skinColor.replace(/\sl[\S\s]+/, '')}"></i>
-        </div>
+        <AticleLoading v-show="isMore"></AticleLoading>
     </div>
 </template>
 

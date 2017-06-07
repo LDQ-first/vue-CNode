@@ -57,6 +57,7 @@
         }
         .msg-list {
             flex: 1;
+            overflow-y: auto;
             .msg-item {
                 display: flex;
                 padding: 0.2rem;

@@ -141,31 +141,33 @@ export default {
                     }
                 }
                  axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
-                      .then( result => {
-                            return result.data.data;
-                    })
-                    .then( article => {
-                        return this.replies = sortFun(article.replies);
-                    })
-                    .then( ()=> {
-                        this.chooseImg();
-                        this.chooseCode();
-                    })
+                      .then( result => result.data.data)
+                      .then( article => this.replies = sortFun(article.replies))
+                      .then( ()=> {
+                          this.chooseImg();
+                          this.chooseCode();
+                      })
 
                    const sortFun =  (replies) => {
-                    return replies.sort((a, b) => {
-                        this.sortWay = type;
-                        if(type === 'normal' ) {
-                            return new Date(b.create_at) - new Date(a.create_at);
-                        }
-                        else if (type === 'farthest') {
-                            return new Date(a.create_at) - new Date(b.create_at);
-                        }
-                        else if(type === 'ups') {
-                            return b.ups.length - a.ups.length;
-                        }
-                 })     
-               }      
+                       if(replies.length === 1) {
+                            this.sortWay = type;
+                           return replies;
+                       }
+                       else {
+                            return replies.sort((a, b) => {
+                                this.sortWay = type;
+                                if(type === 'normal' ) {
+                                    return new Date(b.create_at) - new Date(a.create_at);
+                                }
+                                else if (type === 'farthest') {
+                                    return new Date(a.create_at) - new Date(b.create_at);
+                                }
+                                else if(type === 'ups') {
+                                    return b.ups.length - a.ups.length;
+                                }
+                            })     
+                       }
+                   }      
             }
         },
         collect() {

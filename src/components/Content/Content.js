@@ -1,11 +1,12 @@
 import axios from 'axios'
 import bus from '../../lib/bus.js'
+import AticleLoading from '../AticleLoading/AticleLoading.vue'
 
 export default {
     name: 'Content',
     data() {
         return {
-            page: 3
+            page: 1
         }
     },
     computed: {
@@ -24,6 +25,9 @@ export default {
         over() {
             return this.$store.state.over;
         }
+    },
+    components: {
+        AticleLoading
     },
     methods: {
         changeTab(tab, page = 1) {
@@ -51,8 +55,8 @@ export default {
             if(!this.over) {
                 let isOver = e.target.clientHeight + e.target.scrollTop === e.target.scrollHeight;
                 if(isOver) {
-                    this.$store.commit('changeMore', true);
                     this.page ++;
+                    this.$store.commit('changeMore', true);
                     this.$store.commit('changeTab',{isLoading: true});
                     axios.get(`https://cnodejs.org/api/v1/topics?page=${this.page}&tab=${this.tab}`)
                           .then(result =>result.data.data)
