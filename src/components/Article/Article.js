@@ -29,6 +29,7 @@ export default {
             sortWay: 'normal',
             infos: {},
             currentIndex: null, // 回复某个人的 index
+            isActive: false
         }
     },
     created() {
@@ -224,8 +225,10 @@ export default {
             }
             console.log(mde.value());
             console.log(this.id);
-            if(!item) {
-                 axios.post(`https://lcnodejs.org/api/v1/topic/${this.id}/replies`, {
+            
+            if(!item && !this.isActive) {
+                this.isActive = true;
+                 axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
                      accesstoken: this.at,
                      content: mde.value()
                  }).then(result => {
@@ -234,10 +237,15 @@ export default {
                       }
                  }).then(()=> {
                      mde.value('');
+                     this.isActive = false;
+                 })
+                 .catch(() => {
+                     this.isActive = false;
                  })
             }
-            else {
-                axios.post(`https://lcnodejs.org/api/v1/topic/${this.id}/replies`, {
+            else if(item && !this.isActive){
+                this.isActive = true;
+                axios.post(`https://cnodejs.org/api/v1/topic/${this.id}/replies`, {
                     accesstoken: this.at,
                     content: `@${item.author.loginname}  ${mde.value()}`,
                     reply_id: item.id
@@ -248,7 +256,11 @@ export default {
                 }).then(() => {
                     this.hiddenReplay();
                     mde.value('');
+                    this.isActive = false;
                 })
+                .catch(() => {
+                     this.isActive = false;
+                 })
             }
         },
         hiddenReplay() {

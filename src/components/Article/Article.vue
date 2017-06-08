@@ -55,7 +55,9 @@
         
      </div>
       <div class="article-reply" ref="articleReply">
+          <!--<keep-alive>-->
           <Reply isShowclose="false" placeholderOpt='请登录后再发表评论 (・ω・)' class="article-reply-input" event="common"></Reply>
+         <!-- </keep-alive>-->
         <div class="article-reply-handle">
             
              <span class="sort-reply">
@@ -83,7 +85,7 @@
                                 {{index + 1}}楼
                             </span>
                             <span class="article-reply-option">
-                                <span @click="currentIndex=index" class="article-reply-at" :style="{background:skinColor}">回复</span>
+                                
                                 <i @click="ups(index, item.id, item)" :class="[item.ups.indexOf(userInfo.id) !== -1 ? 'fa-thumbs-up' : 'fa-thumbs-o-up']" 
                                 class="icon-reply-at fa"></i>
                                 <span class="ups-count">{{ item.ups.length }}</span>
@@ -93,6 +95,9 @@
                     <div v-html="item.content" class="article-reply-content"></div>
                     <span class="article-reply-data">
                         {{changeTime(item.create_at)}}
+                    </span>
+                    <span @click="currentIndex=index" class="article-reply-at" :style="{background:skinColor}">
+                        <i class="fa fa-reply" aria-hidden="true"></i>回复
                     </span>
                 </div>   
                 <Reply v-show="currentIndex===index" :loginnmaeOpt="item.author.loginname" :item="item" 

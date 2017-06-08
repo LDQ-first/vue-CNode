@@ -161,11 +161,7 @@
                         .article-reply-option {
                             position: absolute;
                             right: 0.2rem;
-                            .article-reply-at {
-                                padding: 0.1rem;
-                                margin: 0 0.1rem;
-                                cursor: pointer;
-                            }
+                            
                             .icon-reply-at {
                                 cursor: pointer;
                             }
@@ -180,6 +176,12 @@
                      font-size: 0.2rem;
                      color: #808080;
                  }
+                 .article-reply-at {
+                    padding: 0.05rem 0.1rem;
+                    margin: 0 0.1rem;
+                    cursor: pointer;
+                    font-size: 0.24rem;
+                }
              }
         }
         

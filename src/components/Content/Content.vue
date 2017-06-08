@@ -22,7 +22,9 @@
         </div>
         <div ref="articles" @scroll="scroll($event)" class="article">
             <AticleLoading v-show="isLoading" class="loading"></AticleLoading>
-            <router-view></router-view>
+            <!--<keep-alive>-->
+                <router-view></router-view>
+           <!-- </keep-alive>-->
         </div>
     </div>
 </template>

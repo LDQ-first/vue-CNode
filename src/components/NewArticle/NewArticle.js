@@ -16,7 +16,7 @@ export default {
             newArticleType: '客户端测试',
             type: 'dev',
             newArticleTitle: '',
-
+            isActive: false
         }
     },
     computed: {
@@ -55,25 +55,29 @@ export default {
                     this.type = type;
                 }
             }
-             console.log(this.type);
-             axios.post(`https://lcnodejs.org/api/v1/topics`, {
-                 accesstoken: this.at,
-                 title: this.newArticleTitle,
-                 tab: this.type,
-                 content: mde.value()
-             })
-             .then(result => {
-                 if (result.data && result.data.success) {
-                      this.$store.commit('showAsideMenu', false);
-                      this.$store.commit('changeTab', this.type)
-                      this.$router.push({name: 'Article', params: {id: result.data.topic_id}});
-                } else {
-                    console.log('发布失败');
-                }
-             })
-            
-
+             console.log(!this.isActive);
+             if(!this.isActive) {
+                this.isActive = true;
+                axios.post(`https://cnodejs.org/api/v1/topics`, {
+                    accesstoken: this.at,
+                    title: this.newArticleTitle,
+                    tab: this.type,
+                    content: mde.value()
+                })
+                .then(result => {
+                    if (result.data && result.data.success) {
+                        this.$store.commit('showAsideMenu', false);
+                        this.$store.commit('changeTab', this.type)
+                        this.$router.push({name: 'Article', params: {id: result.data.topic_id}});
+                    } else {
+                        console.log('发布失败');
+                    }
+                    this.isActive = false;
+                })
+                .catch(() => {
+                     this.isActive = false;
+                 })
+             }
         }
-
     }
 }

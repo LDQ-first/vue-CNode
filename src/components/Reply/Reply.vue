@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <Buttons @click="reply(mde)" :text="text" :style="{background:skinColor}"></Buttons>
+                <Buttons @click="reply(mde)" :text="text" :style="{background:skinColor}" ref="replyBtn"></Buttons>
             </div>
         </div>
     </transition>

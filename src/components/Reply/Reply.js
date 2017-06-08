@@ -9,7 +9,8 @@ export default {
     data() {
         return {
             mde: null,
-            text: this.btnText ? this.btnText : '回复'
+            text: this.btnText ? this.btnText : '回复',
+            isActive: false
         }
     },
     computed: {
@@ -20,22 +21,35 @@ export default {
             return this.isShowclose === "false" ?  false : true;
         },
     },
+    created() {
+      /* console.log('created');*/
+    },
     mounted(){
+       /* console.log('mounted');*/
+
        this.setMde();
+    },
+    beforeDestory() {
+
     },
     methods: {
         setMde() {
-              let privateOpt = {};
-              if(this.placeholderOpt) {
-                 privateOpt = Object.assign(privateOpt, {placeholder: this.placeholderOpt});
-              }
-              else if(this.loginnmaeOpt) {
-                  privateOpt = Object.assign(privateOpt, {placeholder: `自动添加了@${this.loginnmaeOpt}`});
-              }
+           
+            const editorToolbar = document.querySelector('.editor-toolbar');
+            console.log(editorToolbar);
+            let privateOpt = {};
+            if(this.placeholderOpt) {
+                privateOpt = Object.assign(privateOpt, {placeholder: this.placeholderOpt});
+            }
+            else if(this.loginnmaeOpt) {
+                privateOpt = Object.assign(privateOpt, {placeholder: `自动添加了@${this.loginnmaeOpt}`});
+            }
             const addOpt = Object.assign({element: this.$refs.reply}, privateOpt);
             this.mde = createSimplemde(addOpt);
         },
         reply(mde) {
+             console.log(mde);
+             console.log(this.event);
             if(this.item) {
                 bus.$emit(`${this.event}`, mde, this.item );
             }
