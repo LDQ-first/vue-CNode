@@ -56,7 +56,7 @@ export default {
                 }
             }
              console.log(this.type);
-             axios.post(`https://cnodejs.org/api/v1/topics`, {
+             axios.post(`https://lcnodejs.org/api/v1/topics`, {
                  accesstoken: this.at,
                  title: this.newArticleTitle,
                  tab: this.type,

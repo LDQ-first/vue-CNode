@@ -13,7 +13,8 @@ export default {
             context: '',
             width: 0,
             height: 0,
-            timer: null
+            timer: null,
+            isActive: false
         }
     },
     methods: {
@@ -30,9 +31,17 @@ export default {
             this.$refs.btnCan.style.zIndex = 0;
         },
         click(e) {
-            setTimeout(()=>{
-                this.$emit('click', e);
-            },400);
+            if(!this.isActive) {
+                new Promise((resolve, reject) => {
+                     this.isActive = true;
+                     setTimeout(()=>{   
+                        this.$emit('click', e);
+                        resolve();
+                    },800);
+                } ).then(() => {
+                    this.isActive = false;
+                })
+            }
         },
         init() {   
             this.ex = 0;

@@ -223,6 +223,7 @@ export default {
                 return;
             }
             console.log(mde.value());
+            console.log(this.id);
             if(!item) {
                  axios.post(`https://lcnodejs.org/api/v1/topic/${this.id}/replies`, {
                      accesstoken: this.at,
