@@ -19,6 +19,7 @@ import About from '../components/About/About.vue'
 
 
 
+
 Vue.prototype.moment = moment;
 Vue.prototype.changeTime = time => 
         moment(time).startOf('minute').fromNow()

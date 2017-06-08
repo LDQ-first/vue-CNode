@@ -21,7 +21,8 @@
                         <div class="avatar">
                             <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                             borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
-                            <img :src="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">
+                           <!-- <img :src="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">-->
+                            <img v-lazy="article.author? article.author.avatar_url : ''" class="avatar-img" alt="">
                         </div>
                         {{article.author && article.author.loginname}}
                     </router-link> 
@@ -76,7 +77,8 @@
                                 <div class="avatar">
                                     <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                                     borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
-                                    <img :src="item.author? item.author.avatar_url : ''" class="avatar-img" alt="">
+                                   <!-- <img :src="item.author? item.author.avatar_url : ''" class="avatar-img" alt="">-->
+                                    <img v-lazy="item.author ? item.author.avatar_url: ''" class="avatar-img" alt="">
                                 </div>
                                 {{item.author.loginname}}
                             </router-link>
