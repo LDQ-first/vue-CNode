@@ -3,7 +3,7 @@
         <div class="title">
             <i class="fa fa-bars" aria-hidden="true" 
             @click.stop.prevent="showAsideMenu"></i>
-            <h1 class="logo" title="CNode">
+            <h1 class="logo">
                 <span class="logo-text color-blue">C</span>
                 <span class="logo-text color-red">N</span>
                 <span class="logo-text color-yellow">o</span>

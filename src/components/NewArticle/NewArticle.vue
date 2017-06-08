@@ -19,14 +19,9 @@
             </div>
 
             <div class="new-article-body">
-                <!--<textarea v-model="newArticleContent" placeholder="请输入内容"></textarea>-->
                 <Reply placeholderOpt='请发表主题 (づ｡◕ᴗᴗ◕｡)づ' isShowclose="false" :btnText="'发布'"  event="newArticle"
                 @newArticle="sendNewArticle"></Reply>
             </div>
-
-            <!--<div class="new-article-send">
-                <Buttons @click="sendNewArticle" text="发布"></Buttons>
-            </div>-->
         </div>
    </div>
 </template>

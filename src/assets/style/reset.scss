@@ -475,3 +475,14 @@ a {
   transform: translateX(200px);
   opacity: 0;
 }
+
+.toTop-enter-active {
+  transition: all .5s ease;
+}
+.toTop-leave-active {
+  transition: all .6s ease-out;
+}
+.toTop-enter, .toTop-leave-active {
+  transform: translateY(-2400%);
+  opacity: 0;
+}

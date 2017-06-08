@@ -1,5 +1,5 @@
 <template>
-    <transition name="slide-bottom">
+    <transition name="toTop">
         <div v-show="isShowTop" class="top">
             <i @click.stop.prevent="toTop" class="fa fa-fighter-jet fa-rotate-270" aria-hidden="true"
             :style="{color:skinColor.replace(/\sl[\S\s]+/, '')}"></i>

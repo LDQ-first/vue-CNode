@@ -23,8 +23,13 @@
     }
     .logo {
         font-size: 0.32rem;
+        cursor: default;
         .logo-text {
+            display: inline-block;
             text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+            &:hover {
+                transform: translateY(-0.1rem);
+            }
         }
     }
     .hasMsg {
