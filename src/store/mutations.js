@@ -33,6 +33,9 @@ export default () => {
         },
         updateCollectTopics(state, collectTopics) {
             state.collectTopics = collectTopics;
+        },
+        updateMsgCount(state, msgCount) {
+            state.msgCount = msgCount;
         }
 
     }

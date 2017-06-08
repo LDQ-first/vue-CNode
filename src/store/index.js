@@ -24,6 +24,7 @@ export default new Vuex.Store({
                   { avatar_url: '', id: '', loginname: '', success: false},
         at: localStorage.at || '',
         collectTopics: [],
+        msgCount: 0,
         
         
 },

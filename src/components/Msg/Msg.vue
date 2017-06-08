@@ -33,7 +33,7 @@
                             {{ item.author.loginname }}
                         </router-link>
                         回复你的话题
-                        <router-link class="title" :to="{name: 'Article', params: {id: item.topic.id}}">
+                        <router-link class="title" :to="{name: 'Article', params: {id: item.topic.id}}" @click.native="markOne(item.id)">
                             {{ item.topic.title }}
                         </router-link>
                         <div class="msg-data">

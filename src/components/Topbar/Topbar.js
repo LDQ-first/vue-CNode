@@ -4,7 +4,7 @@ export default {
     name: 'Topbar',
     data() {
         return {
-            msgCount: 0
+           /* msgCount: 0*/
         }
     },
     computed: {
@@ -13,6 +13,9 @@ export default {
         },
         at() {
             return this.$store.state.at;
+        },
+        msgCount() {
+            return this.$store.state.msgCount;
         }
     },
     created() {
@@ -23,7 +26,7 @@ export default {
              .then(result => result.data) 
              .then(data => {
                  if(data.success) {
-                     this.msgCount = data.data;
+                     this.$store.commit('updateMsgCount', data.data);
                  }
              })
     },

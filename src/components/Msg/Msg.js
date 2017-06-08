@@ -40,6 +40,21 @@ export default {
         },
         changeTab(tag) {
             this.tag = tag;
+        },
+        markOne(id) {
+             axios.post(`https://cnodejs.org/api/v1//message/mark_one/${id}`, {
+                 accesstoken: this.at
+             }).then(result => {
+                 if(result.data.success) {
+                  axios.get(`https://cnodejs.org/api/v1/message/count?accesstoken=${this.at}`)
+                        .then(result => result.data) 
+                        .then(data => {
+                            if(data.success) {
+                                this.$store.commit('updateMsgCount', data.data);
+                            }
+                        })
+                }
+             })
         }
     }
 }
