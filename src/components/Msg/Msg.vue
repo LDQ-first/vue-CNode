@@ -25,7 +25,8 @@
                         <div class="avatar ">
                             <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                             borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
-                            <img :src="item ? item.author.avatar_url : ''" class="avatar-img" alt="">
+                           <!-- <img :src="item ? item.author.avatar_url : ''" class="avatar-img" alt="">-->
+                            <img v-lazy="item ? item.author.avatar_url : ''" class="avatar-img" alt="">
                         </div> 
                     </div>
                     <div class="msg-reply">

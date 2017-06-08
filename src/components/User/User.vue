@@ -49,7 +49,8 @@
                                         :title="topic.author.loginname" v-show="topic.author">
                                             <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                                             borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
-                                            <img :src="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">
+                                            <!--<img :src="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">-->
+                                            <img v-lazy="topic.author? topic.author.avatar_url : ''" class="avatar-img" alt="">
                                         </router-link>
                                     </div>
                                     <div class="topic-content-title">
