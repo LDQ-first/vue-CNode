@@ -11,11 +11,15 @@
         display: inline-block;
         position: absolute;
         left: 50%;
-        top: 20%;
-        transform: translate(-50%, -20%);
+        top: 40%;
+        transform: translate(-50%, -40%);
+        min-width: 80%;
+        text-align: center;
     }
     .logoImg {
+        margin: 0.2rem;
         img {
+             
             margin: 0;
         }
     }
