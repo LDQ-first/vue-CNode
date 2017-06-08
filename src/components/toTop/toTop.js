@@ -28,7 +28,7 @@ export default {
                 if (this.e.scrollTop <= 0) {
                     clearInterval(time);
                 }
-                this.e.scrollTop -= 120;
+                this.e.scrollTop -= 240;
             }, 1000/60)
         }
     }
