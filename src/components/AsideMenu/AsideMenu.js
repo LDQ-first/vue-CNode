@@ -41,7 +41,6 @@ export default {
                 return ;
             }
             this.$router.push({name: 'Msg'});
-            /*this.$store.commit('showMsg', true);*/
         },
         showNewArticle() {
             if(!this.at) {
@@ -49,12 +48,7 @@ export default {
                 return ;
             }
             this.$router.push({name: 'NewArticle'});
-            /*this.$store.commit('showNewArticle', true);*/
-
         },
-      /*  showInfo() {
-            this.$store.commit('showInfo', true);
-        },*/
         showUserCenter() {
             if(!this.at) {
                 this.$router.push({name: 'Login'});
@@ -64,7 +58,6 @@ export default {
         },
         showAbout() {
             this.$router.push({name: 'About'});
-            /*this.$store.commit('showAbout', true);*/
         },
         logout() { 
             localStorage.userInfo = '';

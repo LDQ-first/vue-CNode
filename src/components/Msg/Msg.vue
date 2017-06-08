@@ -22,13 +22,13 @@
                 <div v-for="(item, index) of (tag === 'unread' ? msg.hasnot_read_messages : msg.has_read_messages)" 
                 :key="index" class="msg-item">
                     <div class="msg-author-avatar">
-                        <div class="avatar " @click="view">
+                        <div class="avatar ">
                             <span class="img-border" :style="{borderTopColor: skinColor.replace(/\sl[\S\s]+/, ''),
                             borderRightColor: skinColor.replace(/\sl[\S\s]+/, '')}"></span>
                             <img :src="item ? item.author.avatar_url : ''" class="avatar-img" alt="">
                         </div> 
                     </div>
-                    <div class="msg-reply" @click="view">
+                    <div class="msg-reply">
                         <router-link  class="title" :to="{name: 'User', params: {name: item.author.loginname}}">
                             {{ item.author.loginname }}
                         </router-link>

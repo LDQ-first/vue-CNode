@@ -1,7 +1,7 @@
 import Reply from '../Reply/Reply.vue'
 import axios from 'axios'
 import Buttons from '../button/button.vue'
-import bus from '../../lib/bus.js'
+
 
 export default {
     name: 'NewArticle',
@@ -26,11 +26,6 @@ export default {
         at() {
             return this.$store.state.at;
         },
-    },
-    created() {
-        bus.$on('newArticle', (mde) => {
-            this.sendNewArticle(mde);
-        })
     },
     components: {
         Reply,

@@ -33,12 +33,6 @@ export default {
         }
     },
     created() {
-        bus.$on('common', mde => {
-            this.reply(mde);
-        })
-        bus.$on('reply', (mde, item) => {
-            this.reply(mde, item);
-        })
         this.$store.commit('showLoading', true);
         axios.get(`https://cnodejs.org/api/v1/topic/${this.id}`)
             .catch(() => {
@@ -101,6 +95,9 @@ export default {
         }
     },
     methods: {
+        clicks(a) {
+            console.log(a);
+        },
         chooseCode() {
             const articleBody = this.$refs.articleBody;
             let codes = null;

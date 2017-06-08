@@ -1,7 +1,7 @@
 import Buttons from '../button/button.vue'
 import Close from '../close/close.vue'
 import createSimplemde from '../../lib/simplemde.js'
-import bus from '../../lib/bus.js'
+
 
 export default {
     name: 'Reply',
@@ -21,22 +21,11 @@ export default {
             return this.isShowclose === "false" ?  false : true;
         },
     },
-    created() {
-      /* console.log('created');*/
-    },
     mounted(){
-       /* console.log('mounted');*/
-
        this.setMde();
-    },
-    beforeDestory() {
-
     },
     methods: {
         setMde() {
-           
-            const editorToolbar = document.querySelector('.editor-toolbar');
-            console.log(editorToolbar);
             let privateOpt = {};
             if(this.placeholderOpt) {
                 privateOpt = Object.assign(privateOpt, {placeholder: this.placeholderOpt});
@@ -48,13 +37,11 @@ export default {
             this.mde = createSimplemde(addOpt);
         },
         reply(mde) {
-             console.log(mde);
-             console.log(this.event);
             if(this.item) {
-                bus.$emit(`${this.event}`, mde, this.item );
+                this.$emit(`${this.event}`, mde, this.item);
             }
             else {
-                bus.$emit(`${this.event}`, mde);
+                this.$emit(`${this.event}`, mde );
             }
         },
         hiddenReplay() {

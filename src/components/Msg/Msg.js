@@ -40,9 +40,6 @@ export default {
         },
         changeTab(tag) {
             this.tag = tag;
-        },
-        view() {
-            this.$store.commit('showMsg', false);
         }
     }
 }
