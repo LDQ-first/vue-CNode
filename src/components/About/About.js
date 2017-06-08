@@ -8,6 +8,7 @@ export default {
              {name: 'Vue2.2', des: '前端框架'},
              {name: 'Vuex', des: '状态管理,组件通信'}, 
              {name: 'Vue-router', des: '配置路由，组件切换'},
+             {name: 'Vue-lazyload', des: '图片懒加载'},
              {name: 'ES6/7', des: 'JS版本'},
              {name: 'Webpack', des: '模块化处理，编译打包'},
              {name: 'Express', des: '服务器'},

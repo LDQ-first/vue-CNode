@@ -53,7 +53,7 @@ export default {
                      return result.data.data;
                  }
              })
-             .then( article => this.article = article)
+             .then( article =>  this.article = article)
              .then( article => {
                   this.$store.commit('changeTab', {tab: article.tab});
                  return this.replies = article.replies.reverse();

@@ -3,11 +3,9 @@ import '../lib/dynamicRem.js'
 import store from '../store/index'
 import { router, routes } from '../router/index.js'
 import Vue from 'vue'
-/*import axios from 'axios'
-Vue.use(axios);*/
 import moment from 'moment'
 
-
+import BeginLoading from '../components/beginLoading/beginLoading.vue'
 import Topbar from '../components/Topbar/Topbar.vue'
 import AsideMenu from  '../components/AsideMenu/AsideMenu.vue'
 import NContent from '../components/Content/Content.vue'
@@ -34,6 +32,11 @@ export default {
   name: 'App',
   store,
   router,
+  data() {
+      return {
+        BeginLoading: true
+      }
+  },
   computed: {
         isShowLogin() {
                 return this.$store.state.isShowLogin;
@@ -60,12 +63,12 @@ export default {
         }
     },
   components: {
+      BeginLoading,
       Topbar,
       AsideMenu,
       NContent,
       ToTop,
       Login,
-     /* Info,*/
       Msg,
       NewArticle,
       About

@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <transition name="loading" mode="out-in">
+      <BeginLoading v-show="BeginLoading" @BeginLoading="BeginLoading=false"></BeginLoading>
+    </transition>
+
     <Topbar></Topbar>
 
     <AsideMenu></AsideMenu>

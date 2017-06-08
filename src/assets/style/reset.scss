@@ -359,6 +359,24 @@ a {
     background: #3FB3A8;
 }
 
+
+.loading-enter-active{
+    transition: all 0.8s ease-in-out;
+    transform: translateZ(0);
+    opacity: 1;
+  }
+  .loading-enter{
+    transition: all 0.8s ease-in-out;
+    transform: translateZ(-100%);
+    opacity: 0;
+  }
+  .loading-leave-active {
+    transition: all 0.8s ease-in-out;
+    transform: translateZ(-100%);
+    opacity: 0;
+  }
+
+
 .slide-fade-enter-active {
   transition: all .6s ease;
 }
