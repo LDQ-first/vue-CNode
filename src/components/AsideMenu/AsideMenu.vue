@@ -5,7 +5,7 @@
                  <div class="user" >
                       <Close @close="hiddenAsideMenu"></Close>
                       <Buttons class="user-avatar" @click="showLogin" >
-                        <img v-lazy="userInfo ? userInfo.avatar_url : '' " >
+                        <img src="userInfo ? userInfo.avatar_url : '' " >
                       </Buttons>
                       <div class="username">
                           {{userInfo.success ? userInfo.loginname : '点击头像登录'}}
