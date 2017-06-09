@@ -1,5 +1,5 @@
 import axios from 'axios'
-import AticleLoading from '../AticleLoading/AticleLoading.vue'
+import ArticleLoading from '../ArticleLoading/ArticleLoading.vue'
 
 export default {
     name: 'ArticleList',
@@ -31,7 +31,7 @@ export default {
         this.renFirScreen(this.tab);
     },
     components: {
-        AticleLoading
+        ArticleLoading
     },
     methods: {
         isShowArticle(item, tab) {

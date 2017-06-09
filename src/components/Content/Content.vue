@@ -21,7 +21,7 @@
             </div>
         </div>
         <div ref="articles" @scroll="scroll($event)" class="article">
-            <AticleLoading v-show="isLoading" class="loading"></AticleLoading>
+            <ArticleLoading v-show="isLoading" class="loading"></ArticleLoading>
             <router-view></router-view>
         </div>
     </div>

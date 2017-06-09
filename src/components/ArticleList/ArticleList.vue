@@ -38,7 +38,7 @@
                 </li>
             </transition-group>
         </ul>
-        <AticleLoading v-show="isMore"></AticleLoading>
+        <ArticleLoading v-show="isMore"></ArticleLoading>
     </div>
 </template>
 

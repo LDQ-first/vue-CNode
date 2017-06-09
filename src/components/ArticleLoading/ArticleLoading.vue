@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    import './AticleLoading.scss'
-    import AticleLoading from './AticleLoading.js'
-    export default AticleLoading
+    import './ArticleLoading.scss'
+    import ArticleLoading from './ArticleLoading.js'
+    export default ArticleLoading
 </script>

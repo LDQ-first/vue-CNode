@@ -1,6 +1,6 @@
 import axios from 'axios'
 import bus from '../../lib/bus.js'
-import AticleLoading from '../AticleLoading/AticleLoading.vue'
+import ArticleLoading from '../ArticleLoading/ArticleLoading.vue'
 
 export default {
     name: 'Content',
@@ -27,7 +27,7 @@ export default {
         }
     },
     components: {
-        AticleLoading
+        ArticleLoading
     },
     methods: {
         changeTab(tab, page = 1) {
