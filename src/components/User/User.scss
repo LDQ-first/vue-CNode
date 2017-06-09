@@ -15,13 +15,20 @@
         height: 100%;
         margin: 0px auto;
         display: flex;
-        flex-direction: column;
-        position: relative;
+       /* flex-direction: column;*/
+       @media screen and (max-width: 500px) {
+           flex-direction: column;
+       }
         .user-info {
-            width: 100%;
-            height: 10em;
-            /*margin-bottom: 0.3rem;*/
-            position: absolute;
+            width: 2.4rem;
+            height: 100%;
+            position: relative;
+            margin-right: 0.1rem;
+             @media screen and (max-width: 500px) {
+                width: 100%;
+                height: 3rem;
+                margin-bottom: 0.1rem;
+            }
             .user-info-avatar {
                 top: 0.2rem;
                 left: 50%;
@@ -33,6 +40,8 @@
                 top: 1.2rem;
                 transform: translate(-50%, 0);
                 color: #414141;
+                width: 2rem;
+                text-align: center;
             }
             .user-score {
                 position: absolute;
@@ -96,11 +105,11 @@
             flex: 1;
             display: flex;
             background: #01508A;
-            /*position: absolute;
-            top: 3.3rem;*/
-            margin-top: 3.3rem;
             overflow-y: auto;
             overflow-x: hidden;
+             @media screen and (max-width: 500px) {
+               /*margin-top: 3.3rem;*/
+            }
             .user-topic-nav {
                 width: 2rem;
                 border-right: 4px solid;

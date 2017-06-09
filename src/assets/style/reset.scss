@@ -179,21 +179,23 @@ img {
 a {
   display: inline-block;
   font-size: 0.22rem;
-  line-height: 1em;
   color: #0C69CD;
   margin: 0.1rem 0;
   text-decoration: none;
   position: relative;
   &::before , &::after{
     position: absolute;
+
   }
   &.menu {
     &::before , &::after{
-      font-size: 0.22rem;
-      font-weight: bold;
-      color: #FFF;
-      opacity: 0;
-      transition: all .5s ease-in-out;
+        font-size: 0.22rem;
+        font-weight: bold;
+        color: #FFF;
+        opacity: 0;
+        transition: all .5s ease-in-out;
+        top: 50%;
+        transform: translateY(-50%);
       }
       &::before {
         content: '[';
