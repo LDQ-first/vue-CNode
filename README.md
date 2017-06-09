@@ -25,14 +25,14 @@
 * **loaclStorge**: [ 本地存储用户信息 ]
 
 
-##手机可访问二维码
+## 手机可访问二维码
 
 ![Vue版CNode](https://ldq-first.github.io/vue-CNode-1/static/img/mobile.png)
 
-##源码
+## 源码
 [GitHub](https://github.com/LDQ-first/vue-CNode-1)
 
-##项目结构
+## 项目结构
 
 ![项目结构思维导图](https://ldq-first.github.io/vue-CNode-1/static/img/项目结构.jpg)
 
