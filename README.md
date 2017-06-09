@@ -33,6 +33,7 @@
 
 
 ##手机可访问二维码
+
 ![Vue版CNode](https://ldq-first.github.io/vue-CNode-1/static/img/mobile.png)
 
 ##源码
