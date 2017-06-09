@@ -10,19 +10,19 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
                 0 2px 10px 0 rgba(0,0,0,.12);
     .fa {
+         font-size: 0.4rem;
       &.fa-bars {
           position: absolute;
           z-index: 1;
           display: inline-block;
           flex: 1;
-          font-size: 0.3rem;
-          left: 0.2rem;
+          left: 0.4rem;
           top: 0.2rem;
           cursor: pointer;
       }
     }
     .logo {
-        font-size: 0.32rem;
+        font-size: 0.4rem;
         cursor: default;
         .logo-text {
             display: inline-block;

@@ -65,7 +65,7 @@ export default {
             this.$emit('BeginLoading');
             }
             else {
-                this.speed += 0.3;
+                this.speed += 0.4;
             }
         },
         whiteCircle() {
