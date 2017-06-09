@@ -21,7 +21,7 @@
 * **Simplemde**: [ markdown编辑器 ]
 * **Highlight.js**: [ 语法高亮 ]
 * **Flex**: [ 弹性布局 ]
-* **Canvas**: [ 按钮的波纹效果 ]
+* **Canvas**: [ 首页loading效果，按钮的波纹效果 ]
 * **loaclStorge**: [ 本地存储用户信息 ]
 
 
