@@ -33,6 +33,9 @@ export default {
         axios.get(`https://cnodejs.org/api/v1/messages?accesstoken=${this.at}`)
              .then(result => result.data.data)
              .then(msg => this.msg = msg)
+             .then(msg => {
+                 this.$store.commit('updateMsgCount', msg.hasnot_read_messages.length);
+             })
     },
     methods: {
         hiddenMsg() {

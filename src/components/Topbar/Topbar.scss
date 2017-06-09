@@ -10,6 +10,7 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),
                 0 2px 10px 0 rgba(0,0,0,.12);
     line-height: 1em;
+    padding-bottom: 0.6em; 
     .fa {
          font-size: 0.4rem;
       &.fa-bars {
@@ -17,14 +18,16 @@
           z-index: 1;
           display: inline-block;
           flex: 1;
-          left: 0.4rem;
-          top: 0.2rem;
+          left: 0.3rem;
+          bottom: 0.3em;
           cursor: pointer;
       }
     }
     .logo {
         font-size: 0.4rem;
         cursor: default;
+        margin: 0;
+        margin-top: 0.67em;
         .logo-text {
             display: inline-block;
             text-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
@@ -36,8 +39,8 @@
     .hasMsg {
        display: inline-block;
        position: absolute;
-       right: 0.4rem;
-       top: 0.2rem;
+       right: 0.3rem;
+       bottom: 0.3em;
        cursor: pointer;
        .msg-count {
            position: absolute;

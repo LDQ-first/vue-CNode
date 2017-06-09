@@ -4,7 +4,7 @@ export default {
     name: 'Topbar',
     data() {
         return {
-           /* msgCount: 0*/
+           
         }
     },
     computed: {
@@ -30,6 +30,7 @@ export default {
                  }
              })
     },
+
     methods: {
         showAsideMenu() {
             this.$store.commit('showAsideMenu', true);

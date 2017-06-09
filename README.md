@@ -40,7 +40,7 @@
 ## 注意
 - 登录功能采用accessToken登录，需要到[CNode官网](https://cnodejs.org)注册并登录账号，
   到[设置](https://cnodejs.org/setting)页面中获取accessToken
-- 建议使用Chrome浏览器查看
+- 建议使用Chrome等现代浏览器查看
 
 
 ## Build Setup
