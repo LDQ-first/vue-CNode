@@ -32,6 +32,13 @@
 - 建议使用Chrome浏览器查看
 
 
+##手机可访问二维码
+![Vue版CNode](https://ldq-first.github.io/vue-CNode-1/static/img/mobile.png)
+
+##源码
+[GitHub](https://github.com/LDQ-first/vue-CNode-1)
+
+
 
 
 ## Build Setup
