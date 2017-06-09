@@ -34,7 +34,7 @@
 
 ##项目结构
 
-![项目结构](https://ldq-first.github.io/vue-CNode-1/static/img/项目结构.jpg)
+![项目结构思维导图](https://ldq-first.github.io/vue-CNode-1/static/img/项目结构.jpg)
 
 
 ## 注意
