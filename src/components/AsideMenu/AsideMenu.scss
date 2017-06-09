@@ -17,12 +17,11 @@
     }
     .menu {
         z-index: 2;
-        display: flex;
-        flex-direction: column;
         width: 3rem;
         background: #0091ea linear-gradient(135deg, #33b5e5, #0091ea);
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.25),
                     2px 0 10px rgba(0, 0, 0, 0.3);
+        overflow: auto;
         .user {
             display: flex;
             flex-direction: column;
