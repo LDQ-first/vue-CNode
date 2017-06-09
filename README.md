@@ -25,13 +25,6 @@
 * **loaclStorge**: [ 本地存储用户信息 ]
 
 
-
-## 注意
-- 登录功能采用accessToken登录，需要到[CNode官网](https://cnodejs.org)注册并登录账号，
-  到[设置](https://cnodejs.org/setting)页面中获取accessToken
-- 建议使用Chrome浏览器查看
-
-
 ##手机可访问二维码
 
 ![Vue版CNode](https://ldq-first.github.io/vue-CNode-1/static/img/mobile.png)
@@ -39,7 +32,15 @@
 ##源码
 [GitHub](https://github.com/LDQ-first/vue-CNode-1)
 
+##项目结构
 
+![项目结构](https://ldq-first.github.io/vue-CNode-1/static/img/项目结构.jpg)
+
+
+## 注意
+- 登录功能采用accessToken登录，需要到[CNode官网](https://cnodejs.org)注册并登录账号，
+  到[设置](https://cnodejs.org/setting)页面中获取accessToken
+- 建议使用Chrome浏览器查看
 
 
 ## Build Setup
