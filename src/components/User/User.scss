@@ -16,11 +16,12 @@
         margin: 0px auto;
         display: flex;
         flex-direction: column;
+        position: relative;
         .user-info {
             width: 100%;
-            height: 3rem;
-            margin-bottom: 0.3rem;
-            position: relative;
+            height: 10em;
+            /*margin-bottom: 0.3rem;*/
+            position: absolute;
             .user-info-avatar {
                 top: 0.2rem;
                 left: 50%;
@@ -95,6 +96,11 @@
             flex: 1;
             display: flex;
             background: #01508A;
+            /*position: absolute;
+            top: 3.3rem;*/
+            margin-top: 3.3rem;
+            overflow-y: auto;
+            overflow-x: hidden;
             .user-topic-nav {
                 width: 2rem;
                 border-right: 4px solid;
