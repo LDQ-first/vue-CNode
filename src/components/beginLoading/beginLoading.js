@@ -1,4 +1,4 @@
-import particles from '../../lib/particles.js'
+import particles from '@/lib/particles.js'
 
 export default {
     name: 'beginLoading',

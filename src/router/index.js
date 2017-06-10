@@ -7,13 +7,13 @@ import Login from '../components/Login/Login.vue'
 import NewArticle from '../components/NewArticle/NewArticle.vue'
 import Msg from '../components/Msg/Msg.vue'
 import About from '../components/About/About.vue'*/
-const ArticleList = resolve => require(['../components/ArticleList/ArticleList.vue'], resolve)
-const Article = resolve => require(['../components/Article/Article.vue'], resolve)
-const User = resolve => require(['../components/User/User.vue'], resolve)
-const Login = resolve => require(['../components/Login/Login.vue'], resolve)
-const NewArticle = resolve => require(['../components/NewArticle/NewArticle.vue'], resolve)
-const Msg = resolve => require(['../components/Msg/Msg.vue'], resolve)
-const About = resolve => require(['../components/About/About.vue'], resolve)
+const ArticleList = resolve => require(['@/components/ArticleList/ArticleList.vue'], resolve)
+const Article = resolve => require(['@/components/Article/Article.vue'], resolve)
+const User = resolve => require(['@/components/User/User.vue'], resolve)
+const Login = resolve => require(['@/components/Login/Login.vue'], resolve)
+const NewArticle = resolve => require(['@/components/NewArticle/NewArticle.vue'], resolve)
+const Msg = resolve => require(['@/components/Msg/Msg.vue'], resolve)
+const About = resolve => require(['@/components/About/About.vue'], resolve)
 
 Vue.use(Router)
 

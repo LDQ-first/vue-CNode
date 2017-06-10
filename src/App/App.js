@@ -1,19 +1,19 @@
 
-import '../lib/dynamicRem.js'
-import store from '../store/index'
-import { router, routes } from '../router/index.js'
+import '@/lib/dynamicRem.js'
+import store from '@/store/index'
+import { router, routes } from '@/router/index.js'
 import Vue from 'vue'
 import moment from 'moment'
 
-import BeginLoading from '../components/beginLoading/beginLoading.vue'
-import Topbar from '../components/Topbar/Topbar.vue'
-import AsideMenu from  '../components/AsideMenu/AsideMenu.vue'
-import NContent from '../components/Content/Content.vue'
-import ToTop from '../components/toTop/toTop.vue'
-import Login from '../components/Login/Login.vue'
-import Msg from '../components/Msg/Msg.vue'
-import NewArticle from '../components/NewArticle/NewArticle.vue'
-import About from '../components/About/About.vue'
+import BeginLoading from '@/components/beginLoading/beginLoading.vue'
+import Topbar from '@/components/Topbar/Topbar.vue'
+import AsideMenu from  '@/components/AsideMenu/AsideMenu.vue'
+import NContent from '@/components/Content/Content.vue'
+import ToTop from '@/components/toTop/toTop.vue'
+import Login from '@/components/Login/Login.vue'
+import Msg from '@/components/Msg/Msg.vue'
+import NewArticle from '@/components/NewArticle/NewArticle.vue'
+import About from '@/components/About/About.vue'
 
 
 

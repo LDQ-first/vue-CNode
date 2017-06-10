@@ -1,5 +1,5 @@
 import axios from 'axios'
-import bus from '../../lib/bus.js'
+import bus from '@/lib/bus.js'
 import ArticleLoading from '../ArticleLoading/ArticleLoading.vue'
 
 export default {

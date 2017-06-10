@@ -1,6 +1,6 @@
 import Buttons from '../button/button.vue'
 import Close from '../close/close.vue'
-import createSimplemde from '../../lib/simplemde.js'
+import createSimplemde from '@/lib/simplemde.js'
 
 
 export default {

@@ -1,4 +1,4 @@
-import bus from '../../lib/bus.js'
+import bus from '@/lib/bus.js'
 
 export default {
     name: 'toTop',

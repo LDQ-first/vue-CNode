@@ -2,12 +2,14 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var webpack = require('webpack')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
+  cache: true,
   entry: {
     app: './src/main.js'
   },
@@ -34,8 +36,9 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        loader: 'babel-loader?cacheDirectory=true',
+        include: [resolve('src'), resolve('test')],
+        exclude: [path.resolve('../node_modules')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -54,5 +57,18 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      async: 'shared-module',
+      minChunks: (module, count) => (
+        count >= 2    // 当一个模块被重复引用2次或以上的时候单独打包起来。 
+      )
+    }),
+    //这个plugin是用于引入dll里生成的json的。
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../static/public/js/vendor-mainfest.json')  // 指向这个json
+    })
+  ]
 }

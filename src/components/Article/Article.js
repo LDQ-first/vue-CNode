@@ -4,7 +4,6 @@ import Close from '../close/close.vue'
 import highlightjs from 'highlight.js'
 import 'highlight.js/styles/agate.css'
 import Reply from '../Reply/Reply.vue'
-import bus from '../../lib/bus.js'
 
 
 export default {
@@ -220,8 +219,6 @@ export default {
                 console.log('内容不能为空');
                 return;
             }
-            console.log(mde.value());
-            console.log(this.id);
             
             if(!item && !this.isActive) {
                 this.isActive = true;
@@ -264,9 +261,6 @@ export default {
             this.currentIndex = null;
         }
         
-    },
-    watch: {
-     
     },
     components: {
         Buttons,
