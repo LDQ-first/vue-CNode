@@ -6,7 +6,7 @@ const webpack = require('webpack');
 module.exports = {
     entry: {
         vendor: ['vue/dist/vue.esm.js', 'vue-router', 'vuex', 'axios',
-         'moment', 'highlight.js', 'vue-lazyload']
+         'moment', 'simplemde', 'highlight.js', 'vue-lazyload']
     },
     output: {
         path: path.join(__dirname, '../static/public/js'),
