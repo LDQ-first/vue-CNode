@@ -40,7 +40,7 @@ export default {
                  })
         },
         scroll(e) {
-            if(e.target.clientHeight * 2 > e.target.scrollTop) {
+            if(e.target.clientHeight  > e.target.scrollTop) {
                 const e = this.$refs.articles;
                 bus.$emit('isShowTop', {isShow: false, e});
             }
@@ -53,8 +53,9 @@ export default {
                 return;
             }
             if(!this.over && !this.isLoading) {
-                let isOver = e.target.clientHeight + e.target.scrollTop === e.target.scrollHeight;
+                let isOver = e.target.clientHeight + Math.ceil(e.target.scrollTop) >= e.target.scrollHeight;
                 if(isOver) {
+                    console.log(this.page)
                     this.page ++;
                     this.$store.commit('changeMore', true);
                     this.$store.commit('changeTab',{isLoading: true});
