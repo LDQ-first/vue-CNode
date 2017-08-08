@@ -7,7 +7,7 @@
                   return;
               }
               if(clientWidth >= 1000) {
-                  docEl.style.fontSize = '100px'
+                  docEl.style.fontSize = '80px'
               }
               else if(clientWidth <= 640) {
                   docEl.style.fontSize = '64px'
