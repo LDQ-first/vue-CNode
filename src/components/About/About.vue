@@ -15,8 +15,8 @@
             </li>
         </ul>
         <div class="project">
-             <p class="link"><b>项目地址: </b><a class="title" href="https://github.com/LDQ-first/vue-CNode-1">GitHub</a></p>
-             <p class="link"><b>反馈: </b><a class="title" href="https://github.com/LDQ-first/vue-CNode-1/issues">Issues</a></p>
+             <p class="link"><b>项目地址: </b><a class="title" href="https://github.com/LDQ-first/vue-CNode">GitHub</a></p>
+             <p class="link"><b>反馈: </b><a class="title" href="https://github.com/LDQ-first/vue-CNode/issues">Issues</a></p>
              <p class="state"><b>声明: </b>本项目只供学习使用，请不要用作任何商业用途。</p>
         </div>
       </div>
