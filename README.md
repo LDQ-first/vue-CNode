@@ -43,6 +43,14 @@
 - 建议使用Chrome等现代浏览器查看
 
 
+## 效果图
+
+![index](https://ldq-first.github.io/vue-CNode/static/result/001.jpg)
+![index](https://ldq-first.github.io/vue-CNode/static/result/002.jpg)
+![index](https://ldq-first.github.io/vue-CNode/static/result/003.jpg)
+![index](https://ldq-first.github.io/vue-CNode/static/result/004.jpg)
+
+
 ## Build Setup
 
 ``` bash
