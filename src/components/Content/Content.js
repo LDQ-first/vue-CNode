@@ -53,7 +53,7 @@ export default {
                 return;
             }
             if(!this.over && !this.isLoading) {
-                let isOver = e.target.clientHeight + Math.ceil(e.target.scrollTop) >= e.target.scrollHeight;
+                let isOver = e.target.clientHeight + Math.ceil(e.target.scrollTop) >= e.target.scrollHeight - 100;
                 if(isOver) {
                     console.log(this.page)
                     this.page ++;
