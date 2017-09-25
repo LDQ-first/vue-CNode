@@ -27,7 +27,7 @@
 
 ## 手机可访问二维码
 
-![Vue版CNode](https://ldq-first.github.io/vue-CNode/static/img/mobile.png)
+![Vue版CNode](https://ldq-first.github.io/vue-CNode/static/img/mobile.png)  
 
 ## 源码
 [GitHub](https://github.com/LDQ-first/vue-CNode)
