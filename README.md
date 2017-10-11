@@ -2,7 +2,7 @@
 
 > Vue全家桶开发开源的CNode社区，实现了登录，回复，发帖，收藏，点赞，查看消息，更换主题色，退出等功能
 
->[预览地址](https://ldq-first.github.io/vue-CNode/dist/#/)
+>[预览地址](http://ldqblog.me/vue-CNode/dist/#/)
 
 
 ## 技术栈
@@ -27,14 +27,14 @@
 
 ## 手机可访问二维码
 
-![Vue版CNode](https://ldq-first.github.io/vue-CNode/static/img/mobile.png)  
+![Vue版CNode](http://ldqblog.me/vue-CNode/static/img/mobile.png)  
 
 ## 源码
 [GitHub](https://github.com/LDQ-first/vue-CNode)
 
 ## 项目结构
 
-![项目结构思维导图](https://ldq-first.github.io/vue-CNode/static/img/项目结构.jpg)
+![项目结构思维导图](http://ldqblog.me/vue-CNode/static/img/项目结构.jpg)
 
 
 ## 注意
@@ -45,13 +45,13 @@
 
 ## 效果图
 
-![001](https://ldq-first.github.io/vue-CNode/static/result/001.jpg)  
+![001](http://ldqblog.me/vue-CNode/static/result/001.jpg)  
 
-![002](https://ldq-first.github.io/vue-CNode/static/result/002.jpg)  
+![002](http://ldqblog.me/vue-CNode/static/result/002.jpg)  
 
-![003](https://ldq-first.github.io/vue-CNode/static/result/003.jpg)  
+![003](http://ldqblog.me/vue-CNode/static/result/003.jpg)  
 
-![004](https://ldq-first.github.io/vue-CNode/static/result/004.jpg)  
+![004](http://ldqblog.me/vue-CNode/static/result/004.jpg)  
 
 
 
